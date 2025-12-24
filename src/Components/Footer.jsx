@@ -1,8 +1,8 @@
-function App (){
+function Footer (){
   return (    <div>
       <h1>Hello, World!</h1>
     </div>
   );
 }
 
-export default App;
+export default Footer;
