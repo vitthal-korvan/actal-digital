@@ -4,11 +4,11 @@ import React from 'react';
 import styles from './Digital1.module.css';
 
 
-import heroBg from './BN1.png'; 
-import bannerImg1 from './DG1.png';
-import bannerImg2 from './DG2.png';
-import bannerImg3 from './DG3.png';
-import bannerImg4 from './DG4.png';
+import heroBg from '../../images/BN1.png'; 
+import bannerImg1 from '../../images/DG1.png';
+import bannerImg2 from '../../images/DG2.png';
+import bannerImg3 from '../../images/DG3.png';
+import bannerImg4 from '../../images/DG4.png';
 
 const Digital1 = () => {
   return (

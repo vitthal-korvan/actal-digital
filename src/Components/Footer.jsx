@@ -1,10 +1,9 @@
 
 
-import React from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
+import actalLogo from "../../images/logo_footer.png";
 import styles from "./Footer.module.css";
-import actalLogo from "./logo1.png"; // Make sure the file is in src/Components
 
 function Footer() {
   return (
