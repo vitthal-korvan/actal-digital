@@ -58,6 +58,14 @@ const workItems = [
     budget: "$40k — $60k",
     img: "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8a572bd2-eb60-4c9c-a466-264ea1eb7261_3840w.webp?w=800&q=80",
   },
+  {
+    title: "Northwind Capital",
+    industry: "Fintech",
+    engagement: "Design Sprint",
+    duration: "4 Weeks",
+    budget: "$35k — $55k",
+    img: "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/685434ff-bb15-4b85-8b97-4f7f40f43ac1_3840w.webp?w=800&q=80",
+  },
 ];
 
 export default function WorkPage() {

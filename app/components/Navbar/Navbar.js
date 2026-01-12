@@ -35,8 +35,8 @@ export default function Navbar() {
           <Link href="/studio" className={styles.mobileLink} onClick={toggleMenu}>
             Studio
           </Link>
-          <Link href="/journal" className={styles.mobileLink} onClick={toggleMenu}>
-            Journal
+          <Link href="/blogs" className={styles.mobileLink} onClick={toggleMenu}>
+            Blogs
           </Link>
           <Link href="/project" className={styles.mobileCta} onClick={toggleMenu}>
             Start a Project
@@ -61,8 +61,8 @@ export default function Navbar() {
             <Link href="/studio" className={styles.link}>
               Studio
             </Link>
-            <Link href="/journal" className={styles.link}>
-              Journal
+            <Link href="/blogs" className={styles.link}>
+              Blogs
             </Link>
           </div>
 
@@ -75,7 +75,7 @@ export default function Navbar() {
           <div className={styles.logo}>
             <Link href="/" className={styles.logoLink}>
               <div className={styles.logoDot}></div>
-              <span className={styles.logoText}>STUDIO</span>
+              <span className={styles.logoText}>ACTAL DIGITAL</span>
             </Link>
           </div>
 

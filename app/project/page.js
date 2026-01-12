@@ -131,11 +131,11 @@ export default function ProjectPage() {
 
       <footer className={styles.footer}>
          <div className={styles.footerContainer}>
-            <div>© 2025 Studio Inc.</div>
+            <div>© 2025 Actal Digital.</div>
             <div className={styles.footerLinks}>
                <a href="#" className={styles.footerLink}>Privacy</a>
                <a href="#" className={styles.footerLink}>Terms</a>
-               <a href="mailto:hello@studio.com" className={styles.footerLink}>Support</a>
+               <a href="mailto:hello@actaldigital.com" className={styles.footerLink}>Support</a>
             </div>
          </div>
       </footer>

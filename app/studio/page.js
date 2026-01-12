@@ -17,7 +17,7 @@ export default function StudioPage() {
         
         <div className={styles.heroTop}>
            <h1 className={styles.heroTitle}>
-             Studio<span className={styles.heroTitleDot}>.</span>
+             Actal<span className={styles.heroTitleDot}>Digital.</span>
            </h1>
            <div className={styles.spinnerContainer}>
               <div className={styles.spinningText}>
@@ -46,7 +46,7 @@ export default function StudioPage() {
            </div>
            <div className="md:col-span-7">
               <p className={styles.heroTagline}>
-                A small, senior studio focused on <span style={{color: '#D6FF4F'}}>clarity</span> over volume.
+                A digital agency focused on <span style={{color: '#D6FF4F'}}>clarity</span> over volume.
               </p>
               <div className={styles.heroDescGrid}>
                  <p className={styles.textRelaxed}>
@@ -196,7 +196,7 @@ export default function StudioPage() {
                    <span className={styles.sectionLabel}>04 — ACCOUNTABILITY</span>
                    <h2 className={styles.sectionTitle} style={{marginBottom: '1.5rem'}}>Senior by default</h2>
                    <p className={styles.boundariesDesc}>
-                     This studio is founder-led and senior-only. The point isn’t headcount—it’s ownership.
+                     This agency is founder-led and senior-only. The point isn’t headcount—it’s ownership.
                    </p>
                 </div>
                 <div className="md:col-span-7">
@@ -249,7 +249,7 @@ export default function StudioPage() {
                <a href="/services" className={styles.ctaButton}>View Services</a>
                <span className={styles.ctaSub}>No urgency · Just alignment</span>
                <span className={styles.ctaContact}>
-                  Prefer to reach out directly? <a href="mailto:hello@studio.com" className={styles.ctaLink}>hello@studio.com</a>
+                  Prefer to reach out directly? <a href="mailto:hello@actaldigital.com" className={styles.ctaLink}>hello@actaldigital.com</a>
                </span>
             </div>
          </div>

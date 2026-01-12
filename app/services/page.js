@@ -116,15 +116,21 @@ export default function ServicesPage() {
       <div className={styles.capabilities}>
         <div className={styles.capabilitiesContainer}>
            <span className={styles.capLabel}>Core Capabilities</span>
-           <div className={styles.capList}>
-              <span className={styles.capItem}>Brand Identity & Systems</span>
+              <span className={styles.capItem}>Digital Marketing</span>
               <span className={styles.capDivider}>/</span>
-              <span className={styles.capItem}>Product & UX Design</span>
+              <span className={styles.capItem}>Content Marketing</span>
               <span className={styles.capDivider}>/</span>
-              <span className={styles.capItem}>Web Experiences</span>
+              <span className={styles.capItem}>Social Media Marketing</span>
               <span className={styles.capDivider}>/</span>
-              <span className={styles.capItem}>Motion & Interaction</span>
-           </div>
+              <span className={styles.capItem}>Online Reputation Management</span>
+              <span className={styles.capDivider}>/</span>
+              <span className={styles.capItem}>Graphic Designing</span>
+              <span className={styles.capDivider}>/</span>
+              <span className={styles.capItem}>Search Engine Optimization</span>
+              <span className={styles.capDivider}>/</span>
+              <span className={styles.capItem}>Website Design And Development</span>
+              <span className={styles.capDivider}>/</span>
+              <span className={styles.capItem}>Video Editing</span>
            <div className="hidden md:block w-24"></div>
         </div>
       </div>

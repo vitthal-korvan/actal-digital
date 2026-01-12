@@ -3,7 +3,7 @@ import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import styles from "./page.module.css";
 
-export default function JournalPage() {
+export default function BlogsPage() {
   return (
     <main className={styles.main}>
       <Navbar />
@@ -12,7 +12,7 @@ export default function JournalPage() {
         {/* Hero */}
         <div className={styles.heroSection}>
           <span className={styles.heroLabel}>INTELLECTUAL SURFACE AREA</span>
-          <h1 className={styles.heroTitle}>Journal</h1>
+          <h1 className={styles.heroTitle}>Blogs</h1>
           <p className={styles.heroDesc}>
             Notes on systems, design, and decision-making.
           </p>

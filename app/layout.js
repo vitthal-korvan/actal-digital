@@ -14,7 +14,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata = {
-  title: "Studio — Design & Digital Experiences",
+  title: "Actal Digital — Design & Digital Experiences",
   description: "Digital-first branding agency. Crafting identities for future-tech leaders.",
 };
 

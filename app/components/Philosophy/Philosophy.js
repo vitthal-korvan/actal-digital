@@ -8,8 +8,8 @@ export default function Philosophy() {
         {/* Text Area */}
         <div className={styles.content}>
           <div className={styles.innerContent}>
-            <span className={styles.label}>04 — STUDIO PHILOSOPHY</span>
-            <h2 className={styles.title}>The Studio Standard</h2>
+            <span className={styles.label}>04 — PHILOSOPHY</span>
+            <h2 className={styles.title}>The Actal Standard</h2>
             <p className={styles.subtitle}>
               Good design is quiet. Bad design is expensive.
             </p>

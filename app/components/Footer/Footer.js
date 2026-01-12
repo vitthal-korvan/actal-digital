@@ -13,7 +13,7 @@ export default function Footer() {
           <div className={styles.brandCol}>
             <Link href="/" className={styles.brandLogo}>
               <div className={styles.logoDot}></div>
-              <span className={styles.logoText}>STUDIO</span>
+              <span className={styles.logoText}>ACTAL DIGITAL</span>
             </Link>
             <p className={styles.brandDesc}>
               We help ambitious companies build future-proof brands and digital
@@ -51,6 +51,11 @@ export default function Footer() {
                   Studio
                 </Link>
               </li>
+              <li>
+                <Link href="/blogs" className={styles.linkItem}>
+                  Blogs
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -82,8 +87,8 @@ export default function Footer() {
               Currently accepting new projects for Q3 2024. Let's build
               something great.
             </p>
-            <a href="mailto:hello@studio.com" className={styles.emailLink}>
-              hello@studio.com
+            <a href="mailto:hello@actaldigital.com" className={styles.emailLink}>
+              hello@actaldigital.com
             </a>
           </div>
         </div>
@@ -97,7 +102,7 @@ export default function Footer() {
               Terms
             </Link>
           </div>
-          <span>© 2025 Studio Inc.</span>
+          <span>© 2025 Actal Digital.</span>
         </div>
       </div>
     </footer>
