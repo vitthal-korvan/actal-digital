@@ -74,7 +74,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className={styles.logo}>
             <Link href="/" className={styles.logoLink}>
-              <div className={styles.logoDot}></div>
+              <img src="/logo.png" alt="Actal Digital Logo" className={styles.logoImage} />
               <span className={styles.logoText}>ACTAL DIGITAL</span>
             </Link>
           </div>

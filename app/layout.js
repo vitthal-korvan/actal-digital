@@ -16,6 +16,9 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata = {
   title: "Actal Digital — Design & Digital Experiences",
   description: "Digital-first branding agency. Crafting identities for future-tech leaders.",
+  icons: {
+    icon: '/logo.png',
+  },
 };
 
 export default function RootLayout({ children }) {
