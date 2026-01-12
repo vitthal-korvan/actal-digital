@@ -205,15 +205,15 @@ export default function WorkPage() {
 
              {/* Bottom Info */}
              <div className={`${styles.infoBlock} ${styles.fullCard}`}>
-              <div className="md:px-12 pt-10 pr-8 pb-10 pl-8">
-                 <div className="flex items-center gap-4">
-                    <div className="h-px flex-1 bg-[#23252B]"></div>
-                    <div className="text-[10px] font-mono text-[#A1A1A6]/70 tracking-widest uppercase">End of selected work</div>
-                    <div className="h-px flex-1 bg-[#23252B]"></div>
+              <div className={styles.endSection}>
+                 <div className={styles.endHeader}>
+                    <div className={styles.endDivider}></div>
+                    <div className={styles.endLabel}>End of selected work</div>
+                    <div className={styles.endDivider}></div>
                  </div>
-                 <div className="mt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                 <div className={styles.endContent}>
                     <p className={styles.infoText}>More work available in the archive.</p>
-                    <Link href="/work" className={styles.archiveLink} style={{width:'auto', display:'inline-flex'}}>
+                    <Link href="/work" className={styles.viewArchiveBtn}>
                        <span className={styles.archiveTextTitle}>View Archive</span>
                        <ArrowRight size={14} className="text-[#A1A1A6]" />
                     </Link>
