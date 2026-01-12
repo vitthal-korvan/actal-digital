@@ -249,7 +249,7 @@ export default function StudioPage() {
                <a href="/services" className={styles.ctaButton}>View Services</a>
                <span className={styles.ctaSub}>No urgency · Just alignment</span>
                <span className={styles.ctaContact}>
-                  Prefer to reach out directly? <a href="mailto:hello@actaldigital.com" className={styles.ctaLink}>hello@actaldigital.com</a>
+                  Prefer to reach out directly? <a href="mailto:info@actaldigital.com" className={styles.ctaLink}>info@actaldigital.com</a>
                </span>
             </div>
          </div>

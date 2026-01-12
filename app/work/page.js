@@ -101,6 +101,7 @@ export default function WorkPage() {
           {/* Sidebar */}
           <div className={styles.sidebar}>
             <div className="space-y-6">
+              <h2 className="sr-only">Filters</h2>
               <div className={styles.filterLabel}>Filter by</div>
 
               <div className="space-y-2">
@@ -175,7 +176,7 @@ export default function WorkPage() {
 
                 <div className="flex flex-col gap-6">
                   <div className={styles.cardHeader}>
-                    <h3 className={styles.cardTitle}>{item.title}</h3>
+                    <h2 className={styles.cardTitle}>{item.title}</h2>
                     <ArrowUpRight size={24} className={styles.cardArrow} />
                   </div>
 

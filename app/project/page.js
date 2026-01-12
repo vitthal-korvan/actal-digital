@@ -34,7 +34,7 @@ export default function ProjectPage() {
                 </div>
                 <div>
                   <h3 className={styles.infoTitle}>Direct Contact</h3>
-                  <a href="mailto:hello@studio.com" className={styles.emailLink}>hello@studio.com</a>
+                  <a href="mailto:info@actaldigital.com" className={styles.emailLink}>info@actaldigital.com</a>
                   <p className={styles.infoText} style={{color: '#52525B'}}>London, UK</p>
                 </div>
               </div>
@@ -135,7 +135,7 @@ export default function ProjectPage() {
             <div className={styles.footerLinks}>
                <a href="#" className={styles.footerLink}>Privacy</a>
                <a href="#" className={styles.footerLink}>Terms</a>
-               <a href="mailto:hello@actaldigital.com" className={styles.footerLink}>Support</a>
+               <a href="mailto:info@actaldigital.com" className={styles.footerLink}>Support</a>
             </div>
          </div>
       </footer>

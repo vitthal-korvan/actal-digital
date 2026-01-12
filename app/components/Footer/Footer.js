@@ -87,8 +87,8 @@ export default function Footer() {
               Currently accepting new projects for Q3 2024. Let's build
               something great.
             </p>
-            <a href="mailto:hello@actaldigital.com" className={styles.emailLink}>
-              hello@actaldigital.com
+            <a href="mailto:info@actaldigital.com" className={styles.emailLink}>
+              info@actaldigital.com
             </a>
           </div>
         </div>
