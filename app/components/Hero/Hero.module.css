@@ -1,0 +1,242 @@
+.section {
+      padding-top: 10rem;
+      /* mt-24 + pt-10 approx */
+      padding-bottom: 2.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      max-width: 1550px;
+      margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+      .section {
+            padding-top: 12rem;
+            padding-bottom: 3rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+      }
+}
+
+.title {
+      font-size: 14vw;
+      line-height: 0.85;
+      font-weight: 500;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 2rem;
+      word-break: break-word;
+      font-family: var(--font-space-grotesk);
+      color: var(--heading);
+      letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+      .title {
+            font-size: 11vw;
+            margin-bottom: 3rem;
+      }
+}
+
+.strokeText {
+      color: #23252B;
+      -webkit-text-stroke: 1px #23252B;
+      /* Enhance visibility of stroke if needed, or stick to color */
+}
+
+/* Fallback if stroke isn't standard, though user had class stroke-text */
+/* Original HTML used .stroke-text but didn't define it in <style> block shown, assuming generic util or tailwind custom? 
+   No, it was likely just text color #23252B which is dark grey on black bg - might be invisible?
+   Wait, background is #0E0F11 (very dark). #23252B is slightly lighter.
+   Let's stick to the color provided.
+*/
+
+.subtitleWrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1.5rem;
+      color: var(--foreground);
+      margin-bottom: 2rem;
+      font-size: 0.875rem;
+}
+
+@media (min-width: 640px) {
+      .subtitleWrapper {
+            flex-direction: row;
+            align-items: flex-end;
+            gap: 2rem;
+            font-size: 1rem;
+      }
+}
+
+.subtitleLeft p,
+.subtitleRight p {
+      line-height: 1.625;
+      max-width: 20rem;
+      /* xs */
+}
+
+@media (min-width: 640px) {
+
+      .subtitleLeft p,
+      .subtitleRight p {
+            max-width: 24rem;
+            /* sm */
+      }
+
+      .subtitleRight {
+            text-align: right;
+      }
+}
+
+.subtitleBlock {
+      display: block;
+}
+
+.subtitleHighlight {
+      color: var(--heading);
+      display: block;
+}
+
+.workingWith {
+      font-size: 0.6875rem;
+      /* 11px */
+      text-transform: uppercase;
+      color: rgba(161, 161, 166, 0.7);
+      letter-spacing: 0.1em;
+      text-align: center;
+      margin-top: 0.25rem;
+      margin-bottom: 1rem;
+      padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+      .workingWith {
+            font-size: 0.75rem;
+            /* xs */
+            text-align: left;
+      }
+}
+
+/* Slider */
+.sliderContainer {
+      position: relative;
+      width: 100%;
+      height: 50vh;
+      overflow: hidden;
+      border-radius: 2.5rem;
+      border: 1px solid var(--border);
+      background-color: #15171B;
+}
+
+@media (min-width: 640px) {
+      .sliderContainer {
+            height: 60vh;
+      }
+}
+
+@media (min-width: 768px) {
+      .sliderContainer {
+            height: 75vh;
+      }
+}
+
+.heroSlideshow {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+}
+
+.heroSlide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      will-change: opacity, transform;
+      animation: heroFade 18s ease-in-out infinite;
+}
+
+.heroSlide:nth-child(1) {
+      animation-delay: 0s;
+}
+
+.heroSlide:nth-child(2) {
+      animation-delay: 6s;
+}
+
+.heroSlide:nth-child(3) {
+      animation-delay: 12s;
+}
+
+@keyframes heroFade {
+
+      0%,
+      20% {
+            opacity: 0.8;
+            transform: scale(1.05);
+      }
+
+      25%,
+      95% {
+            opacity: 0;
+            transform: scale(1);
+      }
+
+      100% {
+            opacity: 0.8;
+            transform: scale(1.05);
+      }
+}
+
+.showreelBtnWrapper {
+      position: absolute;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 10;
+}
+
+@media (min-width: 768px) {
+      .showreelBtnWrapper {
+            bottom: 2.5rem;
+            right: 2.5rem;
+      }
+}
+
+.showreelBtn {
+      background-color: var(--accent);
+      color: #0E0F11;
+      padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+      /* pl-6 pr-2 py-2 */
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.75rem;
+      /* xs */
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+}
+
+.showreelBtn:hover {
+      background-color: var(--heading);
+      padding-right: 1.5rem;
+}
+
+.playIconWrapper {
+      width: 2rem;
+      height: 2rem;
+      background-color: #0E0F11;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+}
