@@ -52,7 +52,7 @@ export default function Navbar() {
         <nav className={styles.navbar}>
           {/* Desktop Left Nav */}
           <div className={styles.navLinks}>
-            <Link href="/work" className={`${styles.link} hover:text-[#D6FF4F]`}>
+            <Link href="/work" className={styles.link}>
               Work
             </Link>
             <Link href="/services" className={styles.link}>

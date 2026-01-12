@@ -1,5 +1,5 @@
 .footer {
-      background-color: #0E0F11;
+      background-color: var(--background);
       border-top: 1px solid var(--border);
       padding-top: 5rem;
       padding-bottom: 2.5rem;
@@ -97,8 +97,8 @@
 }
 
 .socialIcon:hover {
-      background-color: #F5F5F5;
-      color: #0E0F11;
+      background-color: var(--border);
+      color: var(--heading);
 }
 
 .linksGrid {

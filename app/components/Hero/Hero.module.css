@@ -38,9 +38,9 @@
 }
 
 .strokeText {
-      color: #23252B;
-      -webkit-text-stroke: 1px #23252B;
       /* Enhance visibility of stroke if needed, or stick to color */
+      opacity: 0.1;
+      /* Light theme stroke needs adjustment */
 }
 
 /* Fallback if stroke isn't standard, though user had class stroke-text */
@@ -127,7 +127,7 @@
       overflow: hidden;
       border-radius: 2.5rem;
       border: 1px solid var(--border);
-      background-color: #15171B;
+      background-color: var(--card-bg);
 }
 
 @media (min-width: 640px) {
@@ -233,10 +233,12 @@
 .playIconWrapper {
       width: 2rem;
       height: 2rem;
-      background-color: #0E0F11;
+      background-color: var(--heading);
       border-radius: 9999px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent);
+      color: #0E0F11;
+      /* Keep accent icon dark on light theme? Or match accent? */
+      /* If accent is lime, it needs dark icon. */
 }

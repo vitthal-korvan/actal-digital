@@ -1,5 +1,5 @@
 .section {
-      background-color: #15171B;
+      background-color: var(--card-bg);
       border-top: 1px solid var(--border);
       padding-top: 5rem;
       padding-bottom: 5rem;
@@ -60,7 +60,7 @@
       grid-template-columns: 1fr;
       gap: 2rem;
       align-items: center;
-      background-color: #0E0F11;
+      background-color: var(--background);
       border-radius: 2rem;
       border: 1px solid var(--border);
       padding: 1.5rem;
@@ -99,7 +99,7 @@
       opacity: 0;
       transition: opacity 0.5s ease-in-out;
       pointer-events: none;
-      background-color: #0E0F11;
+      background-color: var(--background);
       border-radius: 2rem;
       border: 1px solid var(--border);
       padding: 1.5rem;
@@ -222,7 +222,7 @@
       height: 3rem;
       border-radius: 9999px;
       border: 1px solid var(--border);
-      background-color: #0E0F11;
+      background-color: var(--card-bg);
       display: flex;
       align-items: center;
       justify-content: center;

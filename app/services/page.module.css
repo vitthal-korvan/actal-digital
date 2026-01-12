@@ -154,7 +154,7 @@
 .card {
       display: flex;
       flex-direction: column;
-      background-color: #15171B;
+      background-color: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 1.5rem;
       padding: 2rem;
@@ -177,7 +177,7 @@
       width: 2.5rem;
       height: 2.5rem;
       border-radius: 9999px;
-      background-color: #0E0F11;
+      background-color: var(--background);
       border: 1px solid var(--border);
       display: flex;
       align-items: center;
@@ -190,7 +190,7 @@
 .cardDuration {
       padding: 0.25rem 0.75rem;
       border-radius: 9999px;
-      background-color: #0E0F11;
+      background-color: var(--background);
       border: 1px solid var(--border);
       font-size: 0.625rem;
       text-transform: uppercase;
@@ -259,7 +259,7 @@
 /* Capabilities */
 .capabilities {
       border-top: 1px solid var(--border);
-      background-color: #0E0F11;
+      background-color: var(--card-bg);
 }
 
 .capabilitiesContainer {
@@ -309,7 +309,7 @@
 /* Operations */
 .operations {
       border-top: 1px solid var(--border);
-      background-color: #15171B;
+      background-color: var(--background);
       padding: 6rem 1.5rem;
 }
 
@@ -465,7 +465,7 @@
 /* Pricing */
 .pricing {
       padding: 6rem 1.5rem;
-      background-color: #0E0F11;
+      background-color: var(--background);
       border-top: 1px solid var(--border);
       text-align: center;
 }
@@ -500,7 +500,7 @@
 /* Who Grid */
 .whoGridSection {
       border-top: 1px solid var(--border);
-      background-color: #0E0F11;
+      background-color: var(--card-bg);
 }
 
 .whoGridContainer {
@@ -519,9 +519,9 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 2rem;
-      background-color: #23252B;
+      background-color: var(--foreground);
       /* border color effectively */
-      border: 1px solid #23252B;
+      border: 1px solid var(--border);
       border-radius: 1.5rem;
       overflow: hidden;
 }
@@ -547,11 +547,11 @@
 }
 
 .whoCardGood {
-      background-color: #15171B;
+      background-color: var(--card-bg);
 }
 
 .whoCardBad {
-      background-color: #0E0F11;
+      background-color: var(--background);
 }
 
 .whoHeader {
@@ -576,7 +576,7 @@
 }
 
 .badIcon {
-      background-color: #23252B;
+      background-color: var(--border);
       color: #52525B;
 }
 
@@ -607,7 +607,7 @@
 .whoDot {
       width: 0.25rem;
       height: 0.25rem;
-      background-color: #23252B;
+      background-color: var(--foreground);
       border-radius: 9999px;
       margin-top: 0.5rem;
       flex-shrink: 0;

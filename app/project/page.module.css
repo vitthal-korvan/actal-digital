@@ -1,5 +1,5 @@
 .main {
-      background-color: #0E0F11;
+      background-color: var(--background);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -11,7 +11,7 @@
       width: 100%;
       height: 100vh;
       z-index: -10;
-      background: radial-gradient(circle at 50% 0%, #1a1c21 0%, #0E0F11 70%);
+      background: radial-gradient(circle at 50% 0%, var(--border) 0%, var(--background) 70%);
 }
 
 .noise {
@@ -159,7 +159,7 @@
 
 /* Right Column: Form */
 .rightCol {
-      background-color: rgba(21, 23, 27, 0.5);
+      background-color: rgba(255, 255, 255, 0.5);
       backdrop-filter: blur(4px);
       border: 1px solid var(--border);
       border-radius: 1.5rem;
@@ -277,7 +277,10 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background-color: #0E0F11;
+      background-color: var(--input-bg);
+      /* Use a new variable or card-bg? */
+      /* Actually, form boxes usually need distinct bg. Let's use card-bg or white */
+      background-color: #FFFFFF;
       transition: all 0.2s;
 }
 
@@ -297,13 +300,13 @@
 }
 
 .checkboxInput:checked+.checkboxBox .checkboxText {
-      color: #0E0F11;
+      color: #FFFFFF;
 }
 
 .checkIcon {
       opacity: 0;
       transition: opacity 0.2s;
-      color: #0E0F11;
+      color: #FFFFFF;
 }
 
 .checkboxInput:checked+.checkboxBox .checkIcon {
@@ -340,8 +343,8 @@
 
 .submitBtn {
       width: 100%;
-      background-color: var(--accent);
-      color: #0E0F11;
+      background-color: var(--heading);
+      color: #FFFFFF;
       padding: 1rem 2.5rem;
       border-radius: 9999px;
       font-size: 0.875rem;
@@ -391,7 +394,7 @@
 /* Footer */
 .footer {
       border-top: 1px solid var(--border);
-      background-color: #0E0F11;
+      background-color: var(--background);
       padding: 2rem 0;
 }
 

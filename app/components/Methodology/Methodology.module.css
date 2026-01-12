@@ -1,6 +1,6 @@
 .section {
       border-top: 1px solid var(--border);
-      background-color: #0E0F11;
+      background-color: var(--background);
       padding-top: 6rem;
       padding-bottom: 6rem;
       padding-left: 1.5rem;
@@ -84,7 +84,7 @@
       width: 3.5rem;
       height: 3.5rem;
       border-radius: 9999px;
-      background-color: #15171B;
+      background-color: var(--card-bg);
       border: 1px solid var(--border);
       display: flex;
       align-items: center;

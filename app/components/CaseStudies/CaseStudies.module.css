@@ -1,6 +1,6 @@
 .section {
       border-top: 1px solid var(--border);
-      background-color: #0E0F11;
+      background-color: var(--background);
 }
 
 .container {
@@ -132,7 +132,7 @@
 
 .archiveBtn {
       width: 100%;
-      background-color: #15171B;
+      background-color: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 9999px;
       color: var(--heading);
@@ -182,20 +182,20 @@
 }
 
 .item {
-      background-color: #0E0F11;
+      background-color: var(--card-bg);
       padding: 1.5rem;
       cursor: pointer;
       transition: background-color 0.2s;
 }
 
 .item:hover {
-      background-color: #15171B;
+      background-color: var(--background);
 }
 
 .imageWrapper {
       position: relative;
       aspect-ratio: 4/3;
-      background-color: #15171B;
+      background-color: var(--card-bg);
       border-radius: 1rem;
       overflow: hidden;
       margin-bottom: 1.25rem;
@@ -218,7 +218,7 @@
       position: absolute;
       top: 0.75rem;
       right: 0.75rem;
-      background-color: rgba(14, 15, 17, 0.8);
+      background-color: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(4px);
       border: 1px solid var(--border);
       padding: 0.25rem 0.75rem;

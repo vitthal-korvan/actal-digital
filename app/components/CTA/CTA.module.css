@@ -1,5 +1,5 @@
 .section {
-      background-color: #0E0F11;
+      background-color: var(--background);
       border-top: 1px solid var(--border);
       padding: 4rem 1.5rem;
 }
@@ -10,7 +10,7 @@
 }
 
 .card {
-      background-color: #15171B;
+      background-color: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 2rem;
       padding: 2rem;
@@ -79,8 +79,8 @@
 }
 
 .btn {
-      background-color: #F5F5F5;
-      color: #0E0F11;
+      background-color: var(--heading);
+      color: #FFFFFF;
       padding: 0.75rem 2rem;
       border-radius: 9999px;
       font-size: 0.75rem;
@@ -95,6 +95,7 @@
 
 .btn:hover {
       background-color: var(--accent);
+      color: #0E0F11;
 }
 
 .note {

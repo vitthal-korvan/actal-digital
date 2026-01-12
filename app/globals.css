@@ -1,10 +1,17 @@
 :root {
-  --background: #0E0F11;
-  --foreground: #A1A1A6;
-  --heading: #F5F5F5;
+  --background: #FAFAFA;
+  /* Zinc-50 */
+  --foreground: #52525B;
+  /* Zinc-600 */
+  --heading: #18181B;
+  /* Zinc-900 */
   --accent: #D6FF4F;
-  --border: #23252B;
-  --card-bg: #15171B;
+  /* Keep Actal Lime */
+  --border: #E4E4E7;
+  /* Zinc-200 */
+  --card-bg: #FFFFFF;
+  /* White */
+  --card-border: #E4E4E7;
   --selection-bg: #D6FF4F;
   --selection-text: #0E0F11;
 }
@@ -30,7 +37,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6, .font-heading {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading {
   font-family: var(--font-space-grotesk), sans-serif;
   color: var(--heading);
 }
@@ -49,6 +62,7 @@ a {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;

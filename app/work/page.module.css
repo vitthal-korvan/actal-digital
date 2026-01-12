@@ -83,7 +83,7 @@
 
 /* Layout */
 .contentWrapper {
-      background-color: #0E0F11;
+      background-color: var(--background);
       border-top: 1px solid var(--border);
 }
 
@@ -207,7 +207,7 @@
       padding: 1rem;
       border-radius: 0.75rem;
       border: 1px solid var(--border);
-      background-color: rgba(21, 23, 27, 0.5);
+      background-color: rgba(255, 255, 255, 0.5);
       transition: all 0.2s;
 }
 
@@ -254,7 +254,7 @@
 }
 
 .infoBlock {
-      background-color: #0E0F11;
+      background-color: var(--background);
       border-bottom: 1px solid var(--border);
 }
 
@@ -286,7 +286,7 @@
 
 .card {
       display: block;
-      background-color: #0E0F11;
+      background-color: var(--card-bg);
       padding: 2rem;
       transition: background-color 0.2s;
       height: 100%;
@@ -299,7 +299,7 @@
 }
 
 .card:hover {
-      background-color: #121316;
+      background-color: var(--border);
 }
 
 /* Full width card override if needed */
@@ -310,7 +310,7 @@
 .cardImageWrapper {
       position: relative;
       aspect-ratio: 16/10;
-      background-color: #15171B;
+      background-color: var(--card-bg);
       border-radius: 1rem;
       overflow: hidden;
       margin-bottom: 2rem;
@@ -470,7 +470,7 @@
       padding: 1rem;
       border-radius: 0.75rem;
       border: 1px solid var(--border);
-      background-color: rgba(21, 23, 27, 0.5);
+      background-color: rgba(255, 255, 255, 0.5);
       transition: all 0.2s;
 }
 
@@ -517,7 +517,7 @@
 }
 
 .infoBlock {
-      background-color: #0E0F11;
+      background-color: var(--background);
       border-bottom: 1px solid var(--border);
 }
 
@@ -549,7 +549,7 @@
 
 .card {
       display: block;
-      background-color: #0E0F11;
+      background-color: var(--card-bg);
       padding: 2rem;
       transition: background-color 0.2s;
       height: 100%;
@@ -562,7 +562,7 @@
 }
 
 .card:hover {
-      background-color: #121316;
+      background-color: var(--border);
 }
 
 /* Full width card override if needed */
@@ -573,7 +573,7 @@
 .cardImageWrapper {
       position: relative;
       aspect-ratio: 16/10;
-      background-color: #15171B;
+      background-color: var(--card-bg);
       border-radius: 1rem;
       overflow: hidden;
       margin-bottom: 2rem;
@@ -681,7 +681,7 @@
 
 /* Who Section */
 .whoSection {
-      background-color: #0E0F11;
+      background-color: var(--background);
       border-top: 1px solid var(--border);
 }
 
@@ -781,12 +781,12 @@
       padding: 0.75rem 1.5rem;
       border-radius: 9999px;
       border: 1px solid var(--border);
-      background-color: rgba(21, 23, 27, 0.5);
+      background-color: rgba(255, 255, 255, 0.5);
       transition: all 0.2s;
       width: auto;
 }
 
 .viewArchiveBtn:hover {
-      background-color: #15171B;
+      background-color: var(--card-bg);
       border-color: rgba(214, 255, 79, 0.5);
 }
