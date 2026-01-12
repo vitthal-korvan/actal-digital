@@ -1,0 +1,106 @@
+.section {
+      background-color: #0E0F11;
+      border-top: 1px solid var(--border);
+      padding: 4rem 1.5rem;
+}
+
+.container {
+      max-width: 1550px;
+      margin: 0 auto;
+}
+
+.card {
+      background-color: #15171B;
+      border: 1px solid var(--border);
+      border-radius: 2rem;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2rem;
+}
+
+@media (min-width: 768px) {
+      .card {
+            padding: 3rem;
+            flex-direction: row;
+            align-items: center;
+      }
+}
+
+.content {
+      max-width: 36rem;
+}
+
+.label {
+      font-size: 0.625rem;
+      font-family: monospace;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      width: fit-content;
+      padding-bottom: 0.25rem;
+      letter-spacing: 0.1em;
+}
+
+.title {
+      font-size: 2.25rem;
+      font-weight: 500;
+      font-family: var(--font-space-grotesk);
+      color: var(--heading);
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
+      .title {
+            font-size: 2.25rem;
+      }
+}
+
+.desc {
+      font-size: 0.875rem;
+      color: var(--foreground);
+      line-height: 1.625;
+}
+
+.actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+      .actions {
+            align-items: flex-end;
+      }
+}
+
+.btn {
+      background-color: #F5F5F5;
+      color: #0E0F11;
+      padding: 0.75rem 2rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: background-color 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+}
+
+.btn:hover {
+      background-color: var(--accent);
+}
+
+.note {
+      font-size: 0.625rem;
+      font-family: var(--font-inter);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: rgba(161, 161, 166, 0.7);
+}

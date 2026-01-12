@@ -1,0 +1,238 @@
+.section {
+      background-color: #15171B;
+      border-top: 1px solid var(--border);
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+      .section {
+            padding-left: 2rem;
+            padding-right: 2rem;
+      }
+}
+
+.container {
+      max-width: 72rem;
+      /* max-w-6xl */
+      margin: 0 auto;
+}
+
+.header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 3rem;
+}
+
+.label {
+      font-size: 0.625rem;
+      font-family: monospace;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      width: fit-content;
+      padding-bottom: 0.25rem;
+      letter-spacing: 0.1em;
+}
+
+.sliderWrapper {
+      position: relative;
+      min-height: 500px;
+}
+
+.slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* Or auto if content varies */
+      transition: opacity 0.5s ease-in-out;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: center;
+      background-color: #0E0F11;
+      border-radius: 2rem;
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+      .slide {
+            grid-template-columns: repeat(12, 1fr);
+            padding: 3rem;
+      }
+}
+
+.slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 10;
+      position: relative;
+      /* Make it flow in document */
+}
+
+/* Hide inactive slides via absolute positioning to prevent height collapse if using relative on active? 
+   Actually, best approach for equal height slides:
+   Container relative. Slides absolute. Active slide opacity 1. 
+   But container needs height. 
+   Let's set min-height on container, or use Javascript to set height.
+   Or... Grid stack trick.
+*/
+
+.gridStack {
+      display: grid;
+      grid-template-areas: "stack";
+}
+
+.slideItem {
+      grid-area: stack;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      pointer-events: none;
+      background-color: #0E0F11;
+      border-radius: 2rem;
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: center;
+}
+
+@media (min-width: 768px) {
+      .slideItem {
+            grid-template-columns: repeat(12, 1fr);
+            padding: 3rem;
+      }
+}
+
+.slideItem.active {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 1;
+}
+
+.imageCol {
+      height: 100%;
+}
+
+@media (min-width: 768px) {
+      .imageCol {
+            grid-column: span 5;
+      }
+}
+
+.imageWrapper {
+      aspect-ratio: 4/5;
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      position: relative;
+      height: 100%;
+}
+
+.image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+      filter: grayscale(100%);
+      transition: all 0.5s;
+}
+
+.image:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+}
+
+.contentCol {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+}
+
+@media (min-width: 768px) {
+      .contentCol {
+            grid-column: span 7;
+      }
+}
+
+.quoteIcon {
+      margin-bottom: 2rem;
+      color: var(--foreground);
+}
+
+.quote {
+      font-size: 1.5rem;
+      font-family: var(--font-space-grotesk);
+      line-height: 1.25;
+      color: var(--heading);
+      margin-bottom: 2rem;
+      font-weight: 600;
+}
+
+@media (min-width: 768px) {
+      .quote {
+            font-size: 2.25rem;
+      }
+}
+
+.authorName {
+      color: var(--heading);
+      font-weight: 600;
+      font-size: 1.125rem;
+}
+
+.authorRole {
+      color: var(--foreground);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.25rem;
+}
+
+.projectInfo {
+      margin-top: 0.75rem;
+      color: rgba(161, 161, 166, 0.6);
+      font-size: 0.625rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-family: var(--font-inter);
+}
+
+.controls {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+}
+
+.navBtn {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 9999px;
+      border: 1px solid var(--border);
+      background-color: #0E0F11;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--foreground);
+      transition: all 0.2s;
+      cursor: pointer;
+}
+
+.navBtn:hover {
+      background-color: var(--accent);
+      color: #0E0F11;
+      border-color: var(--accent);
+}

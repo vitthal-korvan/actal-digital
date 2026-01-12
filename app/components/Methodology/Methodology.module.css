@@ -1,0 +1,113 @@
+.section {
+      border-top: 1px solid var(--border);
+      background-color: #0E0F11;
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+}
+
+.container {
+      max-width: 64rem;
+      /* max-w-5xl */
+      margin: 0 auto;
+      text-align: center;
+}
+
+.label {
+      display: block;
+      font-size: 0.625rem;
+      color: var(--accent);
+      font-family: monospace;
+      width: fit-content;
+      border-bottom: 1px solid var(--border);
+      margin: 0 auto 2rem auto;
+      padding-bottom: 0.25rem;
+      letter-spacing: 0.1em;
+}
+
+.title {
+      font-size: 2.25rem;
+      font-weight: 500;
+      font-family: var(--font-space-grotesk);
+      color: var(--heading);
+      letter-spacing: -0.025em;
+      margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+      .title {
+            font-size: 3rem;
+      }
+}
+
+.grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      position: relative;
+}
+
+@media (min-width: 768px) {
+      .grid {
+            grid-template-columns: repeat(3, 1fr);
+      }
+}
+
+.connector {
+      display: none;
+      position: absolute;
+      top: 28px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      border-top: 1px dashed var(--border);
+      z-index: 0;
+}
+
+@media (min-width: 768px) {
+      .connector {
+            display: block;
+      }
+}
+
+.step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      position: relative;
+      z-index: 10;
+}
+
+.iconWrapper {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 9999px;
+      background-color: #15171B;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--foreground);
+      transition: all 0.2s;
+}
+
+.step:hover .iconWrapper {
+      border-color: var(--accent);
+      color: var(--accent);
+}
+
+.stepTitle {
+      font-size: 1.25rem;
+      font-family: var(--font-space-grotesk);
+      font-weight: 500;
+      color: var(--heading);
+}
+
+.stepDesc {
+      color: var(--foreground);
+      font-size: 0.875rem;
+      line-height: 1.625;
+      max-width: 15rem;
+}
