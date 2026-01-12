@@ -35,7 +35,7 @@ export default function StudioPage() {
         </div>
 
         <div className={styles.heroContent}>
-           <div className="md:col-span-5">
+           <div className={styles.colSpan5}>
               <div className={styles.statusBadge}>
                  <span className={styles.pingDot}>
                     <span className={styles.pingAnimate}></span>
@@ -44,7 +44,7 @@ export default function StudioPage() {
                  Accepting New Work
               </div>
            </div>
-           <div className="md:col-span-7">
+           <div className={styles.colSpan7}>
               <p className={styles.heroTagline}>
                 A digital agency focused on <span style={{color: '#D6FF4F'}}>clarity</span> over volume.
               </p>
@@ -67,12 +67,12 @@ export default function StudioPage() {
             <h2 className={styles.sectionTitle}>The model is small on purpose</h2>
          </div>
          <div className={styles.grid12}>
-            <div className="md:col-span-5">
+            <div className={styles.colSpan5}>
                <p className={styles.textRelaxed}>
-                 We didn’t build this to become an agency. We built it to stay close to the decisions that shape outcomes—language, structure, systems.
+                 We didn’t build this to become a typical agency. We built it to stay close to the decisions that shape outcomes—language, structure, systems.
                </p>
             </div>
-            <div className="md:col-span-7">
+            <div className={styles.colSpan7}>
                <div className={styles.whyContent}>
                   <p className={styles.whyText}>
                     Scale introduces distance: layers, handoffs, and diluted accountability. We prefer fewer projects with deeper involvement, where the work can be coherent from first principle to final detail.

@@ -56,6 +56,22 @@
       .grid12 {
             grid-template-columns: repeat(12, 1fr);
       }
+
+      .colSpan4 {
+            grid-column: span 4;
+      }
+
+      .colSpan5 {
+            grid-column: span 5;
+      }
+
+      .colSpan7 {
+            grid-column: span 7;
+      }
+
+      .colSpan8 {
+            grid-column: span 8;
+      }
 }
 
 .textRelaxed {
