@@ -121,13 +121,40 @@
       }
 }
 
-.contactInfo {
-      border-top: 1px solid var(--border);
-      padding-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
+/* ... tumcha varil sagle CSS tech theva, fakt khali he add kara ... */
+
+.contactLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  color: var(--heading);
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
 }
+
+.contactLink:hover {
+  color: var(--accent);
+}
+
+.contactInfo div {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.contactInfo div:last-child {
+  border-bottom: none;
+}
+
+/* Form success transition sathi thoda gap */
+.main[style*="justifyContent: center"] {
+  padding-top: 100px;
+  min-height: 80vh;
+}
+
+/* Baki CSS tumchi original ashi ch theva... */
 
 .infoTitle {
       font-size: 0.75rem;
@@ -360,6 +387,9 @@
 
 .submitBtn:hover {
       background-color: #c2e846;
+
+     
+      
       transform: scale(0.98);
 }
 

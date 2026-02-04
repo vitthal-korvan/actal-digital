@@ -1,7 +1,7 @@
-.stickyWrapper {
+/* .stickyWrapper {
       position: sticky;
       top: 6rem;
-      /* 24px */
+      
       z-index: 40;
       padding-left: 1rem;
       padding-right: 1rem;
@@ -82,7 +82,7 @@
 @media (min-width: 768px) {
       .controls {
             display: contents;
-            /* Use parent's layout */
+           
       }
 }
 
@@ -164,4 +164,4 @@
 .searchBtn:hover {
       background-color: var(--heading);
       color: #FFFFFF;
-}
+} */

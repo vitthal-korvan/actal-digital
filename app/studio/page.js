@@ -1,261 +1,235 @@
-import { ArrowDown } from "lucide-react";
-import Footer from "../components/Footer/Footer";
+"use client";
+import { useState } from "react";
+import Link from "next/link";
 import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
+import { Plus, Minus, MapPin, Clock, ArrowRight } from "lucide-react";
 import styles from "./page.module.css";
 
-export default function StudioPage() {
+export default function CareerPage() {
+  const [currentLang, setCurrentLang] = useState("EN");
+  const [activeJob, setActiveJob] = useState(null);
+
+  const translations = {
+    EN: {
+      heroTitle: "Join Our",
+      heroHighlight: "Team",
+      heroSubtext: "Work with a digital agency focused on clarity and senior execution.",
+      jobOverview: "Job Overview:",
+      responsibilities: "Key Responsibilities:",
+      skills: "Skills Required:",
+      applyBtn: "Apply Now",
+      jobs: [
+        {
+          title: "Business Development",
+          location: "Bandra, Mumbai",
+          type: "Full-time",
+          overview: "We are seeking a driven Business Development Executive to help grow our client base and expand our market presence.",
+          resList: [
+            "Identify and pursue new business opportunities.",
+            "Build and maintain strong client relationships.",
+            "Prepare and present business proposals and pitch decks.",
+            "Achieve monthly and quarterly sales targets."
+          ],
+          skillList: ["1–3 years experience in Sales", "Strong communication skills", "Digital marketing knowledge"]
+        },
+        {
+          title: "Social Media Manager",
+          location: "Bandra, Mumbai",
+          type: "Full-time",
+          overview: "Creative Social Media Manager to manage clients' online presence and engage with communities.",
+          resList: [
+            "Develop and implement social media strategies.",
+            "Create engaging content calendars.",
+            "Monitor social media analytics and reporting."
+          ],
+          skillList: ["Brand management experience", "Excellent copywriting", "Proficiency with SMM tools"]
+        },
+        {
+          title: "Graphic Designer",
+          location: "Bandra, Mumbai",
+          type: "Full-time",
+          overview: "Visual storyteller to create stunning designs that align with clients' brand identities.",
+          resList: [
+            "Create visual concepts for web and social media.",
+            "Ensure brand consistency across projects.",
+            "Collaborate with marketing teams for assets."
+          ],
+          skillList: ["Adobe Creative Suite (Ps, Ai)", "Strong creative portfolio", "Ability to meet tight deadlines"]
+        },
+        {
+          title: "Video Editor",
+          location: "Bandra, Mumbai",
+          type: "Full-time",
+          overview: "Skilled Video Editor to transform raw footage into high-quality visual stories.",
+          resList: [
+            "Edit videos for social media and advertisements.",
+            "Incorporate motion graphics and sound design.",
+            "Maintain a clear and engaging narrative style."
+          ],
+          skillList: ["Premiere Pro / After Effects", "Understanding of pacing & music", "Color grading skills"]
+        },
+        {
+          title: "App Developer",
+          location: "Bandra, Mumbai",
+          type: "Full-time",
+          overview: "Full-stack Developer to build and maintain high-performance mobile applications.",
+          resList: [
+            "Develop cross-platform apps (React Native/Flutter).",
+            "Integrate REST APIs and backend services.",
+            "Fix bugs and optimize app performance."
+          ],
+          skillList: ["React Native or Flutter", "State management (Redux/Zustand)", "API Integration"]
+        }
+      ]
+    },
+    AR: {
+      heroTitle: "انضم إلى",
+      heroHighlight: "فريقنا",
+      heroSubtext: "اعمل مع وكالة رقمية تركز على الوضوح والتنفيذ الاحترافي.",
+      jobOverview: "نبذة عن الوظيفة:",
+      responsibilities: "المسؤوليات الرئيسية:",
+      skills: "المهارات المطلوبة:",
+      applyBtn: "قدم الآن",
+      jobs: [
+        {
+          title: "تطوير الأعمال",
+          location: "باندرا، مومباي",
+          type: "دوام كامل",
+          overview: "نحن نبحث عن مسؤول تطوير أعمال طموح للمساعدة في تنمية قاعدة عملائنا وتوسيع حضورنا في السوق.",
+          resList: [
+            "تحديد ومتابعة فرص العمل الجديدة.",
+            "بناء وتحسين علاقات قوية مع العملاء.",
+            "إعداد وتقديم العروض التجارية.",
+            "تحقيق أهداف المبيعات الشهرية والربع سنوية."
+          ],
+          skillList: ["خبرة 1-3 سنوات في المبيعات", "مهارات تواصل قوية", "معرفة بالتسويق الرقمي"]
+        },
+        {
+          title: "مدير وسائل التواصل الاجتماعي",
+          location: "باندرا، مومباي",
+          type: "دوام كامل",
+          overview: "مدير محتوى مبدع لإدارة التواجد الرقمي للعملاء والتفاعل مع المجتمعات.",
+          resList: [
+            "تطوير وتنفيذ استراتيجيات التواصل الاجتماعي.",
+            "إنشاء تقويم محتوى جذاب.",
+            "مراقبة تحليلات وسائل التواصل وإعداد التقارير."
+          ],
+          skillList: ["خبرة في إدارة العلامات التجارية", "مهارات كتابة إعلانية ممتازة", "إتقان أدوات SMM"]
+        },
+        {
+          title: "مصمم جرافيك",
+          location: "باندرا، مومباي",
+          type: "دوام كامل",
+          overview: "راوٍ بصري لإنشاء تصميمات مذهلة تتماشى مع هويات العلامات التجارية للعملاء.",
+          resList: [
+            "إنشاء مفاهيم بصرية للويب ووسائل التواصل.",
+            "ضمان اتساق العلامة التجارية عبر المشاريع.",
+            "التعاون مع فرق التسويق للأصول البصرية."
+          ],
+          skillList: ["Adobe Creative Suite (Ps, Ai)", "ملف أعمال إبداعي قوي", "القدرة على الالتزام بالمواعيد النهائية"]
+        },
+        {
+          title: "محرر فيديو",
+          location: "باندرا، مومباي",
+          type: "دوام كامل",
+          overview: "محرر فيديو ماهر لتحويل اللقطات الخام إلى قصص بصرية عالية الجودة.",
+          resList: [
+            "تحرير مقاطع الفيديو لوسائل التواصل والإعلانات.",
+            "دمج الرسوم المتحركة والتصميم الصوتي.",
+            "الحفاظ على أسلوب سردي واضح وجذاب."
+          ],
+          skillList: ["Premiere Pro / After Effects", "فهم الإيقاع والموسيقى", "مهارات تصحيح الألوان"]
+        },
+        {
+          title: "مطور تطبيقات",
+          location: "باندرا، مومباي",
+          type: "دوام كامل",
+          overview: "مطور Full-stack لبناء وصيانة تطبيقات محمولة عالية الأداء.",
+          resList: [
+            "تطوير تطبيقات متعددة المنصات (React Native/Flutter).",
+            "دمج واجهات برمجة التطبيقات REST والخدمات الخلفية.",
+            "إصلاح الأخطاء وتحسين أداء التطبيقات."
+          ],
+          skillList: ["React Native أو Flutter", "إدارة الحالة (Redux/Zustand)", "دمج APIs"]
+        }
+      ]
+    }
+  };
+
+  const t = translations[currentLang] || translations["EN"];
+
+  const toggleJob = (index) => {
+    setActiveJob(activeJob === index ? null : index);
+  };
+
   return (
     <main className={styles.main}>
-      <Navbar />
+      <Navbar currentLang={currentLang} setCurrentLang={setCurrentLang} />
 
-      {/* Hero */}
-      <div 
-        className={styles.heroSection}
-        style={{backgroundImage: "url('https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8de1f873-0a6c-4f85-811e-8fc361da012a_3840w.webp')"}}
-      >
-        <div className={styles.heroBlur}></div>
-        
-        <div className={styles.heroTop}>
-           <h1 className={styles.heroTitle}>
-             Actal<span className={styles.heroTitleDot}>Digital.</span>
-           </h1>
-           <div className={styles.spinnerContainer}>
-              <div className={styles.spinningText}>
-                 <svg viewBox="0 0 100 100" className={styles.spinningSvg}>
-                    <path id="textPath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent"></path>
-                    <text className={styles.textPath}>
-                       <textPath href="#textPath" startOffset="0%">
-                         • Systems • Design • Strategy • Clarity
-                       </textPath>
-                    </text>
-                 </svg>
-              </div>
-              <ArrowDown size={24} color="#D6FF4F" strokeWidth={2} />
-           </div>
+      <section className={styles.careerHero}>
+        <div className={styles.heroContainer}>
+          <div className={styles.heroContent}>
+            <h1 className={styles.joinTitle}>
+              {t.heroTitle} <br className={styles.mobileBr} />
+              <span className={styles.teamHighlight}>{t.heroHighlight}</span>
+            </h1>
+            <p className={styles.heroSubtext}>{t.heroSubtext}</p>
+          </div>
         </div>
-
-        <div className={styles.heroContent}>
-           <div className={styles.colSpan5}>
-              <div className={styles.statusBadge}>
-                 <span className={styles.pingDot}>
-                    <span className={styles.pingAnimate}></span>
-                    <span className={styles.pingStatic}></span>
-                 </span>
-                 Accepting New Work
-              </div>
-           </div>
-           <div className={styles.colSpan7}>
-              <p className={styles.heroTagline}>
-                A digital agency focused on <span style={{color: '#D6FF4F'}}>clarity</span> over volume.
-              </p>
-              <div className={styles.heroDescGrid}>
-                 <p className={styles.textRelaxed}>
-                   We’re systems-first and opinionated by design. We choose the constraints that keep the work honest—and say no to what doesn’t fit.
-                 </p>
-                 <p className={styles.textRelaxed}>
-                   No layers, no handoffs, no fluff. Just senior practitioners solving core problems with coherent design systems.
-                 </p>
-              </div>
-           </div>
-        </div>
-      </div>
-
-      {/* Why This Exists */}
-      <section className={styles.sectionContainer}>
-         <div className={styles.sectionHeader}>
-            <span className={styles.sectionLabel}>01 — WHY THIS EXISTS</span>
-            <h2 className={styles.sectionTitle}>The model is small on purpose</h2>
-         </div>
-         <div className={styles.grid12}>
-            <div className={styles.colSpan5}>
-               <p className={styles.textRelaxed}>
-                 We didn’t build this to become a typical agency. We built it to stay close to the decisions that shape outcomes—language, structure, systems.
-               </p>
-            </div>
-            <div className={styles.colSpan7}>
-               <div className={styles.whyContent}>
-                  <p className={styles.whyText}>
-                    Scale introduces distance: layers, handoffs, and diluted accountability. We prefer fewer projects with deeper involvement, where the work can be coherent from first principle to final detail.
-                  </p>
-                  <p className={styles.whyText}>
-                    Systems matter because they outlive any single deliverable. They make decisions repeatable, teams faster, and products easier to evolve.
-                  </p>
-               </div>
-            </div>
-         </div>
       </section>
 
-      {/* Principles */}
-      <section className={styles.principlesSection}>
-         <div className={styles.sectionContainer}>
-             <div className={styles.sectionHeader}>
-                <span className={styles.sectionLabel}>02 — PRINCIPLES</span>
-                <h2 className={styles.sectionTitle}>The rules we don’t bend</h2>
-             </div>
-             <div className={styles.principlesGrid}>
-                {/* 1 */}
-                <div className={styles.principleCard}>
-                   <h3 className={styles.principleTitle}>Focus beats scale</h3>
-                   <p className={styles.textRelaxed}>
-                     We’d rather do fewer things with total attention than ship volume for its own sake.
-                   </p>
+      <section className={styles.jobSection}>
+        <div className={styles.jobContainer}>
+          {t.jobs.map((job, index) => (
+            <div key={index} className={`${styles.jobWrapper} ${activeJob === index ? styles.active : ""}`}>
+              <div className={styles.jobHeader} onClick={() => toggleJob(index)}>
+                <span className={styles.jobTitle}>{job.title}</span>
+                <div className={styles.iconCircle}>
+                  {activeJob === index ? <Minus size={18} /> : <Plus size={18} />}
                 </div>
-                {/* 2 */}
-                <div className={styles.principleCard}>
-                   <h3 className={styles.principleTitle}>Senior execution only</h3>
-                   <p className={styles.textRelaxed}>
-                     The people in the room are the people doing the work—no relays, no proxies.
-                   </p>
-                </div>
-                {/* 3 */}
-                <div className={styles.principleCard}>
-                   <h3 className={styles.principleTitle}>Systems over assets</h3>
-                   <p className={styles.textRelaxed}>
-                     We optimize for durable structures: language, components, patterns, and decision logic.
-                   </p>
-                </div>
-                {/* 4 */}
-                <div className={styles.principleCard}>
-                   <h3 className={styles.principleTitle}>Depth earns taste</h3>
-                   <p className={styles.textRelaxed}>
-                     We get close enough to your product to make calls that feel inevitable, not ornamental.
-                   </p>
-                </div>
-             </div>
-         </div>
-      </section>
+              </div>
 
-      {/* Boundaries */}
-      <section className={styles.boundariesSection}>
-         <div className="max-w-[1550px] mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-24">
-               <div className="md:col-span-4">
-                  <span className={styles.sectionLabel} style={{color: '#D6FF4F'}}>03 — BOUNDARIES</span>
-                  <h2 className={styles.sectionTitle} style={{marginBottom: '1.5rem'}}>What we optimize for—and what we don’t</h2>
-                  <p className={styles.boundariesDesc}>
-                    Trust is built through constraints. Here’s what we’re willing to trade off to keep the work sharp.
-                  </p>
-               </div>
-               
-               <div className="md:col-span-8">
-                  <div className={styles.boundariesLists}>
-                     {/* We Choose */}
-                     <div>
-                        <h3 className={styles.listTitle}>
-                           <div className={styles.dotGreen}></div>
-                           We choose
-                        </h3>
-                        <ul className={styles.list}>
-                           <li className={styles.listGroupItem}>
-                              <span className={styles.groupItemTitle}>Coherence over coverage</span>
-                              <span className={styles.groupItemDesc}>One strong system beats ten disconnected outputs.</span>
-                           </li>
-                           <li className={styles.listGroupItem}>
-                              <span className={styles.groupItemTitle}>Clear decisions over consensus</span>
-                              <span className={styles.groupItemDesc}>We’d rather be accountable than broadly agreeable.</span>
-                           </li>
-                           <li className={styles.listGroupItem}>
-                              <span className={styles.groupItemTitle}>Longevity over novelty</span>
-                              <span className={styles.groupItemDesc}>We avoid trends that make maintenance harder six months later.</span>
-                           </li>
-                        </ul>
-                     </div>
-
-                     {/* We Don't */}
-                     <div>
-                        <h3 className={`${styles.listTitle} ${styles.listTitleDim}`}>
-                           <div className={styles.dotDark}></div>
-                           We don’t
-                        </h3>
-                        <ul className={`${styles.list} ${styles.listOpacity}`}>
-                           <li className={styles.listGroupItem}>
-                              <span className={styles.strikeTitle}>Chase volume</span>
-                              <span className={styles.strikeDesc}>We keep capacity intentionally limited.</span>
-                           </li>
-                           <li className={styles.listGroupItem}>
-                              <span className={styles.strikeTitle}>Sell “more” for its own sake</span>
-                              <span className={styles.strikeDesc}>If the right answer is less, we’ll say it.</span>
-                           </li>
-                           <li className={styles.listGroupItem}>
-                              <span className={styles.strikeTitle}>Pretend to be a big team</span>
-                              <span className={styles.strikeDesc}>No inflated org charts. Just responsibility.</span>
-                           </li>
-                        </ul>
-                     </div>
+              {activeJob === index && (
+                <div className={styles.jobDetails}>
+                  <div className={styles.metaInfo}>
+                    <span><MapPin size={16} /> {job.location}</span>
+                    <span><Clock size={16} /> {job.type}</span>
                   </div>
-               </div>
-            </div>
-         </div>
-      </section>
+                  
+                  <div className={styles.contentGrid}>
+                    <div className={styles.detailSection}>
+                      <h4>{t.jobOverview}</h4>
+                      <p>{job.overview}</p>
+                    </div>
 
-      {/* Accountability */}
-      <section className={styles.accountabilitySection}>
-         <div className={styles.sectionContainer}>
-             <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-                <div className="md:col-span-5">
-                   <span className={styles.sectionLabel}>04 — ACCOUNTABILITY</span>
-                   <h2 className={styles.sectionTitle} style={{marginBottom: '1.5rem'}}>Senior by default</h2>
-                   <p className={styles.boundariesDesc}>
-                     This agency is founder-led and senior-only. The point isn’t headcount—it’s ownership.
-                   </p>
+                    <div className={styles.detailSection}>
+                      <h4>{t.responsibilities}</h4>
+                      <ul>
+                        {job.resList.map((res, i) => <li key={i}>{res}</li>)}
+                      </ul>
+                    </div>
+
+                    <div className={styles.detailSection}>
+                      <h4>{t.skills}</h4>
+                      <ul>
+                        {job.skillList.map((skill, i) => <li key={i}>{skill}</li>)}
+                      </ul>
+                    </div>
+                  </div>
+
+                  <Link href="/project" className={styles.innerApplyBtn}>
+                    {t.applyBtn} <ArrowRight size={18} />
+                  </Link>
                 </div>
-                <div className="md:col-span-7">
-                   <div className={styles.accountabilityCard}>
-                      <p className={styles.textRelaxed}>
-                        You’ll work directly with the people responsible for the outcome. We keep the circle tight so decisions stay consistent and the work stays true to the intent.
-                      </p>
-                   </div>
-                </div>
-             </div>
-         </div>
+              )}
+            </div>
+          ))}
+        </div>
       </section>
 
-      {/* Evolution */}
-      <section className={styles.evolutionSection}>
-         <div className={styles.sectionContainer}>
-            <div className={styles.sectionHeader}>
-               <span className={styles.sectionLabel}>05 — EVOLUTION</span>
-               <h2 className={styles.sectionTitle}>A living system</h2>
-            </div>
-            <div className={styles.evolutionGrid}>
-               <div className={styles.evolutionCard}>
-                  <h3 className={styles.evolutionTitle}>Continuous refinement</h3>
-                  <p className={styles.textRelaxed}>
-                    We update our thinking when the evidence changes—tools, patterns, language, and judgment.
-                  </p>
-               </div>
-               <div className={styles.evolutionCard}>
-                  <h3 className={styles.evolutionTitle}>Learn from each engagement</h3>
-                  <p className={styles.textRelaxed}>
-                    Every project teaches us what holds up under real constraints—and what doesn’t.
-                  </p>
-               </div>
-               <div className={styles.evolutionCard}>
-                  <h3 className={styles.evolutionTitle}>No templates</h3>
-                  <p className={styles.textRelaxed}>
-                    We reuse principles, not outputs. The work should fit your product—not our portfolio.
-                  </p>
-               </div>
-            </div>
-         </div>
-      </section>
-
-      {/* CTA Next */}
-      <section className={styles.ctaSection}>
-         <div className={styles.ctaContainer}>
-            <span className={styles.ctaLabel}>06 — NEXT</span>
-            <h2 className={styles.ctaHeading}>If this way of working resonates</h2>
-            <div className={styles.ctaContent}>
-               <a href="/services" className={styles.ctaButton}>View Services</a>
-               <span className={styles.ctaSub}>No urgency · Just alignment</span>
-               <span className={styles.ctaContact}>
-                  Prefer to reach out directly? <a href="mailto:info@actaldigital.com" className={styles.ctaLink}>info@actaldigital.com</a>
-               </span>
-            </div>
-         </div>
-      </section>
-
-      <Footer />
+      {/* FIXED: Passing currentLang to Footer */}
+      <Footer currentLang={currentLang} />
     </main>
   );
 }

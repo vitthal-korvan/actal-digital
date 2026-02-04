@@ -1,53 +1,124 @@
-"use client";
-
-import { ArrowLeft, ArrowRight, Quote } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
+import { useLanguage } from "../../context/LanguageContext";
 import styles from "./Testimonials.module.css";
 
-const testimonials = [
-  {
-    quote: "They didn't just redesign our website; they reimagined how we communicate as a brand.",
-    name: "Alex Fast",
-    role: "CTO, Nexus Protocol",
-    info: "Series A fintech · 6-week engagement",
-    img: "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/d3da1789-0f7a-4fbc-b7b6-606f9b85b083_3840w.jpg?w=800&q=80",
-  },
-  {
-    quote: "The attention to detail is unmatched. Our conversion rates doubled within a month of launch.",
-    name: "Sarah Jenkins",
-    role: "CMO, Lumina SaaS",
-    info: "SaaS rebrand · Global launch",
-    img: "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/bc6f2c9a-f51b-4d76-a0af-37c36400e46b_3840w.jpg?w=800&q=80",
-  },
-  {
-    quote: "They moved fast, asked the right questions, and delivered a design system our team actually uses.",
-    name: "Maya Patel",
-    role: "Head of Product, Aether Labs",
-    info: "AI research · Design system rollout",
-    img: "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/f84e0ac4-082e-4160-8877-3043e2a8b63a_3840w.jpg?w=800&q=80",
-  },
-];
-
 export default function Testimonials() {
+  const { currentLang } = useLanguage();
   const [current, setCurrent] = useState(0);
 
+  const translations = {
+    EN: {
+      testimonials: [
+        {
+          quote: "A founder doesn’t just create a business they ignite a vision, inspire a team, and turn ideas into impact.",
+          name: "Nizamuddin Shaikh",
+          role: "Founder",
+          img: "./Sir.jpg",
+        },
+        {
+          quote: "A website should be more than a digital brochure; it should be your company's most hardworking employee.",
+          name: "Vitthal C. Korvan",
+          role: "Operational Manager",
+          img: "./vittu.jpeg",
+        },
+        {
+          quote: "User experience is at the heart of everything. If a site is easy to use, it's easy to trust.",
+          name: "Omkar S. Dhane",
+          role: "Software Developer",
+          img: "./om.jpeg",
+        },
+        {
+          quote: "We don’t just write code; we build the digital infrastructure that allows your business to scale without limits.",
+          name: "Mohammad Z. Shaikh",
+          role: "Software Developer",
+          img: "./zamir.jpeg",
+        },
+        {
+          quote: "Social media isn't just about posting; it's about starting a conversation that leads to a conversion.",
+          name: "Vishwas T. Landge",
+          role: "Social Media Manager",
+          img: "./Vishwas.jpg",
+        },
+        {
+          quote: "Good design is invisible, but great design is unforgettable. We build visuals that make people stop scrolling.",
+          name: "Pratik R. Parab",
+          role: "Senior Video Editor",
+          img: "./pra.jpeg",
+        },
+        {
+          quote: "Design is the silent ambassador of your brand. We craft visuals that don't just look good—they speak directly to your audience's heart.",
+          name: "Manish M. Gurav",
+          role: "Graphic Designer",
+          img: "./Manish.jpg",
+        },
+      ]
+    },
+    AR: {
+      testimonials: [
+        {
+          quote: "المؤسس لا ينشئ شركة فحسب، بل يشعل رؤية، ويلهم فريقاً، ويحول الأفكار إلى تأثير ملموس.",
+          name: "Nizamuddin Shaikh",
+          role: "مؤسس",
+          img: "./Sir.jpg",
+        },
+        {
+          quote: "يجب أن يكون الموقع الإلكتروني أكثر من مجرد كتيب رقمي؛ يجب أن يكون الموظف الأكثر اجتهاداً في شركتك.",
+          name: "Vitthal C. Korvan",
+          role: "مدير العمليات",
+          img: "./vittu.jpeg",
+        },
+        {
+          quote: "تجربة المستخدم هي جوهر كل شيء. إذا كان الموقع سهل الاستخدام، فمن السهل الوثوق به.",
+          name: "Omkar S. Dhane",
+          role: "مطور برمجيات",
+          img: "./om.jpeg",
+        },
+        {
+          quote: "نحن لا نكتب الأكواد فحسب؛ نحن نبني البنية التحتية الرقمية التي تسمح لعملك بالتوسع دون حدود.",
+          name: "Mohammad Z. Shaikh",
+          role: "مطور برمجيات",
+          img: "./zamir.jpeg",
+        },
+        {
+          quote: "وسائل التواصل الاجتماعي لا تقتصر على النشر فحسب؛ بل تتعلق ببدء حوار يؤدي إلى نتائج حقيقية.",
+          name: "Vishwas T. Landge",
+          role: "مدير وسائل التواصل الاجتماعي",
+          img: "./Vishwas.jpg",
+        },
+        {
+          quote: "التصميم الجيد غير مرئي، لكن التصميم الرائع لا يُنسى. نحن نصمم بصريات تجعل الناس يتوقفون عن التمرير.",
+          name: "Pratik R. Parab",
+          role: "محرر فيديو",
+          img: "./pra.jpeg",
+        },
+        {
+          quote: "التصميم هو السفير الصامت لعلامتك التجارية. نحن نصمم بصريات لا تبدو جيدة فحسب، بل تخاطب قلب جمهورك مباشرة.",
+          name: "Manish M. Gurav",
+          role: "مصمم جرافيك",
+          img: "./Manish.jpg",
+        },
+      ]
+    }
+  };
+
+  const t = translations[currentLang] || translations["EN"];
+  const list = t.testimonials;
+
   const next = () => {
-    setCurrent((prev) => (prev + 1) % testimonials.length);
+    setCurrent((prev) => (prev + 1) % list.length);
   };
 
   const prev = () => {
-    setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setCurrent((prev) => (prev - 1 + list.length) % list.length);
   };
 
   return (
     <div className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <span className={styles.label}>06 — CLIENT VOICES</span>
-        </div>
-
         <div className={styles.gridStack}>
-          {testimonials.map((t, i) => (
+          {list.map((item, i) => (
             <div
               key={i}
               className={`${styles.slideItem} ${
@@ -56,18 +127,14 @@ export default function Testimonials() {
             >
               <div className={styles.imageCol}>
                 <div className={styles.imageWrapper}>
-                  <img src={t.img} className={styles.image} alt={t.name} />
+                  <Image src={item.img} className={styles.image} alt={item.name} fill sizes="(max-width: 768px) 100vw, 33vw" />
                 </div>
               </div>
               <div className={styles.contentCol}>
-                <div className={styles.quoteIcon}>
-                  <Quote size={32} />
-                </div>
-                <blockquote className={styles.quote}>"{t.quote}"</blockquote>
+                <blockquote className={styles.quote}>"{item.quote}"</blockquote>
                 <div>
-                  <div className={styles.authorName}>{t.name}</div>
-                  <div className={styles.authorRole}>{t.role}</div>
-                  <div className={styles.projectInfo}>{t.info}</div>
+                  <div className={styles.authorName}>{item.name}</div>
+                  <div className={styles.authorRole}>{item.role}</div>
                 </div>
               </div>
             </div>

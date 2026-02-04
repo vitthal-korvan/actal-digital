@@ -1,14 +1,89 @@
-import { ArrowRight, Check, ChevronDown } from "lucide-react";
+"use client";
+import { useState } from "react"; 
+import { useForm, ValidationError } from '@formspree/react';
+import { ArrowRight, Check, Phone, MessageSquare } from "lucide-react";
 import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
 import styles from "./page.module.css";
 
 export default function ProjectPage() {
+  const [currentLang, setCurrentLang] = useState("EN");
+  const [state, handleSubmit] = useForm("xdaeglal");
+
+  // Translations dictionary
+  const translations = {
+    EN: {
+      title: "Contact",
+      titleUs: "Us",
+      desc: "A short form to understand your needs and determine fit.",
+      nameLabel: "Name",
+      namePlaceholder: "Your Name",
+      emailLabel: "Email",
+      emailPlaceholder: "abc@gmail.com",
+      phoneLabel: "Phone Number",
+      phonePlaceholder: "Enter a Number",
+      helpLabel: "Where can we help?",
+      messageLabel: "Message",
+      messagePlaceholder: "Tell me your requirement",
+      send: "Send Request",
+      sending: "Sending...",
+      successTitle: "Request Sent!",
+      successDesc: "Thanks for reaching out. We'll get back to you within 48 hours.",
+      sendAnother: "Send Another",
+      directIndia: "Direct Contact (India)",
+      directUAE: "Direct Contact (U.A.E)",
+      emailTitle: "Email",
+      services: ['Web Development', 'Digital Marketing', 'Social Media', 'Graphic Design','Creative Content','SEO','Branding','Other']
+    },
+    AR: {
+      title: "اتصل",
+      titleUs: "بنا",
+      desc: "نموذج قصير لفهم احتياجاتك وتحديد مدى الملاءمة.",
+      nameLabel: "الاسم",
+      namePlaceholder: "اسمك",
+      emailLabel: "البريد الإلكتروني",
+      emailPlaceholder: "example@mail.com",
+      phoneLabel: "رقم الهاتف",
+      phonePlaceholder: "أدخل الرقم",
+      helpLabel: "كيف يمكننا مساعدتك؟",
+      messageLabel: "الرسالة",
+      messagePlaceholder: "أخبرنا بمتطلباتك",
+      send: "إرسال الطلب",
+      sending: "جاري الإرسال...",
+      successTitle: "تم إرسال الطلب!",
+      successDesc: "شكراً لتواصلك معنا. سنرد عليك خلال 48 ساعة.",
+      sendAnother: "إرسال طلب آخر",
+      directIndia: "اتصال مباشر (الهند)",
+      directUAE: "اتصال مباشر (الإمارات)",
+      emailTitle: "البريد الإلكتروني",
+      services: ['تطوير المواقع', 'التسويق الرقمي', 'وسائل التواصل', 'التصميم الجرافيكي','المحتوى الإبداعي','SEO','العلامة التجارية','أخرى']
+    }
+  };
+
+  const t = translations[currentLang];
+
+  // SUCCESS STATE
+  if (state.succeeded) {
+    return (
+      <div className={styles.main}>
+        <Navbar currentLang={currentLang} setCurrentLang={setCurrentLang} />
+        <div style={{ justifyContent: 'center', alignItems: 'center', textAlign: 'center', minHeight: '60vh', display: 'flex', flexDirection: 'column', padding: '2rem' }}>
+          <h2 className={styles.title}>{t.successTitle}</h2>
+          <p className={styles.description}>{t.successDesc}</p>
+          <button onClick={() => window.location.reload()} className={styles.submitBtn}>{t.sendAnother}</button>
+        </div>
+        <Footer currentLang={currentLang} />
+      </div>
+    );
+  }
+
   return (
     <div className={styles.main}>
       <div className={styles.background}></div>
       <div className={styles.noise}></div>
       
-      <Navbar />
+      {/* Navbar with language state */}
+      <Navbar currentLang={currentLang} setCurrentLang={setCurrentLang} />
 
       <main className={styles.contentWrapper}>
         <div className={styles.container}>
@@ -16,57 +91,58 @@ export default function ProjectPage() {
             
             {/* Left Column */}
             <div className={styles.leftCol}>
-              <span className={styles.sectionLabel}>01 — INTAKE</span>
               <h1 className={styles.title}>
-                Start a<br />
-                <span className={styles.titleDim}>Project</span>
+                {t.title}<br />
+                <span className={styles.titleDim}>{t.titleUs}</span>
               </h1>
-              <p className={styles.description}>
-                A short form to understand your needs and determine fit.
-              </p>
+              <p className={styles.description}>{t.desc}</p>
 
               <div className={styles.contactInfo}>
                 <div>
-                  <h3 className={styles.infoTitle}>Our Process</h3>
-                  <p className={styles.infoText}>
-                    We engage with a limited number of clients per year to ensure maximum focus and impact. We review every request personally.
-                  </p>
+                  <h3 className={styles.infoTitle}>{t.directIndia}</h3>
+                  <a href="tel:+919820730548" className={styles.contactLink}><Phone size={14}/> +91 9820730548</a>
+                  <a href="https://wa.me/919820715452" target="_blank" className={styles.contactLink}><MessageSquare size={14} style={{color: '#25D366'}}/> +91 9820715452</a>
                 </div>
+
                 <div>
-                  <h3 className={styles.infoTitle}>Direct Contact</h3>
+                  <h3 className={styles.infoTitle}>{t.directUAE}</h3>
+                  <a href="tel:+971506758040" className={styles.contactLink}><Phone size={14}/> +971 50 6758040</a>
+                  <a href="https://wa.me/971503330548" target="_blank" className={styles.contactLink}><MessageSquare size={14} style={{color: '#25D366'}}/> +971 50 3330548</a>
+                </div>
+
+                <div>
+                  <h3 className={styles.infoTitle}>{t.emailTitle}</h3>
                   <a href="mailto:info@actaldigital.com" className={styles.emailLink}>info@actaldigital.com</a>
-                  <p className={styles.infoText} style={{color: '#52525B'}}>London, UK</p>
                 </div>
               </div>
             </div>
 
             {/* Right Column: Form */}
             <div className={styles.rightCol}>
-              <form className={styles.formStack}>
-                {/* Personal Info */}
+              <form onSubmit={handleSubmit} className={styles.formStack}>
                 <div className={styles.formGrid}>
                   <div className={styles.formGroup}>
-                    <label className={styles.label}>Name</label>
-                    <input type="text" placeholder="Jane Doe" className={styles.input} />
+                    <label className={styles.label}>{t.nameLabel}</label>
+                    <input name="name" type="text" placeholder={t.namePlaceholder} className={styles.input} required />
                   </div>
                   <div className={styles.formGroup}>
-                    <label className={styles.label}>Email</label>
-                    <input type="email" placeholder="jane@company.com" className={styles.input} />
+                    <label className={styles.label}>{t.emailLabel}</label>
+                    <input name="email" type="email" placeholder={t.emailPlaceholder} className={styles.input} required />
+                    <ValidationError prefix="Email" field="email" errors={state.errors} />
                   </div>
                 </div>
 
                 <div className={styles.formGroup}>
-                  <label className={styles.label}>Company Website</label>
-                  <input type="url" placeholder="company.com" className={styles.input} />
+                  <label className={styles.label}>{t.phoneLabel}</label>
+                  <input name="phone" type="tel" placeholder={t.phonePlaceholder} className={styles.input} />
                 </div>
 
-                {/* Services */}
                 <div>
-                  <label className={styles.label} style={{marginBottom: '1.5rem'}}>Where can we help?</label>
+                  <label className={styles.label} style={{marginBottom: '1.5rem'}}>{t.helpLabel}</label>
                   <div className={styles.checkboxGrid}>
-                     {['Branding & Identity', 'Digital Product (UX/UI)', 'Marketing Website', 'Motion System'].map((service) => (
+                     {t.services.map((service) => (
                         <label key={service} className={styles.checkboxLabel}>
-                           <input type="checkbox" className={styles.checkboxInput} />
+                           <input type="checkbox" name="services" value={service} className={styles.checkboxInput} />
                            <div className={styles.checkboxBox}>
                               <span className={styles.checkboxText}>{service}</span>
                               <Check size={16} className={styles.checkIcon} />
@@ -76,69 +152,25 @@ export default function ProjectPage() {
                   </div>
                 </div>
 
-                {/* Budget & Timeline */}
-                <div className={styles.formGrid}>
-                   <div className={styles.formGroup}>
-                      <label className={styles.label}>Budget Range (USD)</label>
-                      <div className={styles.selectWrapper}>
-                         <select className={`${styles.input} ${styles.select}`} defaultValue="">
-                            <option value="" disabled className="text-[#23252B]">Select range</option>
-                            <option value="30-50" style={{backgroundColor: '#15171B', color: '#A1A1A6'}}>$30k — $50k</option>
-                            <option value="50-100" style={{backgroundColor: '#15171B', color: '#A1A1A6'}}>$50k — $100k</option>
-                            <option value="100+" style={{backgroundColor: '#15171B', color: '#A1A1A6'}}>$100k +</option>
-                         </select>
-                         <ChevronDown className={styles.selectIcon} size={20} />
-                      </div>
-                   </div>
-                   <div className={styles.formGroup}>
-                      <label className={styles.label}>Ideal Timeline</label>
-                      <div className={styles.selectWrapper}>
-                         <select className={`${styles.input} ${styles.select}`} defaultValue="">
-                            <option value="" disabled className="text-[#23252B]">Select timeline</option>
-                            <option value="asap" style={{backgroundColor: '#15171B', color: '#A1A1A6'}}>As soon as possible</option>
-                            <option value="1-2" style={{backgroundColor: '#15171B', color: '#A1A1A6'}}>1 - 2 Months</option>
-                            <option value="3-4" style={{backgroundColor: '#15171B', color: '#A1A1A6'}}>3 - 4 Months</option>
-                            <option value="flexible" style={{backgroundColor: '#15171B', color: '#A1A1A6'}}>Flexible</option>
-                         </select>
-                         <ChevronDown className={styles.selectIcon} size={20} />
-                      </div>
-                   </div>
-                </div>
-
-                {/* Message */}
                 <div className={styles.formGroup}>
-                   <label className={styles.label}>Project Details</label>
-                   <textarea rows={4} placeholder="Tell us about your vision, goals, and any specific challenges..." className={`${styles.input} ${styles.textarea}`}></textarea>
+                    <label className={styles.label}>{t.messageLabel}</label>
+                    <textarea name="message" rows={4} placeholder={t.messagePlaceholder} className={`${styles.input} ${styles.textarea}`} required></textarea>
+                    <ValidationError prefix="Message" field="message" errors={state.errors} />
                 </div>
 
-                {/* Submit */}
                 <div className={styles.submitSection}>
-                   <button type="button" className={styles.submitBtn}>
-                      Send Request <ArrowRight size={18} />
-                   </button>
-                   <div className={styles.submitNote}>
-                      <span className={styles.noteDot}></span>
-                      <p className={styles.noteText}>Brief form · 48h response</p>
-                   </div>
+                    <button type="submit" disabled={state.submitting} className={styles.submitBtn}>
+                      {state.submitting ? t.sending : t.send} <ArrowRight size={18} />
+                    </button>
                 </div>
-
               </form>
             </div>
-
           </div>
         </div>
       </main>
 
-      <footer className={styles.footer}>
-         <div className={styles.footerContainer}>
-            <div>© 2025 Actal Digital.</div>
-            <div className={styles.footerLinks}>
-               <a href="#" className={styles.footerLink}>Privacy</a>
-               <a href="#" className={styles.footerLink}>Terms</a>
-               <a href="mailto:info@actaldigital.com" className={styles.footerLink}>Support</a>
-            </div>
-         </div>
-      </footer>
+      {/* Footer with currentLang prop - THIS FIXES THE ISSUE */}
+      <Footer currentLang={currentLang} />
     </div>
   );
 }

@@ -1,61 +1,96 @@
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "../../context/LanguageContext";
 import styles from "./Expertise.module.css";
 
-const services = [
-  {
-    title: "Branding",
-    desc: "Positioning, identity systems, brand architecture",
-    img: "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/46281a5c-f67e-419c-9644-02c7d3b25deb_800w.webp",
-  },
-  {
-    title: "Product",
-    desc: "UX strategy, design systems, SaaS interfaces",
-    img: "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/bde9069b-1960-4868-9138-c74f2a623acd_800w.webp",
-  },
-  {
-    title: "Motion",
-    desc: "Brand motion, launch assets, micro-interactions",
-    img: "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/039a9170-346c-47e5-8218-e281b3d525dd_800w.webp",
-  },
-  {
-    title: "Web",
-    desc: "High-performance websites, marketing platforms",
-    img: "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/981546c5-4246-4dec-90f8-8fba1e9dd71d_800w.webp",
-  },
-];
-
 export default function Expertise() {
+  const { currentLang } = useLanguage();
+  // 1. Translations Dictionary
+  const translations = {
+    EN: {
+      title: "Our Process",
+      btnText: "All Services",
+      services: [
+        {
+          title: "Research",
+          desc: "We understand your business objectives and audience to create strategies that are purposeful.",
+          img: "/research.png",
+        },
+        {
+          title: "Goal-Focused",
+          desc: "We align every creative decision with your ultimate business goals for maximum impact.",
+          img: "/goal.png",
+        },
+        {
+          title: "Real Results",
+          desc: "We focus on getting real results that help your business grow, like more leads and traffic.",
+          img: "/Result.png",
+        },
+        {
+          title: "Smart Targeting",
+          desc: "We make sure your message reaches the right people who are most likely to convert.",
+          img: "/Targeting.png",
+        },
+      ],
+    },
+    AR: {
+      title: "عمليتنا",
+      btnText: "جميع الخدمات",
+      services: [
+        {
+          title: "البحث والتحليل",
+          desc: "نحن نفهم أهداف عملك وجمهورك لإنشاء استراتيجيات هادفة وفعالة.",
+          img: "/research.png",
+        },
+        {
+          title: "التركيز على الأهداف",
+          desc: "نحن نربط كل قرار إبداعي بأهداف عملك النهائية لتحقيق أقصى قدر من التأثير.",
+          img: "/goal.png",
+        },
+        {
+          title: "نتائج حقيقية",
+          desc: "نحن نركز على تحقيق نتائج ملموسة تساعد عملك على النمو، مثل زيادة العملاء والزيارات.",
+          img: "/Result.png",
+        },
+        {
+          title: "استهداف ذكي",
+          desc: "نحن نضمن وصول رسالتك إلى الأشخاص المناسبين الأكثر عرضة للاهتمام بخدماتك.",
+          img: "/Targeting.png",
+        },
+      ],
+    },
+  };
+
+  // 2. Current Language नुसार डेटा निवडणे
+  const t = translations[currentLang] || translations["EN"];
+
   return (
-    <div className={styles.section}>
+    <section className={styles.section}>
       <div className={styles.header}>
         <div>
-          <span className={styles.label}>01 — EXPERTISE</span>
-          <h2 className={styles.title}>Core Capabilities</h2>
+          <h2 className={styles.title}>{t.title}</h2>
           <Link href="/services" className={styles.linkButton}>
-            All Services
-            <ArrowRight size={16} />
+            {t.btnText}
+            <ArrowRight size={14} />
           </Link>
         </div>
-        <p className={styles.description}>
-          <span className="block">Holistic design systems for brands</span>
-          <span className="block">ready to define their category.</span>
-        </p>
       </div>
 
       <div className={styles.grid}>
-        {services.map((s, i) => (
-          <Link href="/services" key={i} className={styles.card}>
-            <img src={s.img} className={styles.cardImage} alt={s.title} />
-            <div className={styles.cardOverlay}></div>
+        {t.services.map((s, i) => (
+          <div key={i} className={styles.card}>
+            <div className={styles.imageContainer}>
+              <Image src={s.img} className={styles.cardImage} alt={s.title} fill sizes="(max-width: 768px) 100vw, 33vw" />
+            </div>
+
             <div className={styles.cardContent}>
-              <span className={styles.cardLabel}>Category</span>
               <h3 className={styles.cardTitle}>{s.title}</h3>
               <p className={styles.cardDescription}>{s.desc}</p>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

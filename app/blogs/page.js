@@ -1,209 +1,117 @@
-import { ArrowRight, Feather } from "lucide-react";
+"use client";
+import { useState } from "react";
+import { ArrowRight, Target, Users, Award, Play } from "lucide-react";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import styles from "./page.module.css";
 
-export default function BlogsPage() {
+export default function AboutPage() {
+  // 1. Language State Add Kara
+  const [currentLang, setCurrentLang] = useState("EN");
+
+  // 2. Translations Dictionary
+  const translations = {
+    EN: {
+      heroTitle: "About us",
+      heroDesc: "We Bridge the Gap Between Technology and Creativity. At Actal Digital, we combine innovative technology with creative solutions to elevate your brand. GCC & India, we are a full-service digital agency committed to transforming businesses into industry leaders.",
+      storyTitle: "Our Story",
+      storyText: "Actal Digital was born from a simple observation: businesses need more than just a website; they need a digital partner. We started as a small team of developers and creators with a shared passion for high-performance code and stunning visuals.",
+      storyQuote: "Success is not just about the launch; it's about building a sustainable system.",
+      missionTitle: "Our Mission & Vision",
+      missionText: "Mission: To empower businesses with strategic digital solutions. Vision: To be the most trusted digital partner for brands globally.",
+      wayTitle: "The 'Actal' Way",
+      wayText: "Discovery: Deep dive into brand identity. Strategy: Custom ROI roadmap. Execution: Experts bring it to life. Growth: Continuous monitoring.",
+    },
+    AR: {
+      heroTitle: "من نحن",
+      heroDesc: "نحن نسد الفجوة بين التكنولوجيا والإبداع. في أكتال ديجيتال، نجمع بين التكنولوجيا المبتكرة والحلول الإبداعية للارتقاء بعلامتك التجارية. في دول الخليج والهند، نحن وكالة رقمية متكاملة الخدمات.",
+      storyTitle: "قصتنا",
+      storyText: "ولدت أكتال ديجيتال من ملاحظة بسيطة: الشركات تحتاج إلى أكثر من مجرد موقع إلكتروني؛ إنهم بحاجة إلى شريك رقمي. بدأنا كفريق صغير من المطورين والمبدعين.",
+      storyQuote: "النجاح لا يقتصر فقط على الإطلاق؛ بل يتعلق ببناء نظام مستدام ينمو معك.",
+      missionTitle: "مهمتنا ورؤيتنا",
+      missionText: "المهمة: تمكين الشركات بحلول رقمية استراتيجية. الرؤية: أن نكون الشريك الرقمي الأكثر ثقة للعلامات التجارية عالمياً.",
+      wayTitle: "طريقة 'أكتال'",
+      wayText: "الاكتشاف: التعمق في هوية العلامة التجارية. الاستراتيجية: خارطة طريق مخصصة للعائد على الاستثمار. التنفيذ: الخبراء يجسدونها على أرض الواقع.",
+    }
+  };
+
+  const t = translations[currentLang] || translations["EN"];
+
   return (
     <main className={styles.main}>
-      <Navbar />
+      {/* 3. Navbar la PROPS dya (Most Important) */}
+      <Navbar currentLang={currentLang} setCurrentLang={setCurrentLang} />
 
-      <div className="w-full mt-32">
-        {/* Hero */}
-        <div className={styles.heroSection}>
-          <span className={styles.heroLabel}>INTELLECTUAL SURFACE AREA</span>
-          <h1 className={styles.heroTitle}>Blogs</h1>
-          <p className={styles.heroDesc}>
-            Notes on systems, design, and decision-making.
-          </p>
+      {/* Hero Section */}
+      <section className={styles.heroSection}>
+        <div className={styles.heroContent}>
+          <h1 className={styles.heroTitle}>{t.heroTitle}</h1>
+          <p className={styles.heroDesc}>{t.heroDesc}</p>
         </div>
 
-        {/* Featured Essay */}
-        <div className={styles.sectionContainer}>
-          <div className={styles.featuredSection}>
-            <div className={styles.separator}></div>
-            <article className={styles.featuredCard}>
-              <div className={styles.featuredContent}>
-                <div className={styles.featuredMeta}>
-                   <span className={styles.featuredBadge}>Featured</span>
-                   <span className={styles.featuredReadTime}>8 Min Read</span>
-                </div>
-                <h2 className={styles.featuredTitle}>
-                   Why systems fail when ownership fragments
-                </h2>
-                <p className={styles.featuredDesc}>
-                  We often blame the tools or the documentation when a design system rots. But the real failure point usually happens in the org chart, not Figma. Here is why distributed ownership creates design debt.
-                </p>
-                <div className={styles.readLink}>
-                   Read Essay <ArrowRight size={16} />
-                </div>
-              </div>
-              <div className={styles.featuredImageContainer}>
-                 <div style={{position: 'absolute', inset: 0, background: 'linear-gradient(to bottom right, #23252B, #0E0F11)'}}></div>
-                 <img 
-                    src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/b22b4c39-8a88-42ad-b41e-6ad95c041bd5_3840w.jpg?w=800&q=80" 
-                    alt="Abstract editorial image" 
-                    className={styles.featuredImage}
-                 />
-                 <div className={styles.featuredOverlay}></div>
-              </div>
-              <a href="#" className={styles.cardLinkOverlay} aria-label="Read full essay"></a>
-            </article>
+        <div className={styles.imageGrid}>
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Team 1" className={styles.gridImg} />
+          <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=600&q=80" alt="Team 2" className={styles.gridImg} />
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80" alt="Team 3" className={styles.gridImg} />
+          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" alt="Team 4" className={styles.gridImg} />
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Team 5" className={styles.gridImg} />
+        </div>
+      </section>
+
+      {/* Our Story Section */}
+      <section className={styles.sectionContainer}>
+        <div className={styles.empowerGrid}>
+          <div className={styles.videoPlaceholder}>
+             <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80" alt="Our Office" />
+             <div className={styles.founderCard}>
+                <p>"Building for the future"</p>
+                <span>Actal Story</span>
+             </div>
+          </div>
+          <div className={styles.empowerContent}>
+            <h1 className={styles.sectionHeading}>{t.storyTitle}</h1>
+            <p className={styles.textGray}>{t.storyText}</p>
+            <blockquote className={styles.quote}>"{t.storyQuote}"</blockquote>
           </div>
         </div>
+      </section>
 
-        {/* Filter */}
-        <div className={styles.filterSticky}>
-           <div className={styles.filterContainer}>
-              <span className={styles.filterLabel}>Filter:</span>
-              <button className={styles.filterBtnActive}>All</button>
-              <button className={styles.filterBtnInactive}>Systems</button>
-              <button className={styles.filterBtnInactive}>Process</button>
-              <button className={styles.filterBtnInactive}>Perspective</button>
-              <button className={styles.filterBtnInactive}>Reflections</button>
-           </div>
+      {/* Mission & Vision Section */}
+      <section className={styles.sectionContainer}>
+        <div className={styles.empowerGrid}>
+          <div className={styles.videoPlaceholder}>
+             <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80" alt="Team Strategy" />
+             <div className={styles.founderCard}>
+                <p>"Clarity in every pixel"</p>
+                <span>Mission & Vision</span>
+             </div>
+          </div>
+          <div className={styles.empowerContent}>
+            <h1 className={styles.sectionHeading}>{t.missionTitle}</h1>
+            <p className={styles.textGray}>{t.missionText}</p>
+          </div>
         </div>
+      </section>
 
-        {/* Journal Grid */}
-        <div className={styles.sectionContainer}>
-           <div className={styles.gridSection}>
-              <div className={styles.journalGrid}>
-                 {/* 1 */}
-                 <article className={styles.journalCard}>
-                    <div>
-                       <div className={styles.cardTop}>
-                          <span className={`${styles.cardTag} ${styles.cardTagProcess}`}>Process</span>
-                          <span className={styles.cardTime}>6 Min</span>
-                       </div>
-                       <h3 className={styles.journalTitle}>Designing for longevity instead of launches</h3>
-                       <p className={styles.cardDesc}>
-                         The launch party is one night. The product has to live for years. Why we prioritize maintainable structures over "wow" moments that degrade by week two.
-                       </p>
-                    </div>
-                    <div className={styles.cardFooter}>
-                       <div className={styles.readMore}>Read <ArrowRight size={12} /></div>
-                    </div>
-                    <a href="#" className={styles.cardLinkOverlay} aria-label="Read article"></a>
-                 </article>
-
-                 {/* 2 */}
-                 <article className={styles.journalCard}>
-                    <div>
-                       <div className={styles.cardTop}>
-                          <span className={`${styles.cardTag} ${styles.cardTagReflections}`}>Reflections</span>
-                          <span className={styles.cardTime}>5 Min</span>
-                       </div>
-                       <h3 className={styles.journalTitle}>What a “full system” engagement actually solves</h3>
-                       <p className={styles.cardDesc}>
-                         Most brands think they need a UI refresh. What they usually lack is a shared vocabulary between engineering and design.
-                       </p>
-                    </div>
-                    <div className={styles.cardFooter}>
-                       <div className={styles.readMore}>Read <ArrowRight size={12} /></div>
-                    </div>
-                    <a href="#" className={styles.cardLinkOverlay} aria-label="Read article"></a>
-                 </article>
-
-                 {/* 3 */}
-                 <article className={styles.journalCard}>
-                    <div>
-                       <div className={styles.cardTop}>
-                          <span className={`${styles.cardTag} ${styles.cardTagPerspective}`}>Perspective</span>
-                          <span className={styles.cardTime}>4 Min</span>
-                       </div>
-                       <h3 className={styles.journalTitle}>When branding becomes a product problem</h3>
-                       <p className={styles.cardDesc}>
-                         Brand guidelines often die when they meet the constraints of a React component. How to bridge the gap between marketing fluff and product utility.
-                       </p>
-                    </div>
-                    <div className={styles.cardFooter}>
-                       <div className={styles.readMore}>Read <ArrowRight size={12} /></div>
-                    </div>
-                    <a href="#" className={styles.cardLinkOverlay} aria-label="Read article"></a>
-                 </article>
-
-                 {/* 4 */}
-                 <article className={styles.journalCard}>
-                    <div>
-                       <div className={styles.cardTop}>
-                          <span className={`${styles.cardTag} ${styles.cardTagProcess}`}>Process</span>
-                          <span className={styles.cardTime}>7 Min</span>
-                       </div>
-                       <h3 className={styles.journalTitle}>Why we avoid templates (and what we reuse instead)</h3>
-                       <p className={styles.cardDesc}>
-                         Templates encourage sameness. Patterns encourage consistency. The subtle difference that defines whether a brand feels "premium" or "purchased".
-                       </p>
-                    </div>
-                    <div className={styles.cardFooter}>
-                       <div className={styles.readMore}>Read <ArrowRight size={12} /></div>
-                    </div>
-                    <a href="#" className={styles.cardLinkOverlay} aria-label="Read article"></a>
-                 </article>
-
-                 {/* 5 */}
-                 <article className={styles.journalCard}>
-                    <div>
-                       <div className={styles.cardTop}>
-                          <span className={`${styles.cardTag} ${styles.cardTagPerspective}`}>Perspective</span>
-                          <span className={styles.cardTime}>5 Min</span>
-                       </div>
-                       <h3 className={styles.journalTitle}>Why more feedback often makes work worse</h3>
-                       <p className={styles.cardDesc}>
-                         Design by committee regresses to the mean. We discuss why small, empowered core teams ship better product than large, consensus-driven ones.
-                       </p>
-                    </div>
-                    <div className={styles.cardFooter}>
-                       <div className={styles.readMore}>Read <ArrowRight size={12} /></div>
-                    </div>
-                    <a href="#" className={styles.cardLinkOverlay} aria-label="Read article"></a>
-                 </article>
-
-                 {/* 6 */}
-                 <article className={styles.journalCard}>
-                    <div>
-                       <div className={styles.cardTop}>
-                          <span className={`${styles.cardTag} ${styles.cardTagPerspective}`}>Perspective</span>
-                          <span className={styles.cardTime}>4 Min</span>
-                       </div>
-                       <h3 className={styles.journalTitle}>Why "clean UI" is often a design failure</h3>
-                       <p className={styles.cardDesc}>
-                         "Clean" is often code for "empty." We explore why information density, when managed correctly, is superior to minimalism for complex tools.
-                       </p>
-                    </div>
-                    <div className={styles.cardFooter}>
-                       <div className={styles.readMore}>Read <ArrowRight size={12} /></div>
-                    </div>
-                    <a href="#" className={styles.cardLinkOverlay} aria-label="Read article"></a>
-                 </article>
-              </div>
-           </div>
+      {/* The Actal Way Section */}
+      <section className={styles.sectionContainer}>
+        <div className={styles.empowerGrid}>
+          <div className={styles.videoPlaceholder}>
+             <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1000&q=80" alt="Process" />
+             <div className={styles.founderCard}>
+                <p>"Excellence in execution"</p>
+                <span>The Actal Way</span>
+             </div>
+          </div>
+          <div className={styles.empowerContent}>
+            <h1 className={styles.sectionHeading}>{t.wayTitle}</h1>
+            <p className={styles.textGray}>{t.wayText}</p>
+          </div>
         </div>
+      </section>
 
-        {/* Editorial Note */}
-        <div className={styles.editorialSection}>
-           <div className={styles.editorialContainer}>
-              <Feather className={styles.editorialIcon} size={24} />
-              <p className={styles.editorialText}>
-                "We write to clarify our thinking. Not everything here is a conclusion."
-              </p>
-              <span className={styles.editorialLabel}>Editorial Policy</span>
-           </div>
-        </div>
-
-        {/* Soft CTA */}
-        <section className={styles.softCta}>
-           <div className={styles.softCtaContainer}>
-              <h2 className={styles.softCtaTitle}>Does this thinking align with your needs?</h2>
-              <div className={styles.softCtaLinks}>
-                 <a href="#" className={styles.softLink}>See how we work <ArrowRight size={16} /></a>
-                 <span className={styles.softPipe}>|</span>
-                 <a href="/work" className={styles.softLink}>View selected work <ArrowRight size={16} /></a>
-              </div>
-           </div>
-        </section>
-
-        <Footer />
-      </div>
+      {/* FIXED: Passing currentLang to Footer */}
+                  <Footer currentLang={currentLang} />
     </main>
   );
 }

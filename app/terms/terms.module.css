@@ -1,0 +1,147 @@
+.termsPage {
+  background-color: #ffffff;
+  color: #334155;
+  padding: 120px 1.5rem 80px;
+  line-height: 1.8;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 4rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 2rem;
+}
+
+.label {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: #008080;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.mainTitle {
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
+  color: #0f172a;
+  margin: 1rem 0;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+}
+
+.intro {
+  font-size: 1.1rem;
+  color: #64748b;
+}
+
+.article {
+  margin-bottom: 3rem;
+}
+
+.article h2 {
+  font-size: 1.6rem;
+  color: #1e293b;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+}
+
+/* Text Justification for professional look */
+.article p {
+  text-align: justify;
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+  color: #475569;
+}
+
+.note {
+  padding: 1rem;
+  border-left: 3px solid #008080;
+  background-color: #f0fdfa;
+  font-style: italic;
+  font-size: 0.95rem !important;
+}
+
+/* Contact Section Styling */
+.contactNotice {
+  margin-top: 5rem;
+  padding: 3rem 2rem;
+  border-top: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.contactText {
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 2rem;
+}
+
+.contactGrid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.contactBox {
+  flex: 1;
+  min-width: 250px;
+}
+
+.countryLabel {
+  display: block;
+  font-weight: 800;
+  color: #008080;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+}
+
+.addressText {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.contactLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contactLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #0f172a;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.contactLink:hover {
+  color: #008080;
+  transform: translateY(-2px);
+}
+
+.waIcon {
+  color: #25D366;
+}
+
+@media (max-width: 768px) {
+  .mainTitle { font-size: 2.5rem; }
+  .article p { text-align: left; }
+  .contactGrid { flex-direction: column; gap: 2.5rem; }
+}
