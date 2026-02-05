@@ -1,13 +1,12 @@
 "use client";
-import { useState } from "react";
-import { ArrowRight, Target, Users, Award, Play } from "lucide-react";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
+import { useLanguage } from "../context/LanguageContext";
 import styles from "./page.module.css";
 
 export default function AboutPage() {
-  // 1. Language State Add Kara
-  const [currentLang, setCurrentLang] = useState("EN");
+  // 1. Use Global Context
+  const { currentLang } = useLanguage();
 
   // 2. Translations Dictionary
   const translations = {
@@ -39,8 +38,8 @@ export default function AboutPage() {
 
   return (
     <main className={styles.main}>
-      {/* 3. Navbar la PROPS dya (Most Important) */}
-      <Navbar currentLang={currentLang} setCurrentLang={setCurrentLang} />
+      {/* 3. Navbar uses context internally */}
+      <Navbar />
 
       {/* Hero Section */}
       <section className={styles.heroSection}>

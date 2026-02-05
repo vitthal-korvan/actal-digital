@@ -68,7 +68,7 @@ export default function Navbar() {
       <div className={`${styles.mobileMenu} ${isOpen ? styles.open : ""}`}>
         <button onClick={toggleMenu} className={styles.closeBtn} aria-label="Close menu"><X size={32} /></button>
         <nav className={styles.mobileNav}>
-          <Link href="/blogs" className={styles.mobileLink} onClick={toggleMenu}>{t.about}</Link>
+          <Link href="/about-us" className={styles.mobileLink} onClick={toggleMenu}>{t.about}</Link>
           <div className={styles.mobileDropdownWrapper}>
             <button className={styles.mobileLink} onClick={toggleServices}>
               {t.services} {isServicesOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
@@ -79,7 +79,7 @@ export default function Navbar() {
               ))}
             </div>
           </div>
-          <Link href="/studio" className={styles.mobileLink} onClick={toggleMenu}>{t.careers}</Link>
+          <Link href="/careers" className={styles.mobileLink} onClick={toggleMenu}>{t.careers}</Link>
           <div className={styles.mobileLangSection}>
              <button onClick={() => setCurrentLang("EN")} className={currentLang === "EN" ? styles.activeLang : ""}>EN</button>
              <span className={styles.separator}>|</span>
@@ -94,7 +94,7 @@ export default function Navbar() {
       <div className={styles.navbarWrapper}>
         <nav className={styles.navbar}>
           <div className={styles.navLinks}>
-            <Link href="/blogs" className={styles.link}>{t.about}</Link>
+            <Link href="/about-us" className={styles.link}>{t.about}</Link>
             <div className={styles.dropdown}>
               <button className={styles.link} style={{ display: 'flex', alignItems: 'center', gap: '4px', background: 'none', border: 'none', cursor: 'pointer' }}>
                 {t.services} <ChevronDown size={14} />
@@ -105,7 +105,7 @@ export default function Navbar() {
                 ))}
               </div>
             </div>
-            <Link href="/studio" className={styles.link}>{t.careers}</Link>
+            <Link href="/careers" className={styles.link}>{t.careers}</Link>
           </div>
 
           <button onClick={toggleMenu} className={styles.mobileMenuBtn} aria-label="Open menu"><Menu size={24} /></button>

@@ -100,8 +100,8 @@ export default function Footer() {
             <h4 className={styles.linksTitle}>{t.quickLinks}</h4>
             <ul className={styles.linksList}>
               <li><Link href="/" className={styles.linkItem}>{t.home}</Link></li>
-              <li><Link href="/blogs" className={styles.linkItem}>{t.about}</Link></li>
-              <li><Link href="/studio" className={styles.linkItem}>{t.careers}</Link></li>
+              <li><Link href="/about-us" className={styles.linkItem}>{t.about}</Link></li>
+              <li><Link href="/careers" className={styles.linkItem}>{t.careers}</Link></li>
               <li><Link href="/project" className={styles.linkItem}>{t.contact}</Link></li>
             </ul>
           </div>

@@ -1,13 +1,13 @@
 "use client";
-import { useState } from "react"; 
 import { useForm, ValidationError } from '@formspree/react';
-import { ArrowRight, Check, Phone, MessageSquare } from "lucide-react";
-import Navbar from "../components/Navbar/Navbar";
+import { ArrowRight, Check, MessageSquare, Phone } from "lucide-react";
 import Footer from "../components/Footer/Footer";
+import Navbar from "../components/Navbar/Navbar";
+import { useLanguage } from "../context/LanguageContext";
 import styles from "./page.module.css";
 
 export default function ProjectPage() {
-  const [currentLang, setCurrentLang] = useState("EN");
+  const { currentLang } = useLanguage();
   const [state, handleSubmit] = useForm("xdaeglal");
 
   // Translations dictionary
@@ -66,13 +66,13 @@ export default function ProjectPage() {
   if (state.succeeded) {
     return (
       <div className={styles.main}>
-        <Navbar currentLang={currentLang} setCurrentLang={setCurrentLang} />
+        <Navbar />
         <div style={{ justifyContent: 'center', alignItems: 'center', textAlign: 'center', minHeight: '60vh', display: 'flex', flexDirection: 'column', padding: '2rem' }}>
           <h2 className={styles.title}>{t.successTitle}</h2>
           <p className={styles.description}>{t.successDesc}</p>
           <button onClick={() => window.location.reload()} className={styles.submitBtn}>{t.sendAnother}</button>
         </div>
-        <Footer currentLang={currentLang} />
+        <Footer />
       </div>
     );
   }
@@ -83,7 +83,7 @@ export default function ProjectPage() {
       <div className={styles.noise}></div>
       
       {/* Navbar with language state */}
-      <Navbar currentLang={currentLang} setCurrentLang={setCurrentLang} />
+      <Navbar />
 
       <main className={styles.contentWrapper}>
         <div className={styles.container}>
@@ -170,7 +170,7 @@ export default function ProjectPage() {
       </main>
 
       {/* Footer with currentLang prop - THIS FIXES THE ISSUE */}
-      <Footer currentLang={currentLang} />
+      <Footer />
     </div>
   );
 }

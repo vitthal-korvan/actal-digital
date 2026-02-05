@@ -1,13 +1,14 @@
 "use client";
-import { useState } from "react";
+import { ArrowRight, Clock, MapPin, Minus, Plus } from "lucide-react";
 import Link from "next/link";
-import Navbar from "../components/Navbar/Navbar";
+import { useState } from "react";
 import Footer from "../components/Footer/Footer";
-import { Plus, Minus, MapPin, Clock, ArrowRight } from "lucide-react";
+import Navbar from "../components/Navbar/Navbar";
+import { useLanguage } from "../context/LanguageContext";
 import styles from "./page.module.css";
 
 export default function CareerPage() {
-  const [currentLang, setCurrentLang] = useState("EN");
+  const { currentLang } = useLanguage();
   const [activeJob, setActiveJob] = useState(null);
 
   const translations = {
@@ -165,7 +166,7 @@ export default function CareerPage() {
 
   return (
     <main className={styles.main}>
-      <Navbar currentLang={currentLang} setCurrentLang={setCurrentLang} />
+      <Navbar />
 
       <section className={styles.careerHero}>
         <div className={styles.heroContainer}>
@@ -228,8 +229,8 @@ export default function CareerPage() {
         </div>
       </section>
 
-      {/* FIXED: Passing currentLang to Footer */}
-      <Footer currentLang={currentLang} />
+      {/* FIXED: Footer uses context internally */}
+      <Footer />
     </main>
   );
 }
