@@ -20,6 +20,7 @@ export default function Footer() {
       uae: "U.A.E:",
       terms: "Terms and Conditions",
       privacy: "Privacy Policy",
+      sitemap: "Sitemap",
       copy: "© 2026 Actal Digital.",
       serviceList: [
         { name: "Web Development", path: "/services/webDevelopment" },
@@ -44,6 +45,7 @@ export default function Footer() {
       uae: "الإمارات:",
       terms: "الشروط والأحكام",
       privacy: "سياسة الخصوصية",
+      sitemap: "خريطة الموقع",
       copy: "© 2026 أكتال ديجيتال.",
       serviceList: [
         { name: "تطوير المواقع", path: "/services/webDevelopment" },
@@ -154,6 +156,7 @@ export default function Footer() {
           <div className={styles.legalLinks}>
             <Link href="/terms" className={styles.linkItem}>{t.terms}</Link>
             <Link href="/privacy" className={styles.linkItem}>{t.privacy}</Link>
+            <Link href="/sitemap.xml" className={styles.linkItem}>{t.sitemap}</Link>
           </div>
           <span>{t.copy}</span>
         </div>
