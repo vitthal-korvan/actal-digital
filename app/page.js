@@ -1,36 +1,31 @@
-"use client";
-import CaseStudies from "./components/CaseStudies/CaseStudies";
-import CTA from "./components/CTA/CTA";
-import Expertise from "./components/Expertise/Expertise";
-import Footer from "./components/Footer/Footer";
-import Hero from "./components/Hero/Hero";
-import Methodology from "./components/Methodology/Methodology";
-import Navbar from "./components/Navbar/Navbar";
-import Philosophy from "./components/Philosophy/Philosophy";
-import Testimonials from "./components/Testimonials/Testimonials";
-import { LanguageProvider } from "./context/LanguageContext";
-import styles from "./page.module.css";
+import HomeContent from "./components/HomeContent";
+
+export const metadata = {
+  title: "Actal Digital — Design & Digital Experiences",
+  description: "Digital-first branding agency. Crafting identities for future-tech leaders.",
+  authors: [
+    { name: "Vitthal Korvan" },
+    { name: "Omkar Dhane" },
+    { name: "Zameer Shaikh" }
+  ],
+  openGraph: {
+    title: "Actal Digital — Design & Digital Experiences",
+    description: "Digital-first branding agency. Crafting identities for future-tech leaders.",
+    url: 'https://actaldigital.com',
+    siteName: 'Actal Digital',
+    images: [
+      {
+        url: '/logo.png',
+        width: 800,
+        height: 600,
+        alt: 'Actal Digital Logo',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+};
 
 export default function Home() {
-  return (
-    <LanguageProvider>
-      <MainContent />
-    </LanguageProvider>
-  );
-}
-
-function MainContent() {
-  return (
-    <main className={styles.main}>
-      <Navbar />
-      <Hero />
-      <Expertise />
-      <CaseStudies />
-      <Methodology />
-      <Philosophy />
-      <Testimonials />
-      <CTA />
-      <Footer />
-    </main>
-  );
+  return <HomeContent />;
 }

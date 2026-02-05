@@ -4,6 +4,32 @@ import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import styles from "./page.module.css";
 
+export const metadata = {
+  title: "Selected Work | Actal Digital",
+  description: "A selection of projects where strategy, design, and execution aligned.",
+  authors: [
+    { name: "Vitthal Korvan" },
+    { name: "Omkar Dhane" },
+    { name: "Zameer Shaikh" }
+  ],
+  openGraph: {
+    title: "Selected Work | Actal Digital",
+    description: "A selection of projects where strategy, design, and execution aligned.",
+    url: 'https://actaldigital.com/work',
+    siteName: 'Actal Digital',
+    images: [
+      {
+        url: '/logo.png',
+        width: 800,
+        height: 600,
+        alt: 'Actal Digital Logo',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+};
+
 const workItems = [
   {
     title: "Atlas One",
@@ -168,9 +194,9 @@ export default function WorkPage() {
                 <div className={styles.cardImageWrapper}>
                   <img src={item.img} className={styles.cardImage} alt={item.title} />
                   {(item.featured || item.badge) && (
-                     <div className={styles.featuredBadge}>
-                       {item.badge ? item.badge : "Featured"}
-                     </div>
+                    <div className={styles.featuredBadge}>
+                      {item.badge ? item.badge : "Featured"}
+                    </div>
                   )}
                 </div>
 
@@ -182,43 +208,43 @@ export default function WorkPage() {
 
                   <div className={styles.cardGrid}>
                     <div className={styles.metaBlock}>
-                       <span className={styles.metaLabel}>Industry</span>
-                       <span className={styles.metaValue}>{item.industry}</span>
+                      <span className={styles.metaLabel}>Industry</span>
+                      <span className={styles.metaValue}>{item.industry}</span>
                     </div>
                     <div className={styles.metaBlock}>
-                       <span className={styles.metaLabel}>Engagement</span>
-                       <span className={styles.metaValue}>{item.engagement}</span>
+                      <span className={styles.metaLabel}>Engagement</span>
+                      <span className={styles.metaValue}>{item.engagement}</span>
                     </div>
                     <div className={styles.metaBlock}>
-                       <span className={styles.metaLabel}>Duration</span>
-                       <span className={styles.metaValue}>{item.duration}</span>
+                      <span className={styles.metaLabel}>Duration</span>
+                      <span className={styles.metaValue}>{item.duration}</span>
                     </div>
                     <div className={styles.metaBlock}>
-                       <span className={styles.metaLabel}>Budget</span>
-                       <span className={`${styles.metaValue} ${styles.metaValueHighlight}`}>
-                         {item.budget}
-                       </span>
+                      <span className={styles.metaLabel}>Budget</span>
+                      <span className={`${styles.metaValue} ${styles.metaValueHighlight}`}>
+                        {item.budget}
+                      </span>
                     </div>
                   </div>
                 </div>
               </Link>
             ))}
 
-             {/* Bottom Info */}
-             <div className={`${styles.infoBlock} ${styles.fullCard}`}>
+            {/* Bottom Info */}
+            <div className={`${styles.infoBlock} ${styles.fullCard}`}>
               <div className={styles.endSection}>
-                 <div className={styles.endHeader}>
-                    <div className={styles.endDivider}></div>
-                    <div className={styles.endLabel}>End of selected work</div>
-                    <div className={styles.endDivider}></div>
-                 </div>
-                 <div className={styles.endContent}>
-                    <p className={styles.infoText}>More work available in the archive.</p>
-                    <Link href="/work" className={styles.viewArchiveBtn}>
-                       <span className={styles.archiveTextTitle}>View Archive</span>
-                       <ArrowRight size={14} className="text-[#A1A1A6]" />
-                    </Link>
-                 </div>
+                <div className={styles.endHeader}>
+                  <div className={styles.endDivider}></div>
+                  <div className={styles.endLabel}>End of selected work</div>
+                  <div className={styles.endDivider}></div>
+                </div>
+                <div className={styles.endContent}>
+                  <p className={styles.infoText}>More work available in the archive.</p>
+                  <Link href="/work" className={styles.viewArchiveBtn}>
+                    <span className={styles.archiveTextTitle}>View Archive</span>
+                    <ArrowRight size={14} className="text-[#A1A1A6]" />
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -228,25 +254,25 @@ export default function WorkPage() {
 
       {/* Who This Is For */}
       <section className={styles.whoSection}>
-         <div className={styles.whoContainer}>
-            <div className="max-w-2xl">
-               <div className={styles.filterLabel}>Who This Work Is For</div>
-               <ul className={styles.whoList}>
-                  <li className={styles.whoItem}>
-                     <span className={styles.dot}></span>
-                     <span>Funded startups preparing for launch</span>
-                  </li>
-                  <li className={styles.whoItem}>
-                     <span className={styles.dot}></span>
-                     <span>Scale-ups refining their product narrative</span>
-                  </li>
-                  <li className={styles.whoItem}>
-                     <span className={styles.dot}></span>
-                     <span>Teams who value systems over surface design</span>
-                  </li>
-               </ul>
-            </div>
-         </div>
+        <div className={styles.whoContainer}>
+          <div className="max-w-2xl">
+            <div className={styles.filterLabel}>Who This Work Is For</div>
+            <ul className={styles.whoList}>
+              <li className={styles.whoItem}>
+                <span className={styles.dot}></span>
+                <span>Funded startups preparing for launch</span>
+              </li>
+              <li className={styles.whoItem}>
+                <span className={styles.dot}></span>
+                <span>Scale-ups refining their product narrative</span>
+              </li>
+              <li className={styles.whoItem}>
+                <span className={styles.dot}></span>
+                <span>Teams who value systems over surface design</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <Footer />

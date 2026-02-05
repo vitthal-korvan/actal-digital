@@ -1,6 +1,6 @@
 import { Inter, Space_Grotesk } from "next/font/google";
-import "./globals.css";
 import { LanguageProvider } from "./context/LanguageContext";
+import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -15,11 +15,19 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata = {
-  title: "Actal Digital — Design & Digital Experiences",
+  title: {
+    default: "Actal Digital — Design & Digital Experiences",
+    template: "%s | Actal Digital"
+  },
   description: "Digital-first branding agency. Crafting identities for future-tech leaders.",
-  keywords: ["Digital Design", "Branding", "Web Development", "UX/UI", "Next.js", "Vitthal Korvan"],
-  authors: [{ name: "Vitthal Korvan" }],
-  creator: "Vitthal Korvan",
+  keywords: ["Digital Design", "Branding", "Web Development", "UX/UI", "Next.js", "Vitthal Korvan", "Omkar Dhane", "Zameer Shaikh"],
+  authors: [
+    { name: "Vitthal Korvan" },
+    { name: "Omkar Dhane" },
+    { name: "Zameer Shaikh" }
+  ],
+  creator: "Vitthal Korvan, Omkar Dhane, Zameer Shaikh",
+  manufacturer: "Actal Digital Team",
   openGraph: {
     title: "Actal Digital — Design & Digital Experiences",
     description: "Digital-first branding agency. Crafting identities for future-tech leaders.",
@@ -41,11 +49,23 @@ export const metadata = {
     title: "Actal Digital — Design & Digital Experiences",
     description: "Digital-first branding agency. Crafting identities for future-tech leaders.",
     images: ['/logo.png'],
+    creator: "@actaldigital"
   },
   icons: {
     icon: '/logo.png',
     shortcut: '/logo.png',
     apple: '/logo.png',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
