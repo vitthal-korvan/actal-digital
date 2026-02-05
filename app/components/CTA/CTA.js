@@ -32,7 +32,7 @@ export default function CTA() {
             <p className={styles.desc}>{t.desc}</p>
           </div>
           <div className={styles.actions}>
-            <Link href="/project" className={styles.btn}>
+            <Link href="/contact" className={styles.btn}>
               {t.btnText}
             </Link>
           </div>

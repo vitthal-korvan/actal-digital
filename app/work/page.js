@@ -164,7 +164,7 @@ export default function WorkPage() {
 
             {/* Work Items */}
             {workItems.map((item, i) => (
-              <Link href="/project" key={i} className={`${styles.card} ${item.fullWidth ? styles.fullCard : ''}`}>
+              <Link href="/contact" key={i} className={`${styles.card} ${item.fullWidth ? styles.fullCard : ''}`}>
                 <div className={styles.cardImageWrapper}>
                   <img src={item.img} className={styles.cardImage} alt={item.title} />
                   {(item.featured || item.badge) && (

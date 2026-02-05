@@ -219,7 +219,7 @@ export default function CareerPage() {
                     </div>
                   </div>
 
-                  <Link href="/project" className={styles.innerApplyBtn}>
+                  <Link href="/contact" className={styles.innerApplyBtn}>
                     {t.applyBtn} <ArrowRight size={18} />
                   </Link>
                 </div>

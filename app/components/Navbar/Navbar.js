@@ -86,7 +86,7 @@ export default function Navbar() {
              <button onClick={() => setCurrentLang("AR")} className={currentLang === "AR" ? styles.activeLang : ""}>AR</button>
           </div>
           <div className={styles.mobileFooter}>
-            <Link href="/project" className={styles.mobileCta} onClick={toggleMenu}>{t.contact}</Link>
+            <Link href="/contact" className={styles.mobileCta} onClick={toggleMenu}>{t.contact}</Link>
           </div>
         </nav>
       </div>
@@ -130,7 +130,7 @@ export default function Navbar() {
                 <button onClick={() => setCurrentLang("AR")} className={styles.langOption}>UAE (AR)</button>
               </div>
             </div>
-            <Link href="/project" className={styles.ctaButton}>{t.contact}</Link>
+            <Link href="/contact" className={styles.ctaButton}>{t.contact}</Link>
           </div>
         </nav>
       </div>

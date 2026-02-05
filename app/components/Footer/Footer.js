@@ -102,7 +102,7 @@ export default function Footer() {
               <li><Link href="/" className={styles.linkItem}>{t.home}</Link></li>
               <li><Link href="/about-us" className={styles.linkItem}>{t.about}</Link></li>
               <li><Link href="/careers" className={styles.linkItem}>{t.careers}</Link></li>
-              <li><Link href="/project" className={styles.linkItem}>{t.contact}</Link></li>
+              <li><Link href="/contact" className={styles.linkItem}>{t.contact}</Link></li>
             </ul>
           </div>
 
