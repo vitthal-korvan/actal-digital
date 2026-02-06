@@ -8,8 +8,23 @@
       display: flex;
       align-items: center;
       padding-top: 8rem;
+      /* Mobile default */
       padding-bottom: 4rem;
       background-color: var(--background);
+}
+
+@media (min-width: 768px) {
+      .hero {
+            padding-top: 10rem;
+            /* Tablet */
+      }
+}
+
+@media (min-width: 1024px) {
+      .hero {
+            padding-top: 12rem;
+            /* Desktop */
+      }
 }
 
 .container {
