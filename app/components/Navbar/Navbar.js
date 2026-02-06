@@ -13,7 +13,6 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     {
       name: "Services",
-      href: "/services",
       dropdown: [
         { name: "Web Development", href: "/services/webDevelopment" },
         { name: "Digital Marketing", href: "/services/DigitalMarketing" },
@@ -47,14 +46,36 @@ export default function Navbar() {
         </div>
         <nav className={styles.mobileNav}>
           {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={styles.mobileLink}
-              onClick={toggleMenu}
-            >
-              {link.name}
-            </Link>
+            <div key={link.name}>
+              {link.href ? (
+                <Link
+                  href={link.href}
+                  className={styles.mobileLink}
+                  onClick={toggleMenu}
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <span className={styles.mobileLink} style={{ cursor: 'default' }}>
+                  {link.name}
+                </span>
+              )}
+              {link.dropdown && (
+                <div style={{ paddingLeft: '1.5rem' }}>
+                  {link.dropdown.map((subLink) => (
+                    <Link
+                      key={subLink.name}
+                      href={subLink.href}
+                      className={styles.mobileLink}
+                      style={{ fontSize: '1.5rem', borderBottom: 'none', padding: '0.5rem 0' }}
+                      onClick={toggleMenu}
+                    >
+                      {subLink.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
         </nav>
         <div className={styles.mobileFooter}>
@@ -81,10 +102,17 @@ export default function Navbar() {
           <div className={styles.desktopNav}>
             {navLinks.map((link) => (
               <div key={link.name} className={styles.navItem}>
-                <Link href={link.href} className={styles.navLink}>
-                  {link.name}
-                  {link.dropdown && <span className={styles.dropdownArrow}>▾</span>}
-                </Link>
+                {link.href ? (
+                  <Link href={link.href} className={styles.navLink}>
+                    {link.name}
+                    {link.dropdown && <span className={styles.dropdownArrow}>▾</span>}
+                  </Link>
+                ) : (
+                  <span className={styles.navLink} style={{ cursor: 'default' }}>
+                    {link.name}
+                    {link.dropdown && <span className={styles.dropdownArrow}>▾</span>}
+                  </span>
+                )}
                 {link.dropdown && (
                   <div className={styles.dropdownMenu}>
                     {link.dropdown.map((subLink) => (

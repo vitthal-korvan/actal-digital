@@ -9,7 +9,7 @@ export default function sitemap() {
     '/careers',
     '/contact',
 
-    '/services',
+
     '/services/webDevelopment',
     '/services/DigitalMarketing',
     '/services/SocialMedia',
