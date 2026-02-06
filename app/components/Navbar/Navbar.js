@@ -91,8 +91,8 @@ export default function Navbar() {
             <Image
               src="/nav-logo.png"
               alt="Actal Digital"
-              width={200}
-              height={150}
+              width={133}
+              height={100}
               className={styles.logoImage}
               style={{ objectFit: 'contain' }}
               priority
