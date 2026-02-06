@@ -11,12 +11,18 @@ const translations = {
     growth: "Growth",
     heroTitle: "We Build",
     heroTitleLine: "Digital",
-    heroSubtitle: "Digital-first branding agency. Crafting identities for future-tech leaders.",
+    heroSubtitle: "Digital-first branding agency. Crafting identities for future-tech leaders. We fuse creativity with technology to build immersive web experiences, data-driven marketing campaigns, and scalable digital solutions.",
     heroService1: "Branding",
     heroService2: "Web Design",
     heroService3: "Development",
     heroService4: "Marketing",
-    startProject: "Start a Project"
+    startProject: "Start a Project",
+    stat1Value: "50+",
+    stat1Label: "Projects Delivered",
+    stat2Value: "98%",
+    stat2Label: "Client Satisfaction",
+    stat3Value: "10+",
+    stat3Label: "Countries Served"
   },
   AR: {
     branding: "العلامة التجارية",
@@ -25,12 +31,18 @@ const translations = {
     growth: "النمو",
     heroTitle: "نحن نبني",
     heroTitleLine: "رقمي",
-    heroSubtitle: "وكالة علامات تجارية رقمية أولاً. صياغة هويات قادة التكنولوجيا المستقبلية.",
+    heroSubtitle: "وكالة علامات تجارية رقمية أولاً. صياغة هويات قادة التكنولوجيا المستقبلية. نمزج الإبداع بالتكنولوجيا لبناء تجارب ويب غامرة وحملات تسويقية تعتمد على البيانات وحلول رقمية قابلة للتطوير.",
     heroService1: "العلامة التجارية",
     heroService2: "تصميم المواقع",
     heroService3: "تطوير",
     heroService4: "التسويق",
-    startProject: "ابدأ مشروعاً"
+    startProject: "ابدأ مشروعاً",
+    stat1Value: "٥٠+",
+    stat1Label: "مشروع منجز",
+    stat2Value: "٩٨٪",
+    stat2Label: "رضا العملاء",
+    stat3Value: "١٠+",
+    stat3Label: "دول نخدمها"
   }
 };
 

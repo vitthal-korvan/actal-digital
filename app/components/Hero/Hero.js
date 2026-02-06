@@ -39,6 +39,21 @@ export default function Hero() {
               {t("startProject")}
               <ArrowRight size={18} />
             </Link>
+
+            <div className={styles.statsWrapper}>
+              <div className={styles.statItem}>
+                <span className={styles.statValue}>{t("stat1Value")}</span>
+                <span className={styles.statLabel}>{t("stat1Label")}</span>
+              </div>
+              <div className={styles.statItem}>
+                <span className={styles.statValue}>{t("stat2Value")}</span>
+                <span className={styles.statLabel}>{t("stat2Label")}</span>
+              </div>
+              <div className={styles.statItem}>
+                <span className={styles.statValue}>{t("stat3Value")}</span>
+                <span className={styles.statLabel}>{t("stat3Label")}</span>
+              </div>
+            </div>
           </div>
         </div>
 
