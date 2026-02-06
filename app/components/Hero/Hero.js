@@ -20,15 +20,25 @@ export default function Hero() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentWordIndex((prev) => (prev + 1) % animatedWords.length);
-    }, 2000);
+      // Animate OUT
+      gsap.to(`.${styles.accentWord}`, {
+        y: -30,
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.in",
+        onComplete: () => {
+          // Update State (Text)
+          setCurrentWordIndex((prev) => (prev + 1) % animatedWords.length);
+        }
+      });
+    }, 2500); // Interval includes animation time
     return () => clearInterval(interval);
   }, [animatedWords.length]);
 
+  // Initial Animation Sequence
   useGSAP(() => {
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-    // Initial Reveal Sequence
     tl.to(`.${styles.titleWord}`, {
       y: 0,
       duration: 1.2,
@@ -48,13 +58,14 @@ export default function Hero() {
 
   }, { scope: containerRef });
 
-  // Animation for the changing word
+  // Animation IN for the changing word
   useGSAP(() => {
+    // This runs whenever currentWordIndex changes (after exit completes)
     gsap.fromTo(`.${styles.accentWord}`,
-      { y: 20, opacity: 0 },
+      { y: 30, opacity: 0 },
       { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }
     );
-  }, [currentWordIndex]); // Re-run animation when word changes
+  }, [currentWordIndex]);
 
   return (
     <section className={styles.hero} ref={containerRef}>
@@ -66,10 +77,10 @@ export default function Hero() {
             <h1 className={styles.title}>
               {/* Splitting text for animation */}
               <span className={styles.titleLine}>
-                <span className={styles.titleWord}>{t("heroTitle")}</span>{" "}
-                <span className={styles.titleWord}>{t("heroTitleLine")}</span>
+                <span className={styles.titleWord}>{t("heroTitle")}</span>
               </span>
               <span className={styles.titleLine}>
+                <span className={styles.titleWord}>{t("heroTitleLine")}</span>{" "}
                 <span className={`${styles.titleWord} ${styles.accentWord}`}>
                   {animatedWords[currentWordIndex]}
                 </span>

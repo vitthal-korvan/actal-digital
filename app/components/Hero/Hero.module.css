@@ -59,41 +59,46 @@
 
 @media (min-width: 1024px) {
       .leftContent {
-            max-width: 65%;
+            max-width: 70%;
             margin-bottom: 0;
+            overflow: visible;
       }
 }
 
 /* Typography - Massive & Bold */
 .titleWrapper {
-      overflow: hidden;
-      /* For reveal animations */
+      overflow: visible;
+      /* Allow text to display fully */
       margin-bottom: 1.5rem;
 }
 
 .title {
       font-family: var(--font-manrope), sans-serif;
-      font-size: clamp(3rem, 8vw, 7.5rem);
-      /* Slightly adjusted for better fit */
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      /* Balanced size for 2-line layout */
       font-weight: 600;
-      /* Bolder */
-      line-height: 1;
-      letter-spacing: -0.04em;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
       color: var(--heading);
       text-transform: capitalize;
+      word-break: keep-all;
+      /* Prevent letters from splitting */
 }
 
 .titleWord {
       display: inline-block;
       transform: translateY(120%);
       /* Initial state for animation */
-      padding-right: 0.2em;
+      padding-right: 0.15em;
       /* Spacing between words */
 }
 
 .titleLine {
       display: block;
-      overflow: hidden;
+      overflow: visible;
+      /* Allow text to show fully */
+      white-space: nowrap;
+      /* Keep each line on single row */
 }
 
 .accentWord {
