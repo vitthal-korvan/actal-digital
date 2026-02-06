@@ -56,7 +56,7 @@
 .title {
       font-size: 1.875rem;
       font-weight: 500;
-      font-family: var(--font-space-grotesk);
+      font-family: var(--font-manrope);
       color: var(--heading);
       line-height: 1.1;
       letter-spacing: -0.025em;
@@ -71,7 +71,7 @@
 
 .subtitle {
       font-size: 1.25rem;
-      font-family: var(--font-space-grotesk);
+      font-family: var(--font-manrope);
       font-weight: 500;
       color: var(--foreground);
       letter-spacing: -0.025em;

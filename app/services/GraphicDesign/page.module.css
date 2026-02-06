@@ -24,7 +24,7 @@
 .heroTitle {
   font-size: 3rem;
   font-weight: 500;
-  font-family: var(--font-space-grotesk);
+  font-family: var(--font-manrope);
   color: var(--heading);
   letter-spacing: -0.025em;
   line-height: 0.9;
@@ -136,7 +136,7 @@
 
 .cardTitle {
   font-size: 1.5rem;
-  font-family: var(--font-space-grotesk);
+  font-family: var(--font-manrope);
   color: var(--heading);
 }
 

@@ -38,7 +38,7 @@
 }
 
 .mainTitle {
-  font-family: var(--font-space-grotesk), sans-serif;
+  font-family: var(--font-manrope), sans-serif;
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 500;
   color: var(--heading);
@@ -63,7 +63,7 @@
 }
 
 .article h2 {
-  font-family: var(--font-space-grotesk), sans-serif;
+  font-family: var(--font-manrope), sans-serif;
   font-size: 1.5rem;
   font-weight: 500;
   color: var(--heading);
@@ -72,7 +72,7 @@
 }
 
 .article h3 {
-  font-family: var(--font-space-grotesk), sans-serif;
+  font-family: var(--font-manrope), sans-serif;
   font-size: 1.25rem;
   font-weight: 500;
   color: var(--heading);

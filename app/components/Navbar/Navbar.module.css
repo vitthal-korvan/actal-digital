@@ -169,7 +169,7 @@
 
 .mobileLink {
   display: block;
-  font-family: var(--font-space-grotesk), sans-serif;
+  font-family: var(--font-manrope), sans-serif;
   font-size: 2rem;
   font-weight: 500;
   color: var(--heading);

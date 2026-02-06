@@ -75,7 +75,7 @@
       color: var(--heading);
       line-height: 0.95;
       margin-bottom: 1rem;
-      font-family: var(--font-space-grotesk);
+      font-family: var(--font-manrope);
       letter-spacing: -0.025em;
 }
 
@@ -239,7 +239,7 @@
 
 .itemTitle {
       font-size: 1.125rem;
-      font-family: var(--font-space-grotesk);
+      font-family: var(--font-manrope);
       font-weight: 500;
       color: var(--heading);
       letter-spacing: -0.025em;

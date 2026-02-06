@@ -31,7 +31,7 @@
 }
 
 .heroTitle {
-      font-family: var(--font-space-grotesk), sans-serif;
+      font-family: var(--font-manrope), sans-serif;
       font-size: clamp(3rem, 7vw, 5rem);
       font-weight: 500;
       color: var(--heading);
@@ -313,7 +313,7 @@
 }
 
 .cardTitle {
-      font-family: var(--font-space-grotesk), sans-serif;
+      font-family: var(--font-manrope), sans-serif;
       font-size: 1.5rem;
       font-weight: 500;
       color: var(--heading);

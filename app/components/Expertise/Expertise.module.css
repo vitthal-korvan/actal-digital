@@ -23,7 +23,7 @@
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 600;
   color: var(--heading);
-  font-family: var(--font-space-grotesk);
+  font-family: var(--font-manrope);
 }
 
 .linkButton {

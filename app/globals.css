@@ -126,7 +126,7 @@ h4,
 h5,
 h6,
 .font-heading {
-  font-family: var(--font-space-grotesk), -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-manrope), -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--heading);
   font-weight: 500;
   line-height: 1.1;

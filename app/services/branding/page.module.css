@@ -16,7 +16,7 @@
       line-height: 0.9;
       letter-spacing: -0.025em;
       margin-bottom: 2rem;
-      font-family: var(--font-space-grotesk);
+      font-family: var(--font-manrope);
 }
 
 .heroDesc {
@@ -117,7 +117,7 @@
       font-weight: 500;
       color: var(--heading);
       transition: color 0.2s;
-      font-family: var(--font-space-grotesk);
+      font-family: var(--font-manrope);
 }
 
 .cardGrid {

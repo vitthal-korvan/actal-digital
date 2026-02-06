@@ -32,7 +32,7 @@
 }
 
 .heroTitle {
-      font-family: var(--font-space-grotesk), sans-serif;
+      font-family: var(--font-manrope), sans-serif;
       font-size: clamp(3rem, 8vw, 6rem);
       font-weight: 500;
       color: var(--heading);
@@ -59,7 +59,7 @@
 }
 
 .heroSubtitle {
-      font-family: var(--font-space-grotesk), sans-serif;
+      font-family: var(--font-manrope), sans-serif;
       font-size: 1.25rem;
       font-weight: 500;
       color: var(--heading);
@@ -104,7 +104,7 @@
 }
 
 .sectionTitle {
-      font-family: var(--font-space-grotesk), sans-serif;
+      font-family: var(--font-manrope), sans-serif;
       font-size: clamp(1.75rem, 3vw, 2.5rem);
       font-weight: 500;
       color: var(--heading);
@@ -177,7 +177,7 @@
 }
 
 .cardTitle {
-      font-family: var(--font-space-grotesk), sans-serif;
+      font-family: var(--font-manrope), sans-serif;
       font-size: 1.375rem;
       font-weight: 500;
       color: var(--heading);
@@ -331,7 +331,7 @@
 }
 
 .opsTitle {
-      font-family: var(--font-space-grotesk), sans-serif;
+      font-family: var(--font-manrope), sans-serif;
       font-size: clamp(1.75rem, 3vw, 2.5rem);
       font-weight: 500;
       color: var(--heading);
@@ -441,7 +441,7 @@
 }
 
 .pricingText {
-      font-family: var(--font-space-grotesk), sans-serif;
+      font-family: var(--font-manrope), sans-serif;
       font-size: clamp(1.5rem, 3vw, 2.25rem);
       font-weight: 500;
       color: var(--heading);
@@ -545,7 +545,7 @@
 }
 
 .whoTitle {
-      font-family: var(--font-space-grotesk), sans-serif;
+      font-family: var(--font-manrope), sans-serif;
       font-size: 1.25rem;
       font-weight: 500;
       color: var(--heading);

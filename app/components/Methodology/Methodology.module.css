@@ -28,7 +28,7 @@
 .title {
       font-size: 2.25rem;
       font-weight: 500;
-      font-family: var(--font-space-grotesk);
+      font-family: var(--font-manrope);
       color: var(--heading);
       letter-spacing: -0.025em;
       margin-bottom: 4rem;
@@ -105,7 +105,7 @@
 .stepTitle {
       /* १.२५ ऐवजी १.१५रेम केल्याने एका ओळीत बसण्यास मदत होईल */
       font-size: 1.15rem;
-      font-family: var(--font-space-grotesk);
+      font-family: var(--font-manrope);
       font-weight: 600;
       /* थोडं जास्त बोल्ड केल्याने प्रोफेशनल वाटतं */
       color: var(--heading);

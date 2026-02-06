@@ -35,7 +35,7 @@
 }
 
 .ctaTitle {
-  font-family: var(--font-space-grotesk), sans-serif;
+  font-family: var(--font-manrope), sans-serif;
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 500;
   color: var(--dark-text);
@@ -174,7 +174,7 @@
 }
 
 .emailLink {
-  font-family: var(--font-space-grotesk), sans-serif;
+  font-family: var(--font-manrope), sans-serif;
   font-size: 1.125rem;
   font-weight: 500;
   color: var(--dark-text);

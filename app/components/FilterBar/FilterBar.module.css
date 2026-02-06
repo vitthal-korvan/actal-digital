@@ -59,7 +59,7 @@
 
 .labelText {
       font-size: 0.875rem;
-      font-family: var(--font-space-grotesk);
+      font-family: var(--font-manrope);
       font-weight: 500;
       color: var(--heading);
       white-space: nowrap;

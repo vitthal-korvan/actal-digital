@@ -68,7 +68,7 @@
 }
 
 .title {
-      font-family: var(--font-space-grotesk), sans-serif;
+      font-family: var(--font-manrope), sans-serif;
       font-size: clamp(2.5rem, 5vw, 4rem);
       font-weight: 500;
       color: var(--heading);

@@ -50,7 +50,7 @@
 
 /* Title */
 .title {
-      font-family: var(--font-space-grotesk), sans-serif;
+      font-family: var(--font-manrope), sans-serif;
       font-size: clamp(2.5rem, 6vw + 1rem, 5rem);
       font-weight: 500;
       line-height: 1.05;
