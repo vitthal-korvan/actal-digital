@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import styles from "./Hero.module.css";
 
@@ -13,13 +13,17 @@ gsap.registerPlugin(useGSAP);
 export default function Hero() {
   const { t } = useLanguage();
   const containerRef = useRef(null);
+
+  // Rotating words logic
+  const animatedWords = [t("growth"), t("websites"), t("product"), t("marketing")];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
-  // Separate the title and animated words logic slightly for the new layout
-  // We can keep the rotating word, or simplify for the "Impact" look.
-  // Let's keep the rotating word but integrate it into the GSAP flow.
-
-  const animatedWords = [t("branding"), t("websites"), t("marketing"), t("growth")];
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWordIndex((prev) => (prev + 1) % animatedWords.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [animatedWords.length]);
 
   useGSAP(() => {
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
@@ -35,7 +39,7 @@ export default function Hero() {
         opacity: 1,
         duration: 1,
       }, "-=0.8")
-      .to([`.${styles.subtitle}`, `.${styles.ctaWrapper}`, `.${styles.statsWrapper}`], {
+      .to([`.${styles.subtitle}`, `.${styles.ctaWrapper}`, `.${styles.statsWrapper}`, `.${styles.servicesWrapper}`], {
         opacity: 1,
         y: 0,
         duration: 1,
@@ -43,6 +47,14 @@ export default function Hero() {
       }, "-=0.8");
 
   }, { scope: containerRef });
+
+  // Animation for the changing word
+  useGSAP(() => {
+    gsap.fromTo(`.${styles.accentWord}`,
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }
+    );
+  }, [currentWordIndex]); // Re-run animation when word changes
 
   return (
     <section className={styles.hero} ref={containerRef}>
@@ -59,11 +71,7 @@ export default function Hero() {
               </span>
               <span className={styles.titleLine}>
                 <span className={`${styles.titleWord} ${styles.accentWord}`}>
-                  {/* For now, just static "Growth" or similar from translation to keep it simple and impactful, 
-                       or use the array if we really want rotation. 
-                       Let's use the first word of the array for the static impact, and maybe rotate later.
-                       Actually, let's keep it simple: "We Build Digital Growth" (matches previous somewhat) */}
-                  {t("growth")}
+                  {animatedWords[currentWordIndex]}
                 </span>
               </span>
             </h1>
@@ -102,6 +110,19 @@ export default function Hero() {
               <span className={styles.statValue}>{t("stat3Value")}</span>
               <span className={styles.statLabel}>{t("stat3Label")}</span>
             </div>
+          </div>
+        </div>
+
+        {/* Services List (Restored) */}
+        <div className={styles.servicesWrapper}>
+          <div className={styles.servicesList}>
+            <span className={styles.serviceItem}>{t("heroService1")}</span>
+            <span className={styles.serviceDot}>•</span>
+            <span className={styles.serviceItem}>{t("heroService2")}</span>
+            <span className={styles.serviceDot}>•</span>
+            <span className={styles.serviceItem}>{t("heroService3")}</span>
+            <span className={styles.serviceDot}>•</span>
+            <span className={styles.serviceItem}>{t("heroService4")}</span>
           </div>
         </div>
 

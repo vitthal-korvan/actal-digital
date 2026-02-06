@@ -11,8 +11,7 @@
       align-items: center;
       background-color: var(--background);
       overflow: hidden;
-      padding-top: 2rem;
-      /* Reduced significantly since nav is static */
+      padding-top: 0;
       padding-bottom: 4rem;
 }
 
@@ -38,10 +37,263 @@
       .container {
             padding: 0 3rem;
             flex-direction: row;
-            align-items: flex-end;
-            /* Keep alignment */
+            align-items: center;
+            /* Changed from flex-end to center to reduce top gap */
             justify-content: space-between;
-            padding-bottom: 4rem;
+            padding-bottom: 0;
+      }
+}
+
+/* ================================================
+   LEFT CONTENT: Main Title & Tagline
+   ================================================ */
+.leftContent {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 2;
+      margin-bottom: 2rem;
+      /* Spacing for mobile stack */
+}
+
+@media (min-width: 1024px) {
+      .leftContent {
+            max-width: 65%;
+            margin-bottom: 0;
+      }
+}
+
+/* Typography - Massive & Bold */
+.titleWrapper {
+      overflow: hidden;
+      /* For reveal animations */
+      margin-bottom: 1.5rem;
+}
+
+.title {
+      font-family: var(--font-manrope), sans-serif;
+      font-size: clamp(3rem, 8vw, 7.5rem);
+      /* Slightly adjusted for better fit */
+      font-weight: 600;
+      /* Bolder */
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: var(--heading);
+      text-transform: capitalize;
+}
+
+.titleWord {
+      display: inline-block;
+      transform: translateY(120%);
+      /* Initial state for animation */
+      padding-right: 0.2em;
+      /* Spacing between words */
+}
+
+.titleLine {
+      display: block;
+      overflow: hidden;
+}
+
+.accentWord {
+      color: var(--text-secondary);
+      /* Or keep primary, let animation distinguish */
+      font-style: italic;
+      font-weight: 400;
+}
+
+/* Tagline */
+.taglineWrapper {
+      overflow: hidden;
+      margin-top: 1rem;
+}
+
+.heroTagline {
+      font-size: clamp(1rem, 1.5vw, 1.25rem);
+      font-weight: 500;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      max-width: 500px;
+      opacity: 0;
+      /* Initial state */
+      transform: translateY(20px);
+}
+
+/* ================================================
+   RIGHT CONTENT: Subtitle, CTA, Stats
+   ================================================ */
+.rightContent {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      z-index: 2;
+}
+
+@media (min-width: 1024px) {
+      .rightContent {
+            align-items: flex-end;
+            text-align: right;
+            max-width: 35%;
+      }
+}
+
+.subtitle {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 320px;
+      opacity: 0;
+      /* Initial state */
+}
+
+/* CTA Button */
+.ctaWrapper {
+      opacity: 0;
+      /* Initial state */
+}
+
+.ctaButton {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 1.25rem 2.5rem;
+      background-color: var(--heading);
+      color: var(--background);
+      font-size: 1rem;
+      font-weight: 500;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      overflow: hidden;
+      position: relative;
+}
+
+.ctaButton:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Stats */
+.statsWrapper {
+      display: flex;
+      gap: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-light);
+      opacity: 0;
+      /* Initial state */
+}
+
+.statItem {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+}
+
+.statValue {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--heading);
+      line-height: 1;
+      letter-spacing: -0.02em;
+}
+
+.statLabel {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+}
+
+@media (min-width: 1024px) {
+      .statsWrapper {
+            justify-content: flex-end;
+            border-top: 1px solid var(--border-light);
+            width: 100%;
+      }
+
+      .statItem {
+            align-items: flex-end;
+      }
+}
+
+/* ================================================
+   SERVICES STRIP (Restored & Styled)
+   ================================================ */
+.servicesWrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 3rem;
+      opacity: 0;
+      /* For animation */
+      animation: fadeIn 1s ease forwards 1s;
+      /* Simple delay */
+}
+
+.servicesList {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+}
+
+.serviceItem {
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-secondary);
+}
+
+.serviceDot {
+      color: var(--border);
+}
+
+@media (min-width: 1024px) {
+      .servicesWrapper {
+            position: absolute;
+            top: 2rem;
+            right: 3rem;
+            margin-top: 0;
+      }
+}
+
+@keyframes fadeIn {
+      to {
+            opacity: 1;
+      }
+}
+
+.container {
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* Center vertically in the remaining space */
+}
+
+@media (min-width: 768px) {
+      .container {
+            padding: 0 2rem;
+      }
+}
+
+@media (min-width: 1024px) {
+      .container {
+            padding: 0 3rem;
+            flex-direction: row;
+            align-items: center;
+            /* Changed from flex-end to center to reduce top gap */
+            justify-content: space-between;
+            padding-bottom: 0;
       }
 }
 
@@ -493,19 +745,7 @@
       }
 }
 
-@media (min-width: 768px) {
-      .hero {
-            padding-top: 10rem;
-            /* Tablet */
-      }
-}
 
-@media (min-width: 1024px) {
-      .hero {
-            padding-top: 12rem;
-            /* Desktop */
-      }
-}
 
 .container {
       width: 100%;
