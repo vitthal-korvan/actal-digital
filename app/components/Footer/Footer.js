@@ -86,6 +86,22 @@ export default function Footer() {
               <a href="mailto:contact@actaldigital.com" className={styles.emailLink}>
                 contact@actaldigital.com
               </a>
+
+              <div className={styles.contactInfo}>
+                <p className={styles.contactText}>
+                  If you have any questions, please contact us at:
+                </p>
+                <div className={styles.contactGroup}>
+                  <span className={styles.contactLabel}>INDIA</span>
+                  <a href="tel:+919820730548" className={styles.contactLink}>+91 98207 30548</a>
+                  <a href="tel:+919820715452" className={styles.contactLink}>+91 98207 15452</a>
+                </div>
+                <div className={styles.contactGroup}>
+                  <span className={styles.contactLabel}>U.A.E</span>
+                  <a href="tel:+971506758040" className={styles.contactLink}>+971 50 675 8040</a>
+                  <a href="tel:+971503330548" className={styles.contactLink}>+971 50 333 0548</a>
+                </div>
+              </div>
             </div>
 
             {/* Services Column */}
