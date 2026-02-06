@@ -8,8 +8,7 @@
 }
 
 .container {
-      max-width: 64rem;
-      /* max-w-5xl */
+      max-width: 1280px;
       margin: 0 auto;
       text-align: center;
 }
@@ -49,11 +48,12 @@
 }
 
 @media (min-width: 768px) {
-  .grid {
-    /* ३ ऐवजी ४ कॉलम्स करा */
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 1.5rem; /* ४ बॉक्स बसवण्यासाठी गॅप थोडा कमी केला आहे */
-  }
+      .grid {
+            /* ३ ऐवजी ४ कॉलम्स करा */
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            /* ४ बॉक्स बसवण्यासाठी गॅप थोडा कमी केला आहे */
+      }
 }
 
 .connector {
@@ -96,21 +96,25 @@
 }
 
 .step:hover .iconWrapper {
-      border-color: #a0d411; /* He black karel */
-      color: #000000;        /* Icon cha rang pan black karel */
+      border-color: #a0d411;
+      /* He black karel */
+      color: #000000;
+      /* Icon cha rang pan black karel */
 }
 
 .stepTitle {
       /* १.२५ ऐवजी १.१५रेम केल्याने एका ओळीत बसण्यास मदत होईल */
-      font-size: 1.15rem; 
+      font-size: 1.15rem;
       font-family: var(--font-space-grotesk);
-      font-weight: 600; /* थोडं जास्त बोल्ड केल्याने प्रोफेशनल वाटतं */
+      font-weight: 600;
+      /* थोडं जास्त बोल्ड केल्याने प्रोफेशनल वाटतं */
       color: var(--heading);
       margin-top: 0.5rem;
       line-height: 1.2;
       /* एका ओळीत बसवण्यासाठी */
-      white-space: normal; 
-      min-height: 2.8rem; /* शीर्षक कितीही मोठं असलं तरी खालचा मजकूर एकाच रेषेत राहील */
+      white-space: normal;
+      min-height: 2.8rem;
+      /* शीर्षक कितीही मोठं असलं तरी खालचा मजकूर एकाच रेषेत राहील */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -118,7 +122,8 @@
 
 @media (min-width: 1280px) {
       .stepTitle {
-            font-size: 1.25rem; /* मोठ्या स्क्रीनवर पुन्हा थोडं मोठं करू शकता */
+            font-size: 1.25rem;
+            /* मोठ्या स्क्रीनवर पुन्हा थोडं मोठं करू शकता */
       }
 }
 

@@ -1,42 +1,61 @@
+/* ================================================
+   OPUS-STYLE TERMS PAGE
+   Clean Legal Text Layout
+   ================================================ */
+
 .termsPage {
-  background-color: #ffffff;
-  color: #334155;
-  padding: 120px 1.5rem 80px;
-  line-height: 1.8;
+  background-color: var(--background);
   min-height: 100vh;
+  padding: 8rem 1.5rem 6rem;
+}
+
+@media (min-width: 768px) {
+  .termsPage {
+    padding: 10rem 2rem 8rem;
+  }
 }
 
 .container {
-  max-width: 850px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
+/* Header */
 .header {
   margin-bottom: 4rem;
-  border-bottom: 1px solid #e2e8f0;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--border);
 }
 
 .label {
-  font-family: monospace;
-  font-size: 0.8rem;
-  color: #008080;
-  letter-spacing: 0.2em;
+  font-size: 0.6875rem;
+  font-weight: 600;
   text-transform: uppercase;
-  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-subtle);
+  margin-bottom: 1rem;
+  display: block;
 }
 
 .mainTitle {
-  font-size: clamp(2.5rem, 8vw, 3.5rem);
-  color: #0f172a;
-  margin: 1rem 0;
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 500;
+  color: var(--heading);
+  line-height: 1.1;
   letter-spacing: -0.02em;
-  font-weight: 800;
+  margin-bottom: 1.5rem;
 }
 
 .intro {
-  font-size: 1.1rem;
-  color: #64748b;
+  font-size: 1.125rem;
+  color: var(--foreground);
+  line-height: 1.7;
+}
+
+/* Content Section */
+.contentSection {
+  margin-bottom: 4rem;
 }
 
 .article {
@@ -44,104 +63,116 @@
 }
 
 .article h2 {
-  font-size: 1.6rem;
-  color: #1e293b;
-  margin-bottom: 1.2rem;
-  font-weight: 700;
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--heading);
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
 }
 
-/* Text Justification for professional look */
+.article h3 {
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--heading);
+  margin-bottom: 0.75rem;
+  margin-top: 2rem;
+}
+
 .article p {
-  text-align: justify;
-  margin-bottom: 1.2rem;
-  font-size: 1.05rem;
-  color: #475569;
+  font-size: 1rem;
+  color: var(--foreground);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.article ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.article li {
+  font-size: 1rem;
+  color: var(--foreground);
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+  list-style-type: disc;
 }
 
 .note {
-  padding: 1rem;
-  border-left: 3px solid #008080;
-  background-color: #f0fdfa;
-  font-style: italic;
-  font-size: 0.95rem !important;
+  padding: 1.5rem;
+  border-left: 3px solid var(--heading);
+  background-color: var(--background-alt);
+  font-size: 0.9375rem;
+  color: var(--foreground);
+  margin: 2rem 0;
 }
 
-/* Contact Section Styling */
+/* Contact Notice */
 .contactNotice {
-  margin-top: 5rem;
-  padding: 3rem 2rem;
-  border-top: 1px solid #e2e8f0;
-  background-color: #f8fafc;
-  border-radius: 16px;
-  text-align: center;
+  margin-top: 4rem;
+  padding: 3rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background-color: var(--background-alt);
 }
 
 .contactText {
-  font-weight: 600;
-  color: #64748b;
+  font-size: 0.875rem;
+  color: var(--foreground);
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .contactGrid {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 640px) {
+  .contactGrid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .contactBox {
-  flex: 1;
-  min-width: 250px;
+  text-align: center;
 }
 
 .countryLabel {
   display: block;
-  font-weight: 800;
-  color: #008080;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
   letter-spacing: 0.1em;
+  color: var(--text-subtle);
   margin-bottom: 1rem;
-  font-size: 0.85rem;
-}
-
-.addressText {
-  font-size: 0.9rem;
-  color: #64748b;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
 }
 
 .contactLinks {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .contactLink {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  color: #0f172a;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+  color: var(--heading);
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.2s ease;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
 }
 
 .contactLink:hover {
-  color: #008080;
-  transform: translateY(-2px);
+  opacity: 0.6;
 }
 
 .waIcon {
   color: #25D366;
-}
-
-@media (max-width: 768px) {
-  .mainTitle { font-size: 2.5rem; }
-  .article p { text-align: left; }
-  .contactGrid { flex-direction: column; gap: 2.5rem; }
 }

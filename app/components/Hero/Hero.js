@@ -1,72 +1,65 @@
 "use client";
 
-import Image from "next/image";
-import { useLanguage } from "../../context/LanguageContext";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
-  const { currentLang } = useLanguage();
-  const translations = {
-    EN: {
-      titlePart1: "Your Vision,",
-      titlePart2: "Our Digital Precision.",
-      subLeftHighlight: "Digital-first branding agency.",
-      subLeftBlock: "Crafting identities for future-tech leaders.",
-      subRightHighlight: "Welcome to the future of your brand's growth.",
-      subRightBlock: "Globally connected.",
-      workingWith: "Working with funded startups, scale-ups, and ambitious brands"
-    },
-    AR: {
-      titlePart1: "رؤيتك،",
-      titlePart2: "دقتنا الرقمية.",
-      subLeftHighlight: "وكالة علامة تجارية رقمية أولاً.",
-      subLeftBlock: "صياغة الهويات لقادة تكنولوجيا المستقبل.",
-      subRightHighlight: "مرحباً بك في مستقبل نمو علامتك التجارية.",
-      subRightBlock: "متصلون عالمياً.",
-      workingWith: "نعمل مع الشركات الناشئة الممولة، والشركات المتوسعة، والعلامات التجارية الطموحة"
-    }
-  };
+  const animatedWords = ["Branding", "Websites", "Marketing", "Growth"];
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
-  const t = translations[currentLang] || translations["EN"];
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWordIndex((prev) => (prev + 1) % animatedWords.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className={styles.section}>
-      <h1 className={styles.title}>
-        {t.titlePart1}
-        <br />
-        <span className={styles.strokeText}>{t.titlePart2}</span>
-      </h1>
+    <section className={styles.hero}>
+      <div className={styles.container}>
+        {/* Hero Content */}
+        <div className={styles.content}>
+          <h1 className={styles.title}>
+            We design solutions
+            <br />
+            <span className={styles.titleLine}>
+              that drive <span className={styles.animatedWord} key={currentWordIndex}>{animatedWords[currentWordIndex]}</span>
+            </span>
+          </h1>
 
-      <div className={styles.subtitleWrapper}>
-        <div className={styles.subtitleLeft}>
-          <p>
-            <span className={styles.subtitleHighlight}>{t.subLeftHighlight}</span>
-            <span className={styles.subtitleBlock}>{t.subLeftBlock}</span>
-          </p>
+          <div className={styles.rightContent}>
+            <p className={styles.subtitle}>
+              We believe great design isn't just about aesthetics – it's about creating work that drives results for your business.
+            </p>
+          </div>
         </div>
-        <div className={styles.subtitleRight}>
-          <p>
-            <span className={styles.subtitleHighlight}>{t.subRightHighlight}</span>
-            <span className={styles.subtitleBlock}>{t.subRightBlock}</span>
-          </p>
+
+        {/* Services List */}
+        <div className={styles.servicesWrapper}>
+          <div className={styles.servicesList}>
+            <span className={styles.serviceItem}>Branding</span>
+            <span className={styles.serviceDot}>•</span>
+            <span className={styles.serviceItem}>Website Design</span>
+            <span className={styles.serviceDot}>•</span>
+            <span className={styles.serviceItem}>Product Design</span>
+            <span className={styles.serviceDot}>•</span>
+            <span className={styles.serviceItem}>Development</span>
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className={styles.ctaWrapper}>
+          <Link href="/contact" className={styles.ctaButton}>
+            Start a Project
+            <ArrowRight size={18} />
+          </Link>
+          <Link href="/work" className={styles.ctaSecondary}>
+            View Our Work
+          </Link>
         </div>
       </div>
-      
-      <p className={styles.workingWith}>{t.workingWith}</p>
-
-      <div className={styles.sliderContainer}>
-        <div className={styles.heroSlideshow}>
-          <div className={styles.heroSlide}>
-            <Image src="/b1.png" alt="Design 1" fill style={{ objectFit: 'cover' }} priority />
-          </div>
-          <div className={styles.heroSlide}>
-            <Image src="/b2.png" alt="Design 2" fill style={{ objectFit: 'cover' }} priority />
-          </div>
-          <div className={styles.heroSlide}>
-            <Image src="/b3.png" alt="Design 3" fill style={{ objectFit: 'cover' }} priority />
-          </div>
-        </div>
-      </div>
-    </div>
+    </section>
   );
 }

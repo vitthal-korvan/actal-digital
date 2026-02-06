@@ -1,239 +1,240 @@
-/* Hero & General */
+/* ================================================
+   OPUS-STYLE ABOUT PAGE
+   Clean, Premium Layout
+   ================================================ */
+
 .main {
-  background-color: #ffffff;
+  background-color: var(--background);
 }
+
+/* ================================================
+   HERO SECTION
+   ================================================ */
 
 .heroSection {
-  background-color: #ffffff; /* Changed from yellow to white */
-  padding: 120px 20px 60px;
-  text-align: center;
-  color: #1a1a1a; /* Ensure text is dark */
+  background-color: var(--background);
+  padding: 8rem 1.5rem 4rem;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
-.heroTitle {
-  color: #1a1a1a;
-  font-size: 4rem;
-  font-weight: 700;
-}
-
- /* Hero Description साठी */
-.heroDesc {
-  color: #52525b;
-  max-width: 800px; /* वाचायला सोपे जाण्यासाठी विड्थ मर्यादित केली */
-  margin: 0 auto; /* सेंटर करण्यासाठी */
-  text-align: justify;
-  text-justify: inter-word; /* शब्दांमधील अंतर व्यवस्थित राखण्यासाठी */
-  line-height: 1.6;
-}
-
-/* सेक्शनमधील सामान्य मजकुरासाठी */
-.textGray {
-  color: #52525b;
-  text-align: justify;
-  text-justify: inter-word;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-/* मोबाईलवर देखील व्यवस्थित दिसण्यासाठी */
-@media (max-width: 768px) {
-  .heroDesc, .textGray {
-    text-align: justify;
-    padding: 0 10px;
+@media (min-width: 768px) {
+  .heroSection {
+    padding: 10rem 2rem 5rem;
   }
 }
 
-
-
-.iconBox {
-  background: #f4f4f5; /* Light gray background for icons instead of yellow */
-  color: #1a1a1a;
-  /* ... rest of existing styles */
+@media (min-width: 1024px) {
+  .heroSection {
+    padding: 12rem 3rem 6rem;
+  }
 }
-/* Image Mosaic */
+
+.heroContent {
+  max-width: 800px;
+  margin-bottom: 4rem;
+}
+
+.heroTitle {
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 500;
+  color: var(--heading);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+}
+
+.heroDesc {
+  font-size: 1.125rem;
+  color: var(--foreground);
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+/* ================================================
+   IMAGE GRID
+   ================================================ */
+
 .imageGrid {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 1280px;
   margin: 0 auto;
-  transform: translateY(100px); /* Hangs over the edge */
+}
+
+@media (min-width: 768px) {
+  .imageGrid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+  }
 }
 
 .gridImg {
-  width: 200px;
-  height: 250px;
+  width: 100%;
+  height: 200px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 0.75rem;
+  transition: transform 0.3s ease;
 }
 
-/* Section Layouts */
+@media (min-width: 768px) {
+  .gridImg {
+    height: 280px;
+  }
+}
+
+.gridImg:hover {
+  transform: scale(1.02);
+}
+
+/* ================================================
+   SECTION CONTAINER
+   ================================================ */
+
 .sectionContainer {
-  max-width: 1100px;
-  margin: 180px auto 100px;
-  padding: 0 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem;
+  border-top: 1px solid var(--border);
 }
 
-.splitGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+@media (min-width: 768px) {
+  .sectionContainer {
+    padding: 8rem 2rem;
+  }
 }
 
-.splitTitle {
-  font-size: 2.5rem;
-  line-height: 1.2;
+@media (min-width: 1024px) {
+  .sectionContainer {
+    padding: 10rem 3rem;
+  }
 }
 
-.splitContent {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+/* ================================================
+   EMPOWER GRID (2-Column Layout)
+   ================================================ */
 
-/* Empowerment Section */
 .empowerGrid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1fr;
+  gap: 3rem;
   align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .empowerGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+  }
 }
 
 .videoPlaceholder {
   position: relative;
-  border-radius: 20px;
-  overflow: visible;
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
 .videoPlaceholder img {
-  border-radius: 20px;
   width: 100%;
-}
-
-.playButton {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(255,255,255,0.9);
-  padding: 15px;
-  border-radius: 50%;
+  height: auto;
+  display: block;
+  border-radius: 1rem;
 }
 
 .founderCard {
   position: absolute;
-  bottom: -20px;
-  left: 40px;
-  background: white;
-  padding: 15px 30px;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background: var(--background);
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* Features */
-.growthSection {
-  text-align: center;
-  padding: 100px 20px;
+.founderCard p {
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--heading);
+  margin-bottom: 0.25rem;
 }
 
-.featuresGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1100px;
-  margin: 60px auto;
+.founderCard span {
+  font-size: 0.75rem;
+  color: var(--text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.iconBox {
-  background: #fce96a;
-  width: 80px;
-  height: 80px;
+.empowerContent {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  margin: 0 auto 20px;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sectionHeading {
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  color: var(--heading);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-align: left;
+}
+
+.textGray {
+  font-size: 1rem;
+  color: var(--foreground);
+  line-height: 1.8;
 }
 
 .quote {
-  border-left: 4px solid #fce96a;
-  padding-left: 20px;
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: 1.25rem;
   font-style: italic;
-  margin-top: 30px;
-  color: #333;
+  color: var(--heading);
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--heading);
+  line-height: 1.5;
 }
 
-.sectionHeading{
-      text-align: center;
-}
-
-/* --- Base Responsive Adjustments --- */
+/* ================================================
+   MOBILE ADJUSTMENTS
+   ================================================ */
 
 @media (max-width: 768px) {
-  .heroTitle {
-    font-size: 2.5rem; /* Smaller title on mobile */
+  .founderCard {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    margin-top: 1rem;
+    width: 100%;
   }
 
-  .sectionContainer {
-    margin: 100px auto 50px; /* Reduced spacing */
-  }
-
-  /* --- Image Mosaic Mobile Fix --- */
-  .imageGrid {
-    flex-wrap: wrap; /* Allow images to wrap to next line */
-    transform: translateY(40px); /* Less overlap on mobile */
-    gap: 10px;
-    padding: 0 10px;
-  }
-
-  .gridImg {
-    width: calc(50% - 10px); /* Two images per row */
-    height: 180px;
-  }
-
-  /* --- Convert 2-Column Grids to 1-Column --- */
-  .splitGrid, 
-  .empowerGrid {
-    grid-template-columns: 1fr; /* Stack elements vertically */
-    gap: 30px;
+  .sectionHeading {
     text-align: center;
   }
 
-  /* Adjust icon and content alignment for centered mobile view */
-  .splitContent,
   .empowerContent {
-    align-items: center;
-  }
-
-  /* --- Features Grid (3 columns to 1) --- */
-  .featuresGrid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  /* Founder Card adjustment */
-  .founderCard {
-    position: relative; /* Stop floating on mobile for better flow */
-    bottom: 0;
-    left: 0;
-    margin: 20px auto 0;
-    max-width: 90%;
+    text-align: center;
   }
 
   .quote {
-    text-align: left; /* Keep quote readable */
-    margin: 20px 0;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 400px;
   }
 }
 
-/* --- Extra Small Screens (Phones) --- */
-@media (max-width: 480px) {
-  .gridImg {
-    width: 100%; /* One image per row on very small screens */
-    height: 220px;
-  }
-  
-  .heroSection {
-    padding-top: 80px;
-  }
+/* Hide unused classes */
+.splitGrid,
+.splitTitle,
+.splitContent,
+.growthSection,
+.featuresGrid,
+.iconBox,
+.playButton {
+  display: none;
 }

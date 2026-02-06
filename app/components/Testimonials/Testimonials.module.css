@@ -15,8 +15,7 @@
 }
 
 .container {
-      max-width: 72rem;
-      /* max-w-6xl */
+      max-width: 1280px;
       margin: 0 auto;
 }
 
@@ -175,15 +174,18 @@
 .quote {
       font-size: 1.5rem;
       font-family: var(--font-space-grotesk);
-      line-height: 1.4; /* वाचण्यासाठी सोयीस्कर लाईन हाईट */
+      line-height: 1.4;
+      /* वाचण्यासाठी सोयीस्कर लाईन हाईट */
       color: var(--heading);
       margin-bottom: 2rem;
       font-weight: 600;
 
       /* मजकूर जस्टिफाय करण्यासाठी मुख्य बदल */
       text-align: justify;
-      text-justify: inter-word; /* शब्दांमधील अंतर संतुलित ठेवण्यासाठी */
-      hyphens: auto; /* मोठे शब्द तोडून नीट बसवण्यासाठी */
+      text-justify: inter-word;
+      /* शब्दांमधील अंतर संतुलित ठेवण्यासाठी */
+      hyphens: auto;
+      /* मोठे शब्द तोडून नीट बसवण्यासाठी */
 }
 
 @media (min-width: 768px) {
@@ -198,7 +200,7 @@
       color: var(--heading);
       font-weight: 600;
       font-size: 1.125rem;
-      
+
 }
 
 .authorRole {
