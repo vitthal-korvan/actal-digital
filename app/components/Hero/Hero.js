@@ -23,13 +23,16 @@ export default function Hero() {
       <div className={styles.container}>
         {/* Hero Content */}
         <div className={styles.content}>
-          <h1 className={styles.title}>
-            {t("heroTitle")}
-            <br />
-            <span className={styles.titleLine}>
-              {t("heroTitleLine")} <span className={styles.animatedWord} key={currentWordIndex}>{animatedWords[currentWordIndex]}</span>
-            </span>
-          </h1>
+          <div className={styles.leftContent}>
+            <h1 className={styles.title}>
+              {t("heroTitle")}
+              <br />
+              <span className={styles.titleLine}>
+                {t("heroTitleLine")} <span className={styles.animatedWord} key={currentWordIndex}>{animatedWords[currentWordIndex]}</span>
+              </span>
+            </h1>
+            <p className={styles.heroTagline}>{t("heroTagline")}</p>
+          </div>
 
           <div className={styles.rightContent}>
             <p className={styles.subtitle}>
