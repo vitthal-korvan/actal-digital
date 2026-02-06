@@ -4,14 +4,11 @@
    ================================================ */
 
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
+  /* changed from fixed */
+  width: 100%;
   z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background-color: var(--background);
   border-bottom: 1px solid var(--border-light);
 }
 
