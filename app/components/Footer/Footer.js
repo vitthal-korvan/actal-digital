@@ -7,7 +7,6 @@ import styles from "./Footer.module.css";
 export default function Footer() {
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Projects", href: "/work" },
     { name: "Blog", href: "/blog" },
     { name: "About Us", href: "/about-us" },
     { name: "Contact", href: "/contact" },

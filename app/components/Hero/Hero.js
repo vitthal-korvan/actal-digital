@@ -55,9 +55,7 @@ export default function Hero() {
             Start a Project
             <ArrowRight size={18} />
           </Link>
-          <Link href="/work" className={styles.ctaSecondary}>
-            View Our Work
-          </Link>
+
         </div>
       </div>
     </section>

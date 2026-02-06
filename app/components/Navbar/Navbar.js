@@ -24,7 +24,6 @@ export default function Navbar() {
         { name: "Branding", href: "/services/branding" },
       ]
     },
-    { name: "Projects", href: "/work" },
     { name: "About", href: "/about-us" },
     { name: "Contact", href: "/contact" },
   ];

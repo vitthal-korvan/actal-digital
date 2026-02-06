@@ -8,7 +8,7 @@ export default function sitemap() {
     '/about-us',
     '/careers',
     '/contact',
-    '/work',
+
     '/services',
     '/services/webDevelopment',
     '/services/DigitalMarketing',
