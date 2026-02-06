@@ -9,23 +9,24 @@ import styles from "./Navbar.module.css";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  { name: "Home", href: "/" },
-  {
-    name: "Services",
+  const navLinks = [
+    { name: "Home", href: "/" },
+    {
+      name: "Services",
       href: "/services",
-        dropdown: [
-          { name: "Web Development", href: "/services/webDevelopment" },
-          { name: "Digital Marketing", href: "/services/DigitalMarketing" },
-          { name: "Social Media", href: "/services/SocialMedia" },
-          { name: "Graphic Design", href: "/services/GraphicDesign" },
-          { name: "Creative Content", href: "/services/CreativeContent" },
-          { name: "SEO", href: "/services/SEO" },
-          { name: "Branding", href: "/services/branding" },
-        ]
-  },
-  { name: "Projects", href: "/work" },
-  { name: "About", href: "/about-us" },
-  { name: "Contact", href: "/contact" },
+      dropdown: [
+        { name: "Web Development", href: "/services/webDevelopment" },
+        { name: "Digital Marketing", href: "/services/DigitalMarketing" },
+        { name: "Social Media", href: "/services/SocialMedia" },
+        { name: "Graphic Design", href: "/services/GraphicDesign" },
+        { name: "Creative Content", href: "/services/CreativeContent" },
+        { name: "SEO", href: "/services/SEO" },
+        { name: "Branding", href: "/services/branding" },
+      ]
+    },
+    { name: "Projects", href: "/work" },
+    { name: "About", href: "/about-us" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const toggleMenu = () => {

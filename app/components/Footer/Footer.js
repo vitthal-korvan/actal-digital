@@ -13,6 +13,16 @@ export default function Footer() {
     { name: "Contact", href: "/contact" },
   ];
 
+  const serviceLinks = [
+    { name: "Web Development", href: "/services/webDevelopment" },
+    { name: "Digital Marketing", href: "/services/DigitalMarketing" },
+    { name: "Social Media", href: "/services/SocialMedia" },
+    { name: "Graphic Design", href: "/services/GraphicDesign" },
+    { name: "Creative Content", href: "/services/CreativeContent" },
+    { name: "SEO", href: "/services/SEO" },
+    { name: "Branding", href: "/services/branding" },
+  ];
+
   const socialLinks = [
     { name: "Facebook", href: "https://www.facebook.com/actaldigital", icon: Facebook },
     { name: "Instagram", href: "https://www.instagram.com/actal_digital/", icon: Instagram },
@@ -79,8 +89,21 @@ export default function Footer() {
               </a>
             </div>
 
+            {/* Services Column */}
+            <div className={styles.navCol}>
+              <span className={styles.colLabel}>Services</span>
+              <nav className={styles.footerNav}>
+                {serviceLinks.map((link) => (
+                  <Link key={link.name} href={link.href} className={styles.navLink}>
+                    {link.name}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
             {/* Navigation Column */}
             <div className={styles.navCol}>
+              <span className={styles.colLabel}>Company</span>
               <nav className={styles.footerNav}>
                 {navLinks.map((link) => (
                   <Link key={link.name} href={link.href} className={styles.navLink}>

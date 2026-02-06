@@ -110,9 +110,18 @@
 
 @media (min-width: 768px) {
   .footerGrid {
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 2fr 1.5fr 1fr 1fr;
+    gap: 2rem;
   }
+}
+
+.colLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--dark-muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  display: block;
 }
 
 /* Brand Column */
@@ -180,12 +189,15 @@
 /* Navigation Column */
 .navCol {
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  /* Changed from row to column to stack label and nav */
+  align-items: flex-start;
 }
 
 @media (min-width: 768px) {
   .navCol {
-    justify-content: flex-end;
+    align-items: flex-start;
+    /* Reset justify-content to default alignment */
   }
 }
 
