@@ -19,9 +19,11 @@
   --dark-text: #FFFFFF;
   --dark-muted: #A1A1A6;
 
-  /* Accent - Keep Actal Lime for brand */
-  --accent: #D6FF4F;
-  --accent-hover: #C5EE3E;
+  /* Accent - Darker Lime for better visibility on white */
+  --accent: #7fa802;
+  --accent-hover: #587100;
+  --accent-secondary: #4C6600;
+  /* Darker blending shade */
 
   /* Card */
   --card-bg: #FFFFFF;
