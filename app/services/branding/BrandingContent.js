@@ -4,10 +4,11 @@ import { X } from "lucide-react";
 import { useState } from "react";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import { useLanguage } from "../../context/LanguageContext";
 import styles from "./page.module.css";
 
 export default function BrandingContent() {
-      const [currentLang, setCurrentLang] = useState("EN");
+      const { language } = useLanguage();
       const [selectedImg, setSelectedImg] = useState(null);
 
       const translations = {
@@ -23,12 +24,12 @@ export default function BrandingContent() {
                         "Packaging Design", "Naming", "Brand Audit"
                   ],
                   workItems: [
-                        { title: "Minimalist Identity", industry: "Tech Startup", img: "/work1.png" },
-                        { title: "Luxury Rebrand", industry: "Fashion", img: "/work2.png" },
-                        { title: "Corporate System", industry: "Finance", img: "/work3.png" },
-                        { title: "Visual Language", industry: "Healthcare", img: "/work4.png" },
-                        { title: "Packaging", industry: "Food & Bev", img: "/work5.png" },
-                        { title: "Brand Guidelines", industry: "SaaS", img: "/work6.png" },
+                        { title: "Minimalist Identity", industry: "Tech Startup", img: "/images/branding/work1.png" },
+                        { title: "Luxury Rebrand", industry: "Fashion", img: "/images/branding/work2.png" },
+                        { title: "Corporate System", industry: "Finance", img: "/images/branding/work3.png" },
+                        { title: "Visual Language", industry: "Healthcare", img: "/images/branding/work4.jpg" },
+                        { title: "Packaging", industry: "Food & Bev", img: "/images/branding/work5.jpg" },
+                        { title: "Brand Guidelines", industry: "SaaS", img: "/images/branding/work6.jpg" },
                   ]
             },
             AR: {
@@ -43,21 +44,21 @@ export default function BrandingContent() {
                         "تصميم التغليف", "التسمية", "تدقيق العلامة التجارية"
                   ],
                   workItems: [
-                        { title: "هوية مبسطة", industry: "تكنولوجيا", img: "/work1.png" },
-                        { title: "إعادة تسمية فاخرة", industry: "أزياء", img: "/work2.png" },
-                        { title: "نظام شركات", industry: "مالية", img: "/work3.png" },
-                        { title: "لغة بصرية", industry: "رعاية صحية", img: "/work4.png" },
-                        { title: "تغليف", industry: "أغذية ومشروبات", img: "/work5.png" },
-                        { title: "إرشادات العلامة التجارية", industry: "برمجيات", img: "/work6.png" },
+                        { title: "هوية مبسطة", industry: "تكنولوجيا", img: "/images/branding/work1.png" },
+                        { title: "إعادة تسمية فاخرة", industry: "أزياء", img: "/images/branding/work2.png" },
+                        { title: "نظام شركات", industry: "مالية", img: "/images/branding/work3.png" },
+                        { title: "لغة بصرية", industry: "رعاية صحية", img: "/images/branding/work4.jpg" },
+                        { title: "تغليف", industry: "أغذية ومشروبات", img: "/images/branding/work5.jpg" },
+                        { title: "إرشادات العلامة التجارية", industry: "برمجيات", img: "/images/branding/work6.jpg" },
                   ]
             }
       };
 
-      const t = translations[currentLang] || translations["EN"];
+      const t = translations[language] || translations["EN"];
 
       return (
             <main className={styles.main}>
-                  <Navbar currentLang={currentLang} setCurrentLang={setCurrentLang} />
+                  <Navbar />
 
                   {/* Pop-up Modal */}
                   {selectedImg && (
@@ -133,7 +134,7 @@ export default function BrandingContent() {
                         </div>
                   </div>
 
-                  <Footer currentLang={currentLang} />
+                  <Footer />
             </main>
       );
 }

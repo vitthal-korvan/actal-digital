@@ -5,7 +5,7 @@ import { useLanguage } from "../../context/LanguageContext";
 import styles from "./Expertise.module.css";
 
 export default function Expertise() {
-  const { currentLang } = useLanguage();
+  const { language } = useLanguage();
   // 1. Translations Dictionary
   const translations = {
     EN: {
@@ -15,22 +15,22 @@ export default function Expertise() {
         {
           title: "Research",
           desc: "We understand your business objectives and audience to create strategies that are purposeful.",
-          img: "/research.png",
+          img: "/images/expertise/research.png",
         },
         {
           title: "Goal-Focused",
           desc: "We align every creative decision with your ultimate business goals for maximum impact.",
-          img: "/goal.png",
+          img: "/images/expertise/goal.png",
         },
         {
           title: "Real Results",
           desc: "We focus on getting real results that help your business grow, like more leads and traffic.",
-          img: "/Result.png",
+          img: "/images/expertise/Result.png",
         },
         {
           title: "Smart Targeting",
           desc: "We make sure your message reaches the right people who are most likely to convert.",
-          img: "/Targeting.png",
+          img: "/images/expertise/Targeting.png",
         },
       ],
     },
@@ -41,29 +41,29 @@ export default function Expertise() {
         {
           title: "البحث والتحليل",
           desc: "نحن نفهم أهداف عملك وجمهورك لإنشاء استراتيجيات هادفة وفعالة.",
-          img: "/research.png",
+          img: "/images/expertise/research.png",
         },
         {
           title: "التركيز على الأهداف",
           desc: "نحن نربط كل قرار إبداعي بأهداف عملك النهائية لتحقيق أقصى قدر من التأثير.",
-          img: "/goal.png",
+          img: "/images/expertise/goal.png",
         },
         {
           title: "نتائج حقيقية",
           desc: "نحن نركز على تحقيق نتائج ملموسة تساعد عملك على النمو، مثل زيادة العملاء والزيارات.",
-          img: "/Result.png",
+          img: "/images/expertise/Result.png",
         },
         {
           title: "استهداف ذكي",
           desc: "نحن نضمن وصول رسالتك إلى الأشخاص المناسبين الأكثر عرضة للاهتمام بخدماتك.",
-          img: "/Targeting.png",
+          img: "/images/expertise/Targeting.png",
         },
       ],
     },
   };
 
   // 2. Current Language नुसार डेटा निवडणे
-  const t = translations[currentLang] || translations["EN"];
+  const t = translations[language] || translations["EN"];
 
   return (
     <section className={styles.section}>

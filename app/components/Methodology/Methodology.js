@@ -3,7 +3,7 @@ import { useLanguage } from "../../context/LanguageContext";
 import styles from "./Methodology.module.css";
 
 export default function Methodology() {
-  const { currentLang } = useLanguage();
+  const { language } = useLanguage();
   // 1. Translations Dictionary
   const translations = {
     EN: {
@@ -66,7 +66,7 @@ export default function Methodology() {
     }
   };
 
-  const t = translations[currentLang] || translations["EN"];
+  const t = translations[language] || translations["EN"];
 
   return (
     <div className={styles.section}>

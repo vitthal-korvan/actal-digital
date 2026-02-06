@@ -38,7 +38,7 @@ export default function Navbar() {
       <div className={`${styles.mobileMenu} ${isOpen ? styles.open : ""}`}>
         <div className={styles.mobileMenuHeader}>
           <Link href="/" className={styles.mobileLogo} onClick={toggleMenu}>
-            <Image src="/logo3.png" alt="Actal Digital" width={120} height={40} style={{ objectFit: 'contain' }} />
+            <Image src="/nav-logo.png" alt="Actal Digital" width={150} height={112} style={{ objectFit: 'contain' }} />
           </Link>
           <button onClick={toggleMenu} className={styles.closeBtn} aria-label="Close menu">
             <X size={24} strokeWidth={1.5} />
@@ -89,10 +89,11 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className={styles.logo}>
             <Image
-              src="/logo3.png"
+              src="/nav-logo.png"
               alt="Actal Digital"
-              width={140}
-              height={48}
+              width={200}
+              height={150}
+              className={styles.logoImage}
               style={{ objectFit: 'contain' }}
               priority
             />

@@ -15,6 +15,7 @@ const manrope = Manrope({
 });
 
 export const metadata = {
+  metadataBase: new URL('https://actaldigital.com'),
   title: {
     default: "Actal Digital — Design & Digital Experiences",
     template: "%s | Actal Digital"
@@ -72,7 +73,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${manrope.variable}`}>
+      <body className={`${inter.variable} ${manrope.variable}`} suppressHydrationWarning>
         <LanguageProvider>
           {children}
         </LanguageProvider>

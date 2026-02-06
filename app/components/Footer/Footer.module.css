@@ -136,6 +136,29 @@
   width: fit-content;
 }
 
+.logoImage {
+  width: 100%;
+  height: auto;
+  max-width: 180px;
+  /* Mobile default */
+}
+
+@media (min-width: 768px) {
+  .logoImage {
+    max-width: 220px;
+    /* Tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .logoImage {
+    max-width: 280px;
+    /* Desktop */
+    height: 200px;
+    width: 280px;
+  }
+}
+
 .brandDesc {
   font-size: 0.875rem;
   color: var(--dark-muted);
@@ -183,7 +206,7 @@
 }
 
 .emailLink:hover {
-  opacity: 0.7;
+  color: #5c5c5c;
 }
 
 /* Contact Info */

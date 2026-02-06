@@ -1,14 +1,12 @@
 "use client";
 import { MessageCircle, Phone } from "lucide-react";
-import { useState } from "react";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import { useLanguage } from "../context/LanguageContext";
 import styles from './privacy.module.css';
 
 export default function PrivacyContent() {
-      const { currentLang } = useLanguage();
-      const [lang, setLang] = useState(currentLang || "EN"); // fallback
+      const { language } = useLanguage();
 
       const translations = {
             EN: {

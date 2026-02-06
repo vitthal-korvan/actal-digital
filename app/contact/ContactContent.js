@@ -60,7 +60,7 @@ export default function ContactContent() {
             }
       };
 
-      const t = translations[currentLang];
+      const t = translations[language] || translations["EN"];
 
       // SUCCESS STATE
       if (state.succeeded) {

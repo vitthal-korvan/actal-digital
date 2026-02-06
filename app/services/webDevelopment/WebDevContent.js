@@ -1,13 +1,13 @@
 "use client";
 
 import { ArrowUpRight } from "lucide-react";
-import { useState } from "react";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import { useLanguage } from "../../context/LanguageContext";
 import styles from "./page.module.css";
 
 export default function WebDevContent() {
-      const [currentLang, setCurrentLang] = useState("EN");
+      const { language } = useLanguage();
 
       const translations = {
             EN: {
@@ -40,20 +40,20 @@ export default function WebDevContent() {
             }
       };
 
-      const t = translations[currentLang] || translations["EN"];
+      const t = translations[language] || translations["EN"];
 
       const workItems = [
-            { title: "Stanford Capital", industry: "Finance & Management", engagement: "Platform", duration: "4 Weeks", img: "/stanford.JPG", url: "https://www.stanfordcapital.in/", featured: true, fullWidth: true },
-            { title: "Sana Bakers", industry: "E-Commerce", engagement: "Full System", duration: "2 Weeks", img: "/sana.JPG", url: "https://sanabakers.actaldigital.com/", featured: true },
-            { title: "Arab Jewels", industry: "Gold & Diamond", engagement: "Launch", duration: "1 Weeks", img: "/arab.JPG", url: "https://arabjewels.actaldigital.com/", featured: true, badge: "Awarded" },
-            { title: "Megha Gold", industry: "Jewellery", engagement: "Design Sprint", duration: "1 Weeks", img: "/megha.JPG", url: "https://meghagold.actaldigital.com/" },
-            { title: "Aswan Real Estate", industry: "Real Estate", engagement: "Platform", duration: "4 Weeks", img: "/aswan.JPG", url: "https://aswanrealestate.actaldigital.com/" },
+            { title: "Stanford Capital", industry: "Finance & Management", engagement: "Platform", duration: "4 Weeks", img: "/images/projects/stanford-capital.jpg", url: "https://www.stanfordcapital.in/", featured: true, fullWidth: true },
+            { title: "Sana Bakers", industry: "E-Commerce", engagement: "Full System", duration: "2 Weeks", img: "/images/projects/sana-bakers.jpg", url: "https://sanabakers.actaldigital.com/", featured: true },
+            { title: "Arab Jewels", industry: "Gold & Diamond", engagement: "Launch", duration: "1 Weeks", img: "/images/projects/arab-jewels.jpg", url: "https://arabjewels.actaldigital.com/", featured: true, badge: "Awarded" },
+            { title: "Megha Gold", industry: "Jewellery", engagement: "Design Sprint", duration: "1 Weeks", img: "/images/projects/megha-gold.jpg", url: "https://meghagold.actaldigital.com/" },
+            { title: "Aswan Real Estate", industry: "Real Estate", engagement: "Platform", duration: "4 Weeks", img: "/images/projects/aswan-real-estate.jpg", url: "https://aswanrealestate.actaldigital.com/" },
       ];
 
       return (
             <main className={styles.main}>
                   {/* Navbar with props */}
-                  <Navbar currentLang={currentLang} setCurrentLang={setCurrentLang} />
+                  <Navbar />
 
                   <div className={styles.heroSection}>
                         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
@@ -126,7 +126,7 @@ export default function WebDevContent() {
                         </div>
                   </div>
 
-                  <Footer currentLang={currentLang} />
+                  <Footer />
             </main>
       );
 }

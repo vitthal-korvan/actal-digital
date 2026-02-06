@@ -4,7 +4,7 @@ import { useLanguage } from "../../context/LanguageContext";
 import styles from "./CaseStudies.module.css";
 
 export default function CaseStudies() {
-  const { currentLang } = useLanguage();
+  const { language } = useLanguage();
   // 1. Translations Dictionary
   const translations = {
     EN: {
@@ -15,13 +15,13 @@ export default function CaseStudies() {
       featuredBadge: "Featured",
       awardedBadge: "Awarded",
       projects: [
-        { title: "Web Development", img: "/web.h.png", featured: true, link: "/services/webDevelopment" },
-        { title: "Digital Marketing", img: "/digital.h.png", link: "/services/DigitalMarketing" },
-        { title: "Social Media", img: "/social.h.png", link: "/services/SocialMedia" },
-        { title: "Graphic Design", img: "/graphic.h.png", featured: true, badge: "Awarded", link: "/services/GraphicDesign" },
-        { title: "Creative Content", img: "/creative.h.png", link: "/services/CreativeContent" },
-        { title: "Search Engine Optimization (SEO)", img: "/seo.h.png", link: "/services/SEO" },
-        { title: "Branding", img: "/branding.h.png", link: "/services/ORM" },
+        { title: "Web Development", img: "/images/headers/web-development-header.png", featured: true, link: "/services/webDevelopment" },
+        { title: "Digital Marketing", img: "/images/headers/digital-marketing-header.png", link: "/services/DigitalMarketing" },
+        { title: "Social Media", img: "/images/headers/social-media-header.png", link: "/services/SocialMedia" },
+        { title: "Graphic Design", img: "/images/headers/graphic-design-header.png", featured: true, badge: "Awarded", link: "/services/GraphicDesign" },
+        { title: "Creative Content", img: "/images/headers/creative-header.png", link: "/services/CreativeContent" },
+        { title: "SEO", img: "/images/headers/seo-header.png", link: "/services/SEO" },
+        { title: "Branding", img: "/images/headers/branding-header.png", link: "/services/ORM" },
       ]
     },
     AR: {
@@ -32,18 +32,18 @@ export default function CaseStudies() {
       featuredBadge: "مميز",
       awardedBadge: "حائز على جائزة",
       projects: [
-        { title: "تطوير المواقع", img: "/web.h.png", featured: true, link: "/services/webDevelopment" },
-        { title: "التسويق الرقمي", img: "/digital.h.png", link: "/services/DigitalMarketing" },
-        { title: "وسائل التواصل الاجتماعي", img: "/social.h.png", link: "/services/SocialMedia" },
-        { title: "التصميم الجرافيكي", img: "/graphic.h.png", featured: true, badge: "Awarded", link: "/services/GraphicDesign" },
-        { title: "المحتوى الإبداعي", img: "/creative.h.png", link: "/services/CreativeContent" },
-        { title: "تحسين محركات البحث (SEO)", img: "/seo.h.png", link: "/services/SEO" },
-        { title: "العلامة التجارية", img: "/branding.h.png", link: "/services/ORM" },
+        { title: "تطوير الويب", img: "/images/headers/web-development-header.png", link: "/services/webDevelopment" },
+        { title: "التسويق الرقمي", img: "/images/headers/digital-marketing-header.png", link: "/services/DigitalMarketing" },
+        { title: "وسائل التواصل", img: "/images/headers/social-media-header.png", link: "/services/SocialMedia" },
+        { title: "التصميم الجرافيكي", img: "/images/headers/graphic-design-header.png", link: "/services/GraphicDesign" },
+        { title: "المحتوى الإبداعي", img: "/images/headers/creative-header.png", link: "/services/CreativeContent" },
+        { title: "تحسين محركات البحث", img: "/images/headers/seo-header.png", link: "/services/SEO" },
+        { title: "العلامة التجارية", img: "/images/headers/branding-header.png", link: "/services/ORM" },
       ]
     }
   };
 
-  const t = translations[currentLang] || translations["EN"];
+  const t = translations[language] || translations["EN"];
 
   return (
     <div className={styles.section}>

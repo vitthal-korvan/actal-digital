@@ -4,13 +4,15 @@ import { X } from "lucide-react";
 import { useState } from "react";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import { useLanguage } from "../../context/LanguageContext";
 import styles from "./page.module.css";
 
 export default function DigitalMarketingContent() {
-      const [currentLang, setCurrentLang] = useState("EN");
+      const { language } = useLanguage();
       const [selectedImg, setSelectedImg] = useState(null);
 
       const translations = {
+            // ... keep existing translations ...
             EN: {
                   heroTitle: "Digital Marketing",
                   heroDescHighlight: "Leverage data-driven strategies. Optimize every campaign for results.",
@@ -24,11 +26,11 @@ export default function DigitalMarketingContent() {
                         "Video Marketing", "Conversion Rate Optimization (CRO)"
                   ],
                   workItems: [
-                        { title: "Social Growth Campaign", industry: "Brand Strategy", img: "/social1.png", featured: true, fullWidth: true },
-                        { title: "Content Excellence", industry: "Social Media", img: "/social2.png" },
-                        { title: "Engagement Booster", industry: "Marketing", img: "/social3.png" },
-                        { title: "Digital Presence", industry: "SEO / SEM", img: "/social4.png" },
-                        { title: "Creative Visuals", industry: "Design", img: "/social5.png" },
+                        { title: "Social Growth Campaign", industry: "Brand Strategy", img: "/images/services/social/social-growth.png", featured: true, fullWidth: true },
+                        { title: "Content Excellence", industry: "Social Media", img: "/images/services/social/social-content.png" },
+                        { title: "Engagement Booster", industry: "Marketing", img: "/images/services/social/social-engagement.png" },
+                        { title: "Digital Presence", industry: "SEO / SEM", img: "/images/services/social/social-presence.png" },
+                        { title: "Creative Visuals", industry: "Design", img: "/images/services/social/social-visuals.png" },
                   ]
             },
             AR: {
@@ -44,20 +46,20 @@ export default function DigitalMarketingContent() {
                         "التسويق عبر الفيديو", "تحسين معدل التحويل"
                   ],
                   workItems: [
-                        { title: "حملة النمو الاجتماعي", industry: "استراتيجية العلامة التجارية", img: "/social1.png", featured: true, fullWidth: true },
-                        { title: "التميز في المحتوى", industry: "وسائل التواصل الاجتماعي", img: "/social2.png" },
-                        { title: "معزز التفاعل", industry: "التسويق", img: "/social3.png" },
-                        { title: "التواجد الرقمي", industry: "تحسين محركات البحث", img: "/social4.png" },
-                        { title: "المرئيات الإبداعية", industry: "التصميم", img: "/social5.png" },
+                        { title: "حملة النمو الاجتماعي", industry: "استراتيجية العلامة التجارية", img: "/images/services/social/social-growth.png", featured: true, fullWidth: true },
+                        { title: "التميز في المحتوى", industry: "وسائل التواصل الاجتماعي", img: "/images/services/social/social-content.png" },
+                        { title: "معزز التفاعل", industry: "التسويق", img: "/images/services/social/social-engagement.png" },
+                        { title: "التواجد الرقمي", industry: "تحسين محركات البحث", img: "/images/services/social/social-presence.png" },
+                        { title: "المرئيات الإبداعية", industry: "التصميم", img: "/images/services/social/social-visuals.png" },
                   ]
             }
       };
 
-      const t = translations[currentLang] || translations["EN"];
+      const t = translations[language] || translations["EN"];
 
       return (
             <main className={styles.main}>
-                  <Navbar currentLang={currentLang} setCurrentLang={setCurrentLang} />
+                  <Navbar />
 
                   {selectedImg && (
                         <div className={styles.modalOverlay} onClick={() => setSelectedImg(null)}>
@@ -86,7 +88,7 @@ export default function DigitalMarketingContent() {
                                           <div className={styles.filterLabel}>{t.expertiseTitle}</div>
                                           <div className="flex flex-col">
                                                 {t.services.map((service, index) => (
-                                                      <div key={index} className={styles.filterOption}>{service}</div>
+                                                      <div key={index} className={styles.filterOption} style={{ cursor: 'default', pointerEvents: 'none', borderBottom: '1px solid rgba(255,255,255,0.05)', padding: '0.75rem 0', color: 'var(--foreground)' }}>{service}</div>
                                                 ))}
                                           </div>
                                     </div>
@@ -116,7 +118,7 @@ export default function DigitalMarketingContent() {
                         </div>
                   </div>
 
-                  <Footer currentLang={currentLang} />
+                  <Footer />
             </main>
       );
 }

@@ -4,13 +4,15 @@ import { X } from "lucide-react";
 import { useState } from "react";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import { useLanguage } from "../../context/LanguageContext";
 import styles from "./page.module.css";
 
 export default function CreativeContentContent() {
-      const [currentLang, setCurrentLang] = useState("EN");
+      const { language } = useLanguage();
       const [selectedImg, setSelectedImg] = useState(null);
 
       const translations = {
+            // ... keep existing translations ...
             EN: {
                   heroTitle: "Creative Content",
                   heroDescHighlight: "Crafting compelling stories. Content that captures attention.",
@@ -24,11 +26,11 @@ export default function CreativeContentContent() {
                         "SEO-Optimized Content"
                   ],
                   workItems: [
-                        { title: "The Urban Story", industry: "Brand Content", img: "/creative1.png", fullWidth: true },
-                        { title: "Digital Horizon", industry: "Social Media", img: "/creative2.png" },
-                        { title: "Modern Minimalist", industry: "Publishing", img: "/creative3.png" },
-                        { title: "Creative Pulse", industry: "Marketing", img: "/creative4.png" },
-                        { title: "Video Script", industry: "Marketing", img: "/creative5.png" },
+                        { title: "The Urban Story", industry: "Brand Content", img: "/images/services/creative/creative-story.png", fullWidth: true },
+                        { title: "Digital Horizon", industry: "Social Media", img: "/images/services/creative/creative-horizon.png" },
+                        { title: "Modern Minimalist", industry: "Publishing", img: "/images/services/creative/creative-modern.png" },
+                        { title: "Creative Pulse", industry: "Marketing", img: "/images/services/creative/creative-pulse.png" },
+                        { title: "Video Script", industry: "Marketing", img: "/images/services/creative/creative-video.png" },
                   ]
             },
             AR: {
@@ -44,20 +46,20 @@ export default function CreativeContentContent() {
                         "محتوى متوافق مع محركات البحث"
                   ],
                   workItems: [
-                        { title: "قصة المدينة", industry: "محتوى العلامة التجارية", img: "/creative1.png", fullWidth: true },
-                        { title: "الأفق الرقمي", industry: "وسائل التواصل", img: "/creative2.png" },
-                        { title: "العصر الحديث", industry: "النشر", img: "/creative3.png" },
-                        { title: "النبض الإبداعي", industry: "التسويق", img: "/creative4.png" },
-                        { title: "سيناريو فيديو", industry: "التسويق", img: "/creative5.png" },
+                        { title: "قصة المدينة", industry: "محتوى العلامة التجارية", img: "/images/services/creative/creative-story.png", fullWidth: true },
+                        { title: "الأفق الرقمي", industry: "وسائل التواصل", img: "/images/services/creative/creative-horizon.png" },
+                        { title: "العصر الحديث", industry: "النشر", img: "/images/services/creative/creative-modern.png" },
+                        { title: "النبض الإبداعي", industry: "التسويق", img: "/images/services/creative/creative-pulse.png" },
+                        { title: "سيناريو فيديو", industry: "التسويق", img: "/images/services/creative/creative-video.png" },
                   ]
             }
       };
 
-      const t = translations[currentLang] || translations["EN"];
+      const t = translations[language] || translations["EN"];
 
       return (
             <main className={styles.main}>
-                  <Navbar currentLang={currentLang} setCurrentLang={setCurrentLang} />
+                  <Navbar />
 
                   {/* Pop-up Image Modal */}
                   {selectedImg && (
@@ -91,7 +93,7 @@ export default function CreativeContentContent() {
                                           <div className={styles.filterLabel}>{t.expertiseTitle}</div>
                                           <div className="flex flex-col">
                                                 {t.services.map((service, index) => (
-                                                      <div key={index} className={styles.filterOption}>
+                                                      <div key={index} className={styles.filterOption} style={{ cursor: 'default', pointerEvents: 'none', borderBottom: '1px solid rgba(255,255,255,0.05)', padding: '0.75rem 0', color: 'var(--foreground)' }}>
                                                             {service}
                                                       </div>
                                                 ))}
@@ -129,7 +131,7 @@ export default function CreativeContentContent() {
                         </div>
                   </div>
 
-                  <Footer currentLang={currentLang} />
+                  <Footer />
             </main>
       );
 }

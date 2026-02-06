@@ -54,10 +54,11 @@ export default function Footer() {
             <div className={styles.brandCol}>
               <Link href="/" className={styles.logo}>
                 <Image
-                  src="/logo3.png"
+                  src="/footer-logo.png"
                   alt="Actal Digital"
-                  width={140}
-                  height={48}
+                  width={250}
+                  height={150}
+                  className={styles.logoImage}
                   style={{ objectFit: 'contain' }}
                 />
               </Link>

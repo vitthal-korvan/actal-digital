@@ -84,12 +84,17 @@
 /* Right Content */
 .rightContent {
       max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: flex-start;
 }
 
 @media (min-width: 1024px) {
       .rightContent {
             max-width: 320px;
             text-align: right;
+            align-items: flex-end;
       }
 }
 

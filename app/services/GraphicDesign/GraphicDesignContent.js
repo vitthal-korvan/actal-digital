@@ -4,13 +4,15 @@ import { ArrowUpRight, X } from "lucide-react";
 import { useState } from "react";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import { useLanguage } from "../../context/LanguageContext";
 import styles from "./page.module.css";
 
 export default function GraphicDesignContent() {
-      const [currentLang, setCurrentLang] = useState("EN");
+      const { language } = useLanguage();
       const [selectedImg, setSelectedImg] = useState(null);
 
       const translations = {
+            // ... keep existing translations ...
             EN: {
                   heroTitle: "Graphic Design",
                   heroDescHighlight: "Creating premium visuals. Designs that define your brand identity.",
@@ -24,11 +26,11 @@ export default function GraphicDesignContent() {
                         "Print & Digital Design Solutions"
                   ],
                   workItems: [
-                        { title: "Logo Design", industry: "Corporate", img: "/9.jpg" },
-                        { title: "Packaging Design", industry: "FMCG", img: "/10.jpg" },
-                        { title: "Marketing Collaterals", industry: "Real Estate", img: "/11.jpg" },
-                        { title: "Social Media Kits", industry: "Lifestyle", img: "/12.jpg" },
-                        { title: "Social Media Posts", industry: "Startup", img: "/13.jpg" },
+                        { title: "Logo Design", industry: "Corporate", img: "/images/services/graphic/graphic-logo.jpg" },
+                        { title: "Packaging Design", industry: "FMCG", img: "/images/services/graphic/graphic-packaging.jpg" },
+                        { title: "Marketing Collaterals", industry: "Real Estate", img: "/images/services/graphic/graphic-collaterals.jpg" },
+                        { title: "Social Media Kits", industry: "Lifestyle", img: "/images/services/graphic/graphic-kits.jpg" },
+                        { title: "Social Media Posts", industry: "Startup", img: "/images/services/graphic/graphic-posts.jpg" },
                   ]
             },
             AR: {
@@ -44,20 +46,20 @@ export default function GraphicDesignContent() {
                         "حلول التصميم المطبوع والرقمي"
                   ],
                   workItems: [
-                        { title: "تصميم الشعار", industry: "الشركات", img: "/9.jpg" },
-                        { title: "تصميم التغليف", industry: "السلع الاستهلاكية", img: "/10.jpg" },
-                        { title: "المواد التسويقية", industry: "العقارات", img: "/11.jpg" },
-                        { title: "أطقم الوسائط الاجتماعية", industry: "أسلوب الحياة", img: "/12.jpg" },
-                        { title: "منشورات الوسائط الاجتماعية", industry: "شركة ناشئة", img: "/13.jpg" },
+                        { title: "تصميم الشعار", industry: "الشركات", img: "/images/services/graphic/graphic-logo.jpg" },
+                        { title: "تصميم التغليف", industry: "السلع الاستهلاكية", img: "/images/services/graphic/graphic-packaging.jpg" },
+                        { title: "المواد التسويقية", industry: "العقارات", img: "/images/services/graphic/graphic-collaterals.jpg" },
+                        { title: "أطقم الوسائط الاجتماعية", industry: "أسلوب الحياة", img: "/images/services/graphic/graphic-kits.jpg" },
+                        { title: "منشورات الوسائط الاجتماعية", industry: "شركة ناشئة", img: "/images/services/graphic/graphic-posts.jpg" },
                   ]
             }
       };
 
-      const t = translations[currentLang] || translations["EN"];
+      const t = translations[language] || translations["EN"];
 
       return (
             <main className={styles.main}>
-                  <Navbar currentLang={currentLang} setCurrentLang={setCurrentLang} />
+                  <Navbar />
 
                   {/* Pop-up Image Modal */}
                   {selectedImg && (
@@ -91,7 +93,7 @@ export default function GraphicDesignContent() {
                                           <div className={styles.filterLabel}>{t.expertiseTitle}</div>
                                           <div className="flex flex-col">
                                                 {t.services.map((service, index) => (
-                                                      <div key={index} className={styles.filterOption}>
+                                                      <div key={index} className={styles.filterOption} style={{ cursor: 'default', pointerEvents: 'none', borderBottom: '1px solid rgba(255,255,255,0.05)', padding: '0.75rem 0', color: 'var(--foreground)' }}>
                                                             {service}
                                                       </div>
                                                 ))}
@@ -134,7 +136,7 @@ export default function GraphicDesignContent() {
                         </div>
                   </div>
 
-                  <Footer currentLang={currentLang} />
+                  <Footer />
             </main>
       );
 }

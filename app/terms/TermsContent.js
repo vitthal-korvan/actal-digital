@@ -1,14 +1,12 @@
 "use client";
 import { MessageCircle, Phone } from "lucide-react";
-import { useState } from "react";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import { useLanguage } from "../context/LanguageContext";
 import styles from './terms.module.css';
 
 export default function TermsContent() {
-      const { currentLang } = useLanguage();
-      const [lang, setLang] = useState(currentLang || "EN");
+      const { language } = useLanguage();
 
       const translations = {
             EN: {

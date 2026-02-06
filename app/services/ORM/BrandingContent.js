@@ -1,13 +1,14 @@
 "use client";
 
-import { ArrowUpRight, X } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import { useLanguage } from "../../context/LanguageContext";
 import styles from "./page.module.css";
 
 export default function BrandingContent() {
-      const [currentLang, setCurrentLang] = useState("EN");
+      const { language } = useLanguage();
       const [selectedImg, setSelectedImg] = useState(null);
 
       const translations = {
@@ -22,11 +23,11 @@ export default function BrandingContent() {
                         "Launch & Implementation", "Review, Measure & Refine"
                   ],
                   workItems: [
-                        { title: "Discovery & Research", img: "/brand1.png" },
-                        { title: "Vantage Studio", img: "/brand2.png" },
-                        { title: "Zenith Creative", img: "/brand3.png" },
-                        { title: "Arcane Lab", img: "/brand4.png" },
-                        { title: "Nexus Collective", img: "/brand5.png" },
+                        { title: "Discovery & Research", img: "/images/services/branding/branding-discovery.png" },
+                        { title: "Vantage Studio", img: "/images/services/branding/branding-vantage.png" },
+                        { title: "Zenith Creative", img: "/images/services/branding/branding-zenith.png" },
+                        { title: "Arcane Lab", img: "/images/services/branding/branding-arcane.png" },
+                        { title: "Nexus Collective", img: "/images/services/branding/branding-nexus.png" },
                   ]
             },
             AR: {
@@ -40,11 +41,11 @@ export default function BrandingContent() {
                         "الإطلاق والتنفيذ", "المراجعة والقياس والتحسين"
                   ],
                   workItems: [
-                        { title: "الاستكشاف والبحث", img: "/brand1.png" },
-                        { title: "فانتاج ستوديو", img: "/brand2.png" },
-                        { title: "زنيث كريتيف", img: "/brand3.png" },
-                        { title: "أركين لاب", img: "/brand4.png" },
-                        { title: "نيكسوس كوليكتيف", img: "/brand5.png" },
+                        { title: "الاستكشاف والبحث", img: "/images/services/branding/branding-discovery.png" },
+                        { title: "فانتاج ستوديو", img: "/images/services/branding/branding-vantage.png" },
+                        { title: "زنيث كريتيف", img: "/images/services/branding/branding-zenith.png" },
+                        { title: "أركين لاب", img: "/images/services/branding/branding-arcane.png" },
+                        { title: "نيكسوس كوليكتيف", img: "/images/services/branding/branding-nexus.png" },
                   ]
             }
       };
@@ -53,7 +54,7 @@ export default function BrandingContent() {
 
       return (
             <main className={styles.main}>
-                  <Navbar currentLang={currentLang} setCurrentLang={setCurrentLang} />
+                  <Navbar />
 
                   {/* Pop-up Image Modal */}
                   {selectedImg && (
@@ -72,7 +73,8 @@ export default function BrandingContent() {
                               <div className="md:col-span-8 lg:col-span-7">
                                     <h1 className={styles.heroTitle}>{t.heroTitle}</h1>
                                     <p className={styles.heroDesc}>
-                                          <span className={styles.heroDescHighlight}>{t.heroDescHighlight}</span>
+                                          <span className={styles.heroDescHighlight}>{t.heroDescHighlight}</span>{" "}
+                                          {t.heroDescSub}
                                     </p>
                               </div>
                         </div>
@@ -86,7 +88,7 @@ export default function BrandingContent() {
                                           <div className={styles.filterLabel}>{t.expertiseTitle}</div>
                                           <div className="flex flex-col">
                                                 {t.services.map((service, index) => (
-                                                      <div key={index} className={styles.filterOption}>
+                                                      <div key={index} className={styles.filterOption} style={{ cursor: 'default', pointerEvents: 'none', borderBottom: '1px solid rgba(255,255,255,0.05)', padding: '0.75rem 0', color: 'var(--foreground)' }}>
                                                             {service}
                                                       </div>
                                                 ))}

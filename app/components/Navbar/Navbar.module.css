@@ -21,18 +21,18 @@
   justify-content: space-between;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 1rem 1.5rem;
+  padding: 0 1.5rem;
 }
 
 @media (min-width: 768px) {
   .navbar {
-    padding: 1.25rem 2rem;
+    padding: 0 2rem;
   }
 }
 
 @media (min-width: 1024px) {
   .navbar {
-    padding: 1.25rem 3rem;
+    padding: 0 3rem;
   }
 }
 
@@ -41,18 +41,44 @@
   display: flex;
   align-items: center;
   z-index: 10;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
 }
 
 .logo img {
-  height: 100px;
-  width: 200px;
+  display: block;
+}
+
+.logoImage {
+  width: auto;
+  height: auto;
+  max-width: 120px;
+  /* Mobile default */
+}
+
+@media (min-width: 768px) {
+  .logoImage {
+    max-width: 160px;
+    /* Tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .logoImage {
+    max-width: 200px;
+    /* Desktop */
+    height: 150px;
+    width: 200px;
+  }
 }
 
 /* Desktop Navigation */
 .desktopNav {
   display: none;
   align-items: center;
-  gap: 2.5rem;
+  gap: 3.5rem;
+  /* Increased spacing for premium feel */
 }
 
 @media (min-width: 768px) {

@@ -4,10 +4,11 @@ import { X } from "lucide-react";
 import { useState } from "react";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import { useLanguage } from "../../context/LanguageContext";
 import styles from "./page.module.css";
 
 export default function SocialMediaContent() {
-      const [currentLang, setCurrentLang] = useState("EN");
+      const { language } = useLanguage();
       const [selectedImg, setSelectedImg] = useState(null);
 
       const translations = {
@@ -23,11 +24,11 @@ export default function SocialMediaContent() {
                         "Viral Campaigns & Trends", "Profile Optimization", "Online Reputation Management (ORM)"
                   ],
                   workItems: [
-                        { title: "Stanford Capital", img: "/4.jpg" },
-                        { title: "Poonam Bakery", img: "/5.jpg" },
-                        { title: "Bombay Trading Company", img: "/6.jpg" },
-                        { title: "Sana Bakers", img: "/7.jpg" },
-                        { title: "Unlisted Equity", img: "/8.jpg" },
+                        { title: "Stanford Capital", img: "/images/services/social/social-stanford.jpg" },
+                        { title: "Poonam Bakery", img: "/images/services/social/social-poonam.jpg" },
+                        { title: "Bombay Trading Company", img: "/images/services/social/social-bombay.jpg" },
+                        { title: "Sana Bakers", img: "/images/services/social/social-sana.jpg" },
+                        { title: "Unlisted Equity", img: "/images/services/social/social-unlisted.jpg" },
                   ]
             },
             AR: {
@@ -42,23 +43,24 @@ export default function SocialMediaContent() {
                         "الحملات الفيروسية والترندات", "تحسين الملفات الشخصية", "إدارة السمعة عبر الإنترنت (ORM)"
                   ],
                   workItems: [
-                        { title: "ستانفورد كابيتال", img: "/4.jpg" },
-                        { title: "مخبز بونام", img: "/5.jpg" },
-                        { title: "شركة بومباي التجارية", img: "/6.jpg" },
-                        { title: "سناء بيكرز", img: "/7.jpg" },
-                        { title: "الأسهم غير المدرجة", img: "/8.jpg" },
+                        { title: "ستانفورد كابيتال", img: "/images/services/social/social-stanford.jpg" },
+                        { title: "مخبز بونام", img: "/images/services/social/social-poonam.jpg" },
+                        { title: "شركة بومباي التجارية", img: "/images/services/social/social-bombay.jpg" },
+                        { title: "سناء بيكرز", img: "/images/services/social/social-sana.jpg" },
+                        { title: "الأسهم غير المدرجة", img: "/images/services/social/social-unlisted.jpg" },
                   ]
             }
       };
 
-      const t = translations[currentLang] || translations["EN"];
+      const t = translations[language] || translations["EN"];
 
       const openModal = (imgSrc) => setSelectedImg(imgSrc);
       const closeModal = () => setSelectedImg(null);
 
       return (
             <main className={styles.main}>
-                  <Navbar currentLang={currentLang} setCurrentLang={setCurrentLang} />
+                  {/* Navbar with props */}
+                  <Navbar />
 
                   {selectedImg && (
                         <div className={styles.modalOverlay} onClick={closeModal}>
@@ -86,49 +88,45 @@ export default function SocialMediaContent() {
                   <div className={styles.contentWrapper}>
                         <div className={styles.gridContainer}>
 
-                              <aside className={styles.sidebar}>
+                              <div className={styles.sidebar}>
                                     <div className="space-y-6">
                                           <div className={styles.filterLabel}>{t.expertiseTitle}</div>
                                           <div className="flex flex-col">
                                                 {t.services.map((service, index) => (
-                                                      <div key={index} className={styles.filterOption}>
+                                                      <div key={index} className={styles.filterOption} style={{ cursor: 'default', pointerEvents: 'none', borderBottom: '1px solid rgba(255,255,255,0.05)', padding: '0.75rem 0', color: 'var(--foreground)' }}>
                                                             {service}
                                                       </div>
                                                 ))}
                                           </div>
                                     </div>
-                              </aside>
+                              </div>
 
                               <div className={styles.listings}>
-                                    <div className={`${styles.infoBlock} ${styles.fullCard}`}>
+                                    <div className={`${styles.infoBlock} ${styles.fullCard} `}>
                                           <div className={styles.infoContent}>
                                                 <p className={styles.infoText}>{t.infoText}</p>
                                           </div>
                                     </div>
 
-                                    {t.workItems.map((item, i) => (
-                                          <div
-                                                key={i}
-                                                className={styles.card}
-                                                onClick={() => openModal(item.img)}
-                                                style={{ cursor: 'pointer' }}
-                                          >
-                                                <div className={styles.cardImageWrapper}>
-                                                      <img src={item.img} className={styles.cardImage} alt={item.title} />
-                                                </div>
-
-                                                <div className="flex flex-col gap-6">
-                                                      <div className={styles.cardHeader}>
-                                                            <h2 className={styles.cardTitle}>{item.title}</h2>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                          {t.workItems.map((item, i) => (
+                                                <div key={i} className={styles.card}>
+                                                      <div className={styles.cardImageWrapper}>
+                                                            <img src={item.img} className={styles.cardImage} alt={item.title} />
+                                                      </div>
+                                                      <div className="flex flex-col gap-6 p-6">
+                                                            <div className={styles.cardHeader}>
+                                                                  <h2 className={styles.cardTitle}>{item.title}</h2>
+                                                            </div>
                                                       </div>
                                                 </div>
-                                          </div>
-                                    ))}
+                                          ))}
+                                    </div>
                               </div>
                         </div>
                   </div>
 
-                  <Footer currentLang={currentLang} />
+                  <Footer />
             </main>
       );
 }

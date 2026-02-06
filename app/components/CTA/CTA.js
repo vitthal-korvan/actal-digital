@@ -4,7 +4,7 @@ import { useLanguage } from "../../context/LanguageContext";
 import styles from "./CTA.module.css";
 
 export default function CTA() {
-  const { currentLang } = useLanguage();
+  const { language } = useLanguage();
   // 1. Translations Dictionary
   const translations = {
     EN: {
@@ -21,7 +21,7 @@ export default function CTA() {
     }
   };
 
-  const t = translations[currentLang] || translations["EN"];
+  const t = translations[language] || translations["EN"];
 
   return (
     <section className={styles.section}>
