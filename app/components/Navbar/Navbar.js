@@ -10,7 +10,6 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", href: "/" },
     {
       name: "Services",
       dropdown: [
@@ -25,6 +24,7 @@ export default function Navbar() {
     },
     { name: "About", href: "/about-us" },
     { name: "Contact", href: "/contact" },
+    { name: "Careers", href: "/careers" },
   ];
 
   const toggleMenu = () => {

@@ -10,6 +10,7 @@ export default function Footer() {
     { name: "Blog", href: "/blog" },
     { name: "About Us", href: "/about-us" },
     { name: "Contact", href: "/contact" },
+    { name: "Careers", href: "/careers" },
   ];
 
   const serviceLinks = [
