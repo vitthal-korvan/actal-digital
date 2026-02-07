@@ -1,12 +1,14 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import styles from "./Testimonials.module.css";
 
 export default function Testimonials() {
   const { language } = useLanguage();
   const [current, setCurrent] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const intervalRef = useRef(null);
 
   const translations = {
     EN: {
@@ -107,16 +109,40 @@ export default function Testimonials() {
   const t = translations[language] || translations["EN"];
   const list = t.testimonials;
 
+  const resetInterval = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+    intervalRef.current = setInterval(() => {
+      if (!isPaused) {
+        setCurrent((prev) => (prev + 1) % list.length);
+      }
+    }, 2000); // 2 seconds interval
+  };
+
+  useEffect(() => {
+    resetInterval();
+    return () => clearInterval(intervalRef.current);
+  }, [list.length, isPaused]); // Re-run when paused state changes
+
   const next = () => {
     setCurrent((prev) => (prev + 1) % list.length);
+    resetInterval(); // Reset timer on manual interaction
   };
 
   const prev = () => {
     setCurrent((prev) => (prev - 1 + list.length) % list.length);
+    resetInterval(); // Reset timer on manual interaction
   };
 
   return (
-    <div className={styles.section}>
+    <div
+      className={styles.section}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      role="region"
+      aria-label="Testimonials carousel"
+    >
       <div className={styles.container}>
         <div className={styles.gridStack}>
           {list.map((item, i) => (
@@ -124,10 +150,11 @@ export default function Testimonials() {
               key={i}
               className={`${styles.slideItem} ${i === current ? styles.active : ""
                 }`}
+              aria-hidden={i !== current}
             >
               <div className={styles.imageCol}>
                 <div className={styles.imageWrapper}>
-                  <Image src={item.img} className={styles.image} alt={item.name} fill sizes="(max-width: 768px) 100vw, 33vw" />
+                  <Image src={item.img} className={styles.image} alt={item.name} fill sizes="(max-width: 768px) 100vw, 33vw" priority={i === current} />
                 </div>
               </div>
               <div className={styles.contentCol}>
@@ -142,10 +169,10 @@ export default function Testimonials() {
         </div>
 
         <div className={styles.controls}>
-          <button onClick={prev} className={styles.navBtn}>
+          <button onClick={prev} className={styles.navBtn} aria-label="Previous testimonial">
             <ArrowLeft size={20} />
           </button>
-          <button onClick={next} className={styles.navBtn}>
+          <button onClick={next} className={styles.navBtn} aria-label="Next testimonial">
             <ArrowRight size={20} />
           </button>
         </div>
