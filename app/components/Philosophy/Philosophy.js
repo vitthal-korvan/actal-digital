@@ -93,41 +93,39 @@ export default function Philosophy() {
 
         {/* Images Grid */}
         <div className={styles.imagesGrid}>
-          <div className={styles.imageContainer}>
+          <div className={styles.imageContainerFull}>
             <Image
               src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/a795a8d9-4bac-4f56-b06c-0cfaba3dbc9a_1600w.webp"
               className={styles.image}
               alt="Workspace"
               fill
               style={{ objectFit: 'cover' }}
-              sizes="(max-width: 768px) 100vw, 33vw"
+              sizes="(max-width: 768px) 100vw, 66vw"
             />
             <div className={styles.imageCaption}>{t.fig1}</div>
           </div>
 
-          <div className={styles.stackedImages}>
-            <div className={styles.imageContainer}>
-              <Image
-                src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/b9fdfc28-8272-467a-b305-f09454abb35a_1600w.webp"
-                className={styles.image}
-                alt="Materials"
-                fill
-                style={{ objectFit: 'cover' }}
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
-              <div className={styles.imageCaption}>{t.fig2}</div>
-            </div>
-            <div className={styles.imageContainer}>
-              <Image
-                src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/3a6e12d2-345b-4681-a0ae-d817646753f8_1600w.webp"
-                className={styles.image}
-                alt="Output"
-                fill
-                style={{ objectFit: 'cover' }}
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
-              <div className={styles.imageCaption}>{t.fig3}</div>
-            </div>
+          <div className={styles.imageContainer}>
+            <Image
+              src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/b9fdfc28-8272-467a-b305-f09454abb35a_1600w.webp"
+              className={styles.image}
+              alt="Materials"
+              fill
+              style={{ objectFit: 'cover' }}
+              sizes="(max-width: 768px) 100vw, 33vw"
+            />
+            <div className={styles.imageCaption}>{t.fig2}</div>
+          </div>
+          <div className={styles.imageContainer}>
+            <Image
+              src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/3a6e12d2-345b-4681-a0ae-d817646753f8_1600w.webp"
+              className={styles.image}
+              alt="Output"
+              fill
+              style={{ objectFit: 'cover' }}
+              sizes="(max-width: 768px) 100vw, 33vw"
+            />
+            <div className={styles.imageCaption}>{t.fig3}</div>
           </div>
         </div>
       </div>
