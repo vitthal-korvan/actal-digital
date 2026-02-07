@@ -77,7 +77,7 @@ export default function TermsContent() {
             }
       };
 
-      const t = translations[currentLang] || translations["EN"];
+      const t = translations[language] || translations["EN"];
 
       return (
             <>
@@ -132,7 +132,7 @@ export default function TermsContent() {
                               </div>
                         </div>
                   </main>
-                  <Footer currentLang={currentLang} />
+                  <Footer />
             </>
       );
 }
