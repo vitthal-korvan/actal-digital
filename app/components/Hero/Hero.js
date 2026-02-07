@@ -75,12 +75,15 @@ export default function Hero() {
         <div className={styles.leftContent}>
           <div className={styles.titleWrapper}>
             <h1 className={styles.title}>
-              {/* Splitting text for animation */}
+              {/* 3-line layout: Line 1: We design, Line 2: solutions that, Line 3: drive [rotating word] */}
               <span className={styles.titleLine}>
-                <span className={styles.titleWord}>{t("heroTitle")}</span>
+                <span className={styles.titleWord}>{t("heroTitleLine1")}</span>
               </span>
               <span className={styles.titleLine}>
-                <span className={styles.titleWord}>{t("heroTitleLine")}</span>{" "}
+                <span className={styles.titleWord}>{t("heroTitleLine2")}</span>
+              </span>
+              <span className={styles.titleLine}>
+                <span className={styles.titleWord}>{t("heroTitleLine3")}</span>{" "}
                 <span className={`${styles.titleWord} ${styles.accentWord}`}>
                   {animatedWords[currentWordIndex]}
                 </span>
