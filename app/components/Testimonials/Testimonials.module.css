@@ -145,12 +145,10 @@
       height: 100%;
       object-fit: cover;
       opacity: 0.8;
-      filter: grayscale(100%);
       transition: all 0.5s;
 }
 
 .image:hover {
-      filter: grayscale(0%);
       opacity: 1;
 }
 
