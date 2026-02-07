@@ -279,3 +279,75 @@
   background-color: var(--background-alt);
   /* Ensure background-alt is defined or use a color */
 }
+
+/* ================================================
+   CONTACT CTA BUTTON
+   Premium, Aesthetic Style
+   ================================================ */
+
+.contactBtn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  background-color: var(--heading);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.contactBtn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contactBtn:hover {
+  background-color: var(--accent);
+  color: #0E0F11;
+}
+
+.contactBtn:hover::before {
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .contactBtn {
+    display: inline-flex;
+  }
+}
+
+/* Mobile Contact Button */
+.mobileContactBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 2rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--heading);
+  color: #FFFFFF;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.mobileContactBtn:hover {
+  background-color: var(--accent);
+  color: #0E0F11;
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -25,7 +25,6 @@ export default function Navbar() {
       ]
     },
     { name: "Careers", href: "/careers" },
-    { name: "Contact", href: "/contact" },
   ];
 
   const toggleMenu = () => {
@@ -112,6 +111,10 @@ export default function Navbar() {
           ))}
         </nav>
         <div className={styles.mobileFooter}>
+          <Link href="/contact" className={styles.mobileContactBtn} onClick={toggleMenu}>
+            Contact Us
+            <ArrowRight size={18} />
+          </Link>
           <p className={styles.mobileEmail}>hello@actaldigital.com</p>
         </div>
       </div>
@@ -159,6 +162,12 @@ export default function Navbar() {
               </div>
             ))}
           </div>
+
+          {/* Contact CTA Button */}
+          <Link href="/contact" className={styles.contactBtn}>
+            Contact
+            <ArrowRight size={16} />
+          </Link>
 
           {/* Hamburger Menu Button */}
           <button

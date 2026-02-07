@@ -59,19 +59,21 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 1rem 2rem;
+  padding: 0.75rem 2rem;
   background-color: var(--dark-text);
   color: var(--dark-bg);
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   border-radius: 9999px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: background-color 0.2s ease;
 }
 
 .ctaButton:hover {
-  background-color: #e5e5e5;
-  transform: translateY(-2px);
+  background-color: #a0a0a0;
+  color: #0E0F11;
 }
 
 /* ================================================
