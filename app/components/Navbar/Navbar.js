@@ -1,6 +1,6 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -8,8 +8,10 @@ import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   const navLinks = [
+    { name: "About", href: "/about-us" },
     {
       name: "Services",
       dropdown: [
@@ -22,14 +24,18 @@ export default function Navbar() {
         { name: "Branding", href: "/services/branding" },
       ]
     },
-    { name: "About", href: "/about-us" },
-    { name: "Contact", href: "/contact" },
     { name: "Careers", href: "/careers" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    setServicesOpen(false); // Reset services dropdown when menu closes
     document.body.style.overflow = !isOpen ? "hidden" : "";
+  };
+
+  const toggleServices = () => {
+    setServicesOpen(!servicesOpen);
   };
 
   return (
@@ -47,7 +53,53 @@ export default function Navbar() {
         <nav className={styles.mobileNav}>
           {navLinks.map((link) => (
             <div key={link.name}>
-              {link.href ? (
+              {link.dropdown ? (
+                <>
+                  <button
+                    className={styles.mobileLink}
+                    onClick={toggleServices}
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      width: '100%',
+                      background: 'none',
+                      border: 'none',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    {link.name}
+                    <ChevronDown
+                      size={20}
+                      style={{
+                        transform: servicesOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                        transition: 'transform 0.3s ease'
+                      }}
+                    />
+                  </button>
+                  <div
+                    className={styles.mobileDropdown}
+                    style={{
+                      maxHeight: servicesOpen ? '500px' : '0',
+                      overflow: 'hidden',
+                      transition: 'max-height 0.3s ease',
+                      paddingLeft: '1.5rem'
+                    }}
+                  >
+                    {link.dropdown.map((subLink) => (
+                      <Link
+                        key={subLink.name}
+                        href={subLink.href}
+                        className={styles.mobileLink}
+                        style={{ fontSize: '1.25rem', borderBottom: 'none', padding: '0.5rem 0' }}
+                        onClick={toggleMenu}
+                      >
+                        {subLink.name}
+                      </Link>
+                    ))}
+                  </div>
+                </>
+              ) : (
                 <Link
                   href={link.href}
                   className={styles.mobileLink}
@@ -55,25 +107,6 @@ export default function Navbar() {
                 >
                   {link.name}
                 </Link>
-              ) : (
-                <span className={styles.mobileLink} style={{ cursor: 'default' }}>
-                  {link.name}
-                </span>
-              )}
-              {link.dropdown && (
-                <div style={{ paddingLeft: '1.5rem' }}>
-                  {link.dropdown.map((subLink) => (
-                    <Link
-                      key={subLink.name}
-                      href={subLink.href}
-                      className={styles.mobileLink}
-                      style={{ fontSize: '1.5rem', borderBottom: 'none', padding: '0.5rem 0' }}
-                      onClick={toggleMenu}
-                    >
-                      {subLink.name}
-                    </Link>
-                  ))}
-                </div>
               )}
             </div>
           ))}
