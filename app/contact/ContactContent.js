@@ -7,7 +7,7 @@ import { useLanguage } from "../context/LanguageContext";
 import styles from "./page.module.css";
 
 export default function ContactContent() {
-      const { currentLang } = useLanguage();
+      const { language } = useLanguage();
       const [state, handleSubmit] = useForm("xdaeglal");
 
       // Translations dictionary
