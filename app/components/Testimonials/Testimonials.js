@@ -117,7 +117,7 @@ export default function Testimonials() {
       if (!isPaused) {
         setCurrent((prev) => (prev + 1) % list.length);
       }
-    }, 2000); // 2 seconds interval
+    }, 5000); // 5 seconds interval
   };
 
   useEffect(() => {
