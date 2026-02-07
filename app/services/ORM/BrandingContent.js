@@ -50,7 +50,7 @@ export default function BrandingContent() {
             }
       };
 
-      const t = translations[currentLang] || translations["EN"];
+      const t = translations[language] || translations["EN"];
 
       return (
             <main className={styles.main}>
@@ -124,7 +124,7 @@ export default function BrandingContent() {
                         </div>
                   </div>
 
-                  <Footer currentLang={currentLang} />
+                  <Footer />
             </main>
       );
 }
