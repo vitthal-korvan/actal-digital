@@ -115,7 +115,7 @@ export default function Navbar() {
             Contact Us
             <ArrowRight size={18} />
           </Link>
-          <p className={styles.mobileEmail}>hello@actaldigital.com</p>
+          <p className={styles.mobileEmail}>info@actaldigital.com</p>
         </div>
       </div>
 

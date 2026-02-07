@@ -85,8 +85,8 @@ export default function Footer() {
             {/* Email Column */}
             <div className={styles.emailCol}>
               <span className={styles.emailLabel}>You can also email us at:</span>
-              <a href="mailto:contact@actaldigital.com" className={styles.emailLink}>
-                contact@actaldigital.com
+              <a href="mailto:info@actaldigital.com" className={styles.emailLink}>
+                info@actaldigital.com
               </a>
 
               <div className={styles.contactInfo}>
